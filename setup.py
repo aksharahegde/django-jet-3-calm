@@ -27,13 +27,13 @@ def get_install_requires():
     return install_requires
 
 setup(
-    name='django-4-jet',
-    version='1.0.8',
-    description='Modern template for Django-4 admin interface with improved functionality',
+    name='django-jet-calm',
+    version='2.0.0',
+    description='Modern template for Django-3&4 admin interface with improved functionality',
     long_description=read('README.rst'),
-    author='Denis Kildishev',
-    author_email='barukimang@gmail.com',
-    url='https://github.com/Barukimang/django-jet/archive/refs/tags/1.0.8-django4.tar.gz',
+    author='Akshara Hegde',
+    author_email='akshara.dt@gmail.com',
+    url='https://github.com/aksharahegde/django-jet-3-calm',
     packages=find_packages(),
     license='AGPLv3',
     classifiers=[

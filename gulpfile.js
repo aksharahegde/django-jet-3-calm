@@ -121,12 +121,12 @@ gulp.task('vendor-translations', function() {
 
 gulp.task('locales', shell.task('python manage.py compilemessages', { quiet: true }));
 
-gulp.task('build', ['scripts', 'styles', 'vendor-styles', 'vendor-translations', 'locales']);
+gulp.task('build', gulp.parallel('scripts', 'styles', 'vendor-styles', 'vendor-translations', 'locales'));
 
 gulp.task('watch', function() {
-    gulp.watch('./jet/static/jet/js/src/**/*.js', ['scripts']);
-    gulp.watch('./jet/static/jet/css/**/*.scss', ['styles']);
-    gulp.watch(['./jet/locale/**/*.po', './jet/dashboard/locale/**/*.po'], ['locales']);
+    gulp.watch('./jet/static/jet/js/src/**/*.js', gulp.series('scripts'));
+    gulp.watch('./jet/static/jet/css/**/*.scss', gulp.series('styles'));
+    gulp.watch(['./jet/locale/**/*.po', './jet/dashboard/locale/**/*.po'], gulp.series('locales'));
 });
 
-gulp.task('default', ['build', 'watch']);
+gulp.task('default', gulp.parallel('build', 'watch'));
