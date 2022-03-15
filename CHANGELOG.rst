@@ -1,5 +1,9 @@
 Changelog
 =========
+2.0.0
+-----
+* Fixed - Select across pages not visible
+* Upgraded - Jquery to 1.12.4
 
 1.0.8
 -----
