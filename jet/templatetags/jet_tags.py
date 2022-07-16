@@ -12,10 +12,10 @@ from django.contrib.admin.widgets import RelatedFieldWidgetWrapper
 from django.utils.formats import get_format
 from django.utils.safestring import mark_safe
 try:
-    from django.utils.encoding import smart_text as smart_txt
+    from django.utils.encoding import smart_str as smart_txt
 except ImportError: # Django 3+
     '''
-    "The smart_text() and force_text() aliases (since Django 2.0) of 
+    "The smart_str() and force_text() aliases (since Django 2.0) of 
     smart_str() and force_str() are deprecated...".
 
     Taken from:
@@ -228,7 +228,7 @@ def jet_popup_response_data(context):
     return json.dumps({
         'action': context.get('action'),
         'value': context.get('value') or context.get('pk_value'),
-        #'obj': smart_text(context.get('obj')),
+        #'obj': smart_str(context.get('obj')),
         'obj': smart_txt(context.get('obj')),   # Django 2&3+
         'new_value': context.get('new_value')
     })

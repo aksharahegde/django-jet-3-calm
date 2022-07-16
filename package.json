@@ -20,10 +20,10 @@
     "jquery.cookie": "1.4.1",
     "jquery.mousewheel": "3.1.9",
     "merge-stream": "1.0.0",
-    "perfect-scrollbar": "git://github.com/mdbootstrap/perfect-scrollbar#0.8.1",
+    "perfect-scrollbar": "git@github.com:aksharahegde/perfect-scrollbar#0.8.1",
     "postcss-pxtorem": "3.3.1",
     "select2": "4.0.0",
-    "timepicker": "git://github.com/geex-arts/timepicker",
+    "timepicker": "git@github.com:aksharahegde/timepicker.git",
     "vinyl-buffer": "1.0.1",
     "vinyl-source-stream": "2.0.0"
   }

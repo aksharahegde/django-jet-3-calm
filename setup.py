@@ -28,7 +28,7 @@ def get_install_requires():
 
 setup(
     name='django-jet-calm',
-    version='2.0.0',
+    version='3.0.0',
     description='Modern template for Django-3&4 admin interface with improved functionality',
     long_description=read('README.rst'),
     author='Akshara Hegde',

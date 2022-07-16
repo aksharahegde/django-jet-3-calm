@@ -21,10 +21,10 @@ except ImportError: # Django 1.11
 
 from django.contrib.admin import AdminSite
 try:
-    from django.utils.encoding import smart_text as smart_txt
+    from django.utils.encoding import smart_str as smart_txt
 except ImportError: # Django 2&3+
     '''
-    "The smart_text() and force_text() aliases (since Django 2.0) of 
+    "The smart_str() and force_text() aliases (since Django 2.0) of 
     smart_str() and force_str() are deprecated...".
 
     Taken from:
@@ -174,7 +174,7 @@ class LazyDateTimeEncoder(json.JSONEncoder):
 def get_model_instance_label(instance):
     if getattr(instance, "related_label", None):
         return instance.related_label()
-    #return smart_text(instance)    # Django 3+
+    #return smart_str(instance)    # Django 3+
     return smart_txt(instance)
 
 
