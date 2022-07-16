@@ -1,5 +1,10 @@
 Changelog
 =========
+4.1.0
+-----
+* Dropped - Support for Django 3, Python < 3..9
+
+
 2.0.0
 -----
 * Fixed - Select across pages not visible
