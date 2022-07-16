@@ -41,7 +41,7 @@ from django.utils.functional import Promise
 from django.contrib.admin.options import IncorrectLookupParameters
 from django.contrib import admin
 try:
-    from django.utils.translation import ugettext_lazy as _
+    from django.utils.translation import gettext_lazy as _
 except ImportError: # Django 4 (tested with Django 4.0)
     from django.utils.translation import gettext_lazy as _
 from django.utils.text import slugify

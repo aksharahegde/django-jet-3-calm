@@ -2,7 +2,7 @@ from importlib import import_module
 import json
 from django.db import models
 try:
-    from django.utils.translation import ugettext_lazy as _
+    from django.utils.translation import gettext_lazy as _
 except ImportError: # Django 4 (tested with Django 4.0)
     from django.utils.translation import gettext_lazy as _
 from jet.utils import LazyDateTimeEncoder
