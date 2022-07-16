@@ -1,10 +1,9 @@
-import json
+import operator
 from django import forms
 from django.contrib.auth.models import Permission
 from django.contrib.contenttypes.models import ContentType
 from django.core.exceptions import ValidationError
 from django.db.models import Q
-import operator
 
 from jet.models import Bookmark, PinnedApplication
 from jet.utils import get_model_instance_label, user_is_authenticated

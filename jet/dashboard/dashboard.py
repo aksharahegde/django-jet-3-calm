@@ -1,16 +1,9 @@
 from importlib import import_module
-try:
-    from django.core.urlresolvers import reverse
-except ImportError: # Django 1.11
-    from django.urls import reverse
-
+from django.urls import reverse
 from django.template.loader import render_to_string
 from jet.dashboard import modules
 from jet.dashboard.models import UserDashboardModule
-try:
-    from django.utils.translation import gettext_lazy as _
-except ImportError: # Django 4 (tested with Django 4.0)
-    from django.utils.translation import gettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from jet.ordered_set import OrderedSet
 from jet.utils import get_admin_site_name, context_to_dict
 

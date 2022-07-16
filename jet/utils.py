@@ -1,55 +1,24 @@
 import datetime
 import json
+from collections import OrderedDict
 from django.template import Context
 from django.utils import translation
 from jet import settings
 from jet.models import PinnedApplication
 
-try:
-    from django.apps.registry import apps
-except ImportError:
-    try:
-        from django.apps import apps # Fix Django 1.7 import issue
-    except ImportError:
-        pass
+from django.apps.registry import apps
 from django.core.serializers.json import DjangoJSONEncoder
-from django.http import HttpResponse
-try:
-    from django.core.urlresolvers import reverse, resolve, NoReverseMatch
-except ImportError: # Django 1.11
-    from django.urls import reverse, resolve, NoReverseMatch
-
+from django.contrib import admin, messages
 from django.contrib.admin import AdminSite
-try:
-    from django.utils.encoding import smart_str as smart_txt
-except ImportError: # Django 2&3+
-    '''
-    "The smart_str() and force_text() aliases (since Django 2.0) of 
-    smart_str() and force_str() are deprecated...".
-
-    Taken from:
-    https://docs.djangoproject.com/en/4.0/releases/3.0/#deprecated-features-3-0
-    '''
-    from django.utils.encoding import smart_str as smart_txt
-from django.utils.text import capfirst
-from django.contrib import messages
-try:
-    from django.utils.encoding import force_text as force_txt
-except ImportError: # Django 2&3+ Same as above
-    from django.utils.encoding import force_str as force_txt
-from django.utils.functional import Promise
 from django.contrib.admin.options import IncorrectLookupParameters
-from django.contrib import admin
-try:
-    from django.utils.translation import gettext_lazy as _
-except ImportError: # Django 4 (tested with Django 4.0)
-    from django.utils.translation import gettext_lazy as _
+from django.http import HttpResponse
+from django.urls import reverse, resolve, NoReverseMatch
+from django.utils.encoding import smart_str
+from django.utils.text import capfirst
+from django.utils.encoding import force_str
+from django.utils.functional import Promise
+from django.utils.translation import gettext_lazy as _
 from django.utils.text import slugify
-
-try:
-    from collections import OrderedDict
-except ImportError:
-    from ordereddict import OrderedDict  # Python 2.6
 
 
 class JsonResponse(HttpResponse):
@@ -166,16 +135,14 @@ class LazyDateTimeEncoder(json.JSONEncoder):
         if isinstance(obj, datetime.datetime) or isinstance(obj, datetime.date):
             return obj.isoformat()
         elif isinstance(obj, Promise):
-            #return force_text(obj)
-            return force_txt(obj)   # Django 2&3+
+            return force_str(obj)
         return self.encode(obj)
 
 
 def get_model_instance_label(instance):
     if getattr(instance, "related_label", None):
         return instance.related_label()
-    #return smart_str(instance)    # Django 3+
-    return smart_txt(instance)
+    return smart_str(instance)
 
 
 class SuccessMessageMixin(object):

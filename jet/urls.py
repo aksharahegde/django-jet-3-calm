@@ -1,14 +1,8 @@
 import django
-try:
-    from django.conf.urls import url
-except ImportError: # Django 3+ (tested with Django 4.0)
-    from django.urls import re_path as url
+from django.urls import re_path as url
 
-try:
-    from django.views.i18n import JavaScriptCatalog
-    javascript_catalog = JavaScriptCatalog.as_view()
-except ImportError:  # Django < 2.0
-    from django.views.i18n import javascript_catalog
+from django.views.i18n import JavaScriptCatalog
+javascript_catalog = JavaScriptCatalog.as_view()
 
 from jet.views import add_bookmark_view, remove_bookmark_view, toggle_application_pin_view, model_lookup_view
 
@@ -43,7 +37,3 @@ urlpatterns = [
         name='jsi18n'
     ),
 ]
-
-if django.VERSION[:2] < (1, 8):
-    from django.conf.urls import patterns
-    urlpatterns = patterns('', *urlpatterns)

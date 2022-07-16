@@ -1,20 +1,9 @@
 from django.contrib.admin import RelatedFieldListFilter
 from django.utils.encoding import smart_str
 from django.utils.html import format_html
-try:
-    from django.core.urlresolvers import reverse
-except ImportError: # Django 1.11
-    from django.urls import reverse
-
-try:
-    from django.contrib.admin.utils import get_model_from_relation
-except ImportError: # Django 1.6
-    from django.contrib.admin.util import get_model_from_relation
-
-try:
-    from django.forms.utils import flatatt
-except ImportError: # Django 1.6
-    from django.forms.util import flatatt
+from django.urls import reverse
+from django.contrib.admin.utils import get_model_from_relation
+from django.forms.utils import flatatt
 
 
 class RelatedFieldAjaxListFilter(RelatedFieldListFilter):
