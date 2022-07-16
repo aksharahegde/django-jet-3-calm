@@ -28,8 +28,8 @@ def get_install_requires():
 
 setup(
     name='django-jet-calm',
-    version='3.0.0',
-    description='Modern template for Django-3&4 admin interface with improved functionality',
+    version='3.1.0',
+    description='Modern template for Django-4 admin interface with improved functionality',
     long_description=read('README.rst'),
     author='Akshara Hegde',
     author_email='akshara.dt@gmail.com',
@@ -50,6 +50,7 @@ setup(
         'Programming Language :: Python :: 3.2',
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.10',
         'Environment :: Web Environment',
         'Topic :: Software Development',
         'Topic :: Software Development :: User Interfaces',
