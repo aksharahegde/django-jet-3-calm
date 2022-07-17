@@ -2,29 +2,19 @@
 import datetime
 import json
 from django import forms
-try:
-    from django.core.urlresolvers import reverse
-except ImportError: # Django 1.11
-    from django.urls import reverse
-
+from django.urls import reverse
 from django.forms import Widget
 from django.utils import formats
 from django.utils.html import format_html
 from django.utils.safestring import mark_safe
 from django.utils.text import capfirst
 from jet.dashboard.modules import DashboardModule
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from django.conf import settings
-from django.utils.encoding import force_text
-
-try:
-    from urllib import request
-    from urllib.parse import urlencode
-    from urllib.error import URLError, HTTPError
-except ImportError:
-    import urllib2 as request
-    from urllib2 import URLError, HTTPError
-    from urllib import urlencode
+from django.utils.encoding import force_str
+from urllib import request
+from urllib.parse import urlencode
+from urllib.error import URLError, HTTPError
 
 JET_MODULE_YANDEX_METRIKA_CLIENT_ID = getattr(settings, 'JET_MODULE_YANDEX_METRIKA_CLIENT_ID', '')
 JET_MODULE_YANDEX_METRIKA_CLIENT_SECRET = getattr(settings, 'JET_MODULE_YANDEX_METRIKA_CLIENT_SECRET', '')
@@ -104,12 +94,12 @@ class AccessTokenWidget(Widget):
         if value and len(value) > 0:
             link = '<a href="%s">%s</a>' % (
                 reverse('jet-dashboard:yandex-metrika-revoke', kwargs={'pk': self.module.model.pk}),
-                force_text(_('Revoke access'))
+                force_str(_('Revoke access'))
             )
         else:
             link = '<a href="%s">%s</a>' % (
                 reverse('jet-dashboard:yandex-metrika-grant', kwargs={'pk': self.module.model.pk}),
-                force_text(_('Grant access'))
+                force_str(_('Grant access'))
             )
 
         if value is None:
@@ -136,10 +126,10 @@ class YandexMetrikaSettingsForm(forms.Form):
     def set_counter_choices(self, module):
         counters = module.counters()
         if counters is not None:
-            self.fields['counter'].choices = (('', '-- %s --' % force_text(_('none'))),)
+            self.fields['counter'].choices = (('', '-- %s --' % force_str(_('none'))),)
             self.fields['counter'].choices.extend(map(lambda x: (x['id'], x['site']), counters))
         else:
-            label = force_text(_('grant access first')) if module.access_token is None else force_text(_('counters loading failed'))
+            label = force_str(_('grant access first')) if module.access_token is None else force_str(_('counters loading failed'))
             self.fields['counter'].choices = (('', '-- %s -- ' % label),)
 
 

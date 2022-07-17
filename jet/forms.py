@@ -1,20 +1,15 @@
-import json
+import operator
 from django import forms
 from django.contrib.auth.models import Permission
 from django.contrib.contenttypes.models import ContentType
 from django.core.exceptions import ValidationError
 from django.db.models import Q
-import operator
 
 from jet.models import Bookmark, PinnedApplication
 from jet.utils import get_model_instance_label, user_is_authenticated
 from functools import reduce
-
-try:
-    from django.apps import apps
-    get_model = apps.get_model
-except ImportError:
-    from django.db.models.loading import get_model
+from django.apps import apps
+get_model = apps.get_model
 
 
 class AddBookmarkForm(forms.ModelForm):

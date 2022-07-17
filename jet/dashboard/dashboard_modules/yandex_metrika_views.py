@@ -1,16 +1,12 @@
 from django.conf.urls import url
 from django.contrib import messages
-try:
-    from django.core.urlresolvers import reverse
-except ImportError: # Django 1.11
-    from django.urls import reverse
-
+from django.urls import reverse
 from django.http import HttpResponse
 from django.shortcuts import redirect
 from jet.dashboard.dashboard_modules.yandex_metrika import YandexMetrikaClient
 from jet.dashboard.models import UserDashboardModule
 from jet.dashboard import dashboard
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 
 def yandex_metrika_grant_view(request, pk):

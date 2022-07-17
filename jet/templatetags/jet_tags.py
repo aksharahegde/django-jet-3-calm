@@ -2,36 +2,17 @@ from __future__ import unicode_literals
 import json
 import os
 from django import template
-try:
-    from django.core.urlresolvers import reverse
-except ImportError: # Django 1.11
-    from django.urls import reverse
-
+from django.urls import reverse
 from django.forms import CheckboxInput, ModelChoiceField, Select, ModelMultipleChoiceField, SelectMultiple
 from django.contrib.admin.widgets import RelatedFieldWidgetWrapper
 from django.utils.formats import get_format
 from django.utils.safestring import mark_safe
-try:
-    from django.utils.encoding import smart_text as smart_txt
-except ImportError: # Django 3+
-    '''
-    "The smart_text() and force_text() aliases (since Django 2.0) of 
-    smart_str() and force_str() are deprecated...".
-
-    Taken from:
-    https://docs.djangoproject.com/en/4.0/releases/3.0/#deprecated-features-3-0
-    '''
-    from django.utils.encoding import smart_str as smart_txt
-
+from django.utils.encoding import smart_str
 from jet import settings, VERSION
 from jet.models import Bookmark
 from jet.utils import get_model_instance_label, get_model_queryset, get_possible_language_codes, \
     get_admin_site, get_menu_items
-
-try:
-    from urllib.parse import parse_qsl
-except ImportError:
-    from urlparse import parse_qsl
+from urllib.parse import parse_qsl
 
 
 register = template.Library()
@@ -228,8 +209,8 @@ def jet_popup_response_data(context):
     return json.dumps({
         'action': context.get('action'),
         'value': context.get('value') or context.get('pk_value'),
-        #'obj': smart_text(context.get('obj')),
-        'obj': smart_txt(context.get('obj')),   # Django 2&3+
+        #'obj': smart_str(context.get('obj')),
+        'obj': smart_str(context.get('obj')),   # Django 2&3+
         'new_value': context.get('new_value')
     })
 

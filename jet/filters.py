@@ -1,20 +1,9 @@
 from django.contrib.admin import RelatedFieldListFilter
-from django.utils.encoding import smart_text
+from django.utils.encoding import smart_str
 from django.utils.html import format_html
-try:
-    from django.core.urlresolvers import reverse
-except ImportError: # Django 1.11
-    from django.urls import reverse
-
-try:
-    from django.contrib.admin.utils import get_model_from_relation
-except ImportError: # Django 1.6
-    from django.contrib.admin.util import get_model_from_relation
-
-try:
-    from django.forms.utils import flatatt
-except ImportError: # Django 1.6
-    from django.forms.util import flatatt
+from django.urls import reverse
+from django.contrib.admin.utils import get_model_from_relation
+from django.forms.utils import flatatt
 
 
 class RelatedFieldAjaxListFilter(RelatedFieldListFilter):
@@ -46,7 +35,7 @@ class RelatedFieldAjaxListFilter(RelatedFieldListFilter):
             rel_name = other_model._meta.pk.name
 
         queryset = model._default_manager.filter(**{rel_name: self.lookup_val}).all()
-        return [(x._get_pk_val(), smart_text(x)) for x in queryset]
+        return [(x._get_pk_val(), smart_str(x)) for x in queryset]
 
 
 try:
@@ -54,7 +43,7 @@ try:
     from django import forms
     from django.contrib.admin.widgets import AdminDateWidget
     from rangefilter.filter import DateRangeFilter as OriginalDateRangeFilter
-    from django.utils.translation import ugettext as _
+    from django.utils.translation import gettext_lazy as _
 
 
     class DateRangeFilter(OriginalDateRangeFilter):

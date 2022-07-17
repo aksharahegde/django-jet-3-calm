@@ -1,11 +1,6 @@
 from django.db import models
 
-try:
-    from django.utils.encoding import python_2_unicode_compatible
-except ImportError:
-    from six import python_2_unicode_compatible
 
-@python_2_unicode_compatible
 class TestModel(models.Model):
     field1 = models.CharField(max_length=255)
     field2 = models.IntegerField()
@@ -14,7 +9,6 @@ class TestModel(models.Model):
         return '%s%d' % (self.field1, self.field2)
 
 
-@python_2_unicode_compatible
 class RelatedToTestModel(models.Model):
     field = models.ForeignKey(TestModel, on_delete=models.CASCADE)
 
@@ -22,7 +16,6 @@ class RelatedToTestModel(models.Model):
         return self.field
 
 
-@python_2_unicode_compatible
 class SearchableTestModel(models.Model):
     field1 = models.CharField(max_length=255)
     field2 = models.IntegerField()

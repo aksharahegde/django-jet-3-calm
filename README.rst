@@ -1,9 +1,6 @@
 ================================
-Django JET (Django-4 compatible)
+Django JET (Django-4)
 ================================
-
-.. image:: https://travis-ci.org/geex-arts/django-jet.svg?branch=master
-    :target: https://travis-ci.org/geex-arts/django-jet
 
 **Modern template for Django-4 admin interface with improved functionality**
 
@@ -12,20 +9,10 @@ code in your programs make them AGPL compatible too. So if you don't want to com
 license (visit Home page). The commercial license is designed for using Django JET in commercial products
 and applications without the provisions of the AGPLv3.
 
-.. image:: https://raw.githubusercontent.com/geex-arts/jet/static/logo.png
-    :width: 500px
-    :height: 500px
-    :scale: 50%
-    :alt: Logo
-    :align: center
-    
-* Home page: http://jet.geex-arts.com/
-* **New Jet**: `Live Demo <https://app.jetadmin.io/demo?utm_source=jet&utm_medium=banner&utm_campaign=github&utm_content=link&utm_term=promo>`_
-* Live Demo: http://demo.jet.geex-arts.com/admin/
-* Documentation: http://jet.readthedocs.org/
-* libi.io http://libi.io/library/1683/django-jet
-* PyPI: https://pypi.python.org/pypi/django-jet
-* Support: support@jet.geex-arts.com
+* Documentation: http://jet.readthedocs.org/ (Old official version)
+* libi.io http://libi.io/library/1683/django-jet (Old official version)
+* PyPI: https://pypi.python.org/pypi/django-jet (Old official version)
+* Support: akshara.dt@gmail.com
 
 Why Django JET?
 ===============
@@ -60,13 +47,13 @@ Screenshots
 Installation
 ============
 
-* Download and install the Django3 compatible version of Django JET:
+* Download and install the Django 4 version of Django JET:
 
 .. code:: python
 
-    pip install https://github.com/Barukimang/django-jet/archive/dev.zip
+    pip install git+https://github.com/aksharahegde/django-jet-3-calm.git@jet-jquery-migrate
     # or
-    easy_install https://github.com/Barukimang/django-jet/archive/dev.zip
+    easy_install git+https://github.com/aksharahegde/django-jet-3-calm.git@jet-jquery-migrate
 
 * Add 'jet' application to the INSTALLED_APPS setting of your Django project settings.py file (note it should be before 'django.contrib.admin'):
 
@@ -78,7 +65,7 @@ Installation
         'django.contrib.admin',
     )
         
-* Make sure ``django.template.context_processors.request`` context processor is enabled in settings.py (Django 1.8+ way):
+* Make sure ``django.template.context_processors.request`` context processor is enabled in settings.py:
 
 .. code:: python
 
@@ -96,17 +83,6 @@ Installation
             },
         },
     ]
-
-.. warning::
-    Before Django 1.8 you should specify context processors different way. Also use ``django.core.context_processors.request`` instead of ``django.template.context_processors.request``.
-
-    .. code:: python
-
-        from django.conf import global_settings
-
-        TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
-            'django.core.context_processors.request',
-        )
 
 * Add URL-pattern to the urlpatterns of your Django project urls.py file (they are needed for related–lookups and autocompletes):
 

@@ -1,12 +1,8 @@
-try:
-    from django.core.management.base import NoArgsCommand
-except ImportError:
-    from django.core.management import BaseCommand as NoArgsCommand
-
+from django.core.management import BaseCommand, CommandError
 from jet.utils import get_app_list
 
 
-class Command(NoArgsCommand):
+class Command(BaseCommand):
     help = 'Generates example of JET custom apps setting'
     item_order = 0
     
