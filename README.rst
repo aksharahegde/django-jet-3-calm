@@ -51,9 +51,9 @@ Installation
 
 .. code:: python
 
-    pip install git+https://github.com/aksharahegde/django-jet-3-calm.git@jet-jquery-migrate
+    pip install git+https://github.com/aksharahegde/django-jet-3-calm.git@main
     # or
-    easy_install git+https://github.com/aksharahegde/django-jet-3-calm.git@jet-jquery-migrate
+    easy_install git+https://github.com/aksharahegde/django-jet-3-calm.git@main
 
 * Add 'jet' application to the INSTALLED_APPS setting of your Django project settings.py file (note it should be before 'django.contrib.admin'):
 
