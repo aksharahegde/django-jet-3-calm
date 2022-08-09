@@ -14,7 +14,7 @@
     "gulp-shell": "0.5.2",
     "gulp-sourcemaps": "1.6.0",
     "gulp-uglify": "1.5.4",
-    "jquery": "2.0.0",
+    "jquery": "2.2.4",
     "jquery.mousewheel": "3.1.9",
     "jquery-migrate": "3.0.0",
     "jquery-ui": "git+https://github.com/jquery/jquery-ui.git#1.11.4",
