@@ -2440,10 +2440,10 @@ jquery.mousewheel@3.1.9:
   resolved "https://registry.yarnpkg.com/jquery.mousewheel/-/jquery.mousewheel-3.1.9.tgz#b1e162f1df8aaf6c24fbf923d3d6c58c52d9553e"
   integrity sha512-n4tdvQAzKBYl5KIPil3za4yDmhodXZQu968k8J63kvxy77kg+HApIejpuE+S3Ko9d7P5UIFH6fMdghzWupqVVw==
 
-jquery@1.12.4:
-  version "1.12.4"
-  resolved "https://registry.yarnpkg.com/jquery/-/jquery-1.12.4.tgz#01e1dfba290fe73deba77ceeacb0f9ba2fec9e0c"
-  integrity sha512-UEVp7PPK9xXYSk8xqXCJrkXnKZtlgWkd2GsAQbMRFK6S/ePU2JN5G2Zum8hIVjzR3CpdfSqdqAzId/xd4TJHeg==
+jquery@2.0.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-2.1.0.tgz#1c9a8c971d2b53dae10d72e16cbb5a1df16a4ace"
+  integrity sha512-QyJAvw0LUlUPci88C5LTFNtg4WFs70Dkqmwq4rZyOBflduKnHZakpIIDjhZVygAQbUqaghv6msUyP5TmRoNevQ==
 
 jquery@>=1.5.1:
   version "3.6.0"
