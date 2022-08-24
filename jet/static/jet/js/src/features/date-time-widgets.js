@@ -1,7 +1,7 @@
 var $ = require('jquery');
 
 require('jquery-ui/ui/core');
-require('jquery-ui/ui/datepicker');
+require('jquery-ui/ui/widgets/datepicker');
 
 require('timepicker');
 

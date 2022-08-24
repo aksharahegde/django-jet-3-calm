@@ -65,46 +65,43 @@ gulp.task('vendor-styles', function() {
             ]),
             gulp.src([
                 './node_modules/jquery-ui/themes/base/all.css'
-            ])
-                .pipe(cleanCSS()) // needed to remove jQuery UI comments breaking concatCss
-                .on('error', function(error) {
-                    console.error(error);
-                })
-                .pipe(concatCss('jquery-ui.css', {
-                    rebaseUrls: false
-                }))
-                .on('error', function(error) {
-                    console.error(error);
-                })
-                .pipe(replace('images/', 'jquery-ui/images/'))
-                .on('error', function(error) {
-                    console.error(error);
-                }),
-            gulp.src([
-                './node_modules/perfect-scrollbar/src/css/main.scss'
-            ])
-                .pipe(sass({
-                    outputStyle: 'compressed'
-                }))
-                .on('error', function(error) {
-                    console.error(error);
-                })
-        )
-            .pipe(postcss(cssProcessors))
+            ]).pipe(cleanCSS()) // needed to remove jQuery UI comments breaking concatCss
             .on('error', function(error) {
                 console.error(error);
             })
-            .pipe(concatCss('vendor.css', {
+            .pipe(concatCss('jquery-ui.css', {
                 rebaseUrls: false
             }))
             .on('error', function(error) {
                 console.error(error);
             })
-            .pipe(cleanCSS())
+            .pipe(replace('images/', 'jquery-ui/images/'))
+            .on('error', function(error) {
+                console.error(error);
+            }),
+            gulp.src([
+                './node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css'
+            ]).pipe(sass({
+                outputStyle: 'compressed'
+            }))
             .on('error', function(error) {
                 console.error(error);
             })
-            .pipe(gulp.dest('./jet/static/jet/css'))
+        ).pipe(postcss(cssProcessors))
+        .on('error', function(error) {
+            console.error(error);
+        })
+        .pipe(concatCss('vendor.css', {
+            rebaseUrls: false
+        }))
+        .on('error', function(error) {
+            console.error(error);
+        })
+        .pipe(cleanCSS())
+        .on('error', function(error) {
+            console.error(error);
+        })
+        .pipe(gulp.dest('./jet/static/jet/css'))
     )
 });
 
