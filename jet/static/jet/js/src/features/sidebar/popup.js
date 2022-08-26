@@ -94,17 +94,17 @@ SideBarPopup.prototype = {
         $sidebar.find('.popup-section-link').on('click', function(e) {
             e.preventDefault();
 
-            if (!$(document.documentElement).hasClass('touchevents') && $(this).attr('href')) {
-                document.location = $(this).attr('href');
-                clicked = true;
-            } else {
-                self.onSectionLinkInteracted($popupContainer, $(this));
-                clicked = true;
-            }
-
             if (clicked) {
                 clicked = false;
                 self.closePopup($popupContainer);
+            } else {
+                if (!$(document.documentElement).hasClass('touchevents') && $(this).attr('href')) {
+                    document.location = $(this).attr('href');
+                    clicked = true;
+                } else {
+                    self.onSectionLinkInteracted($popupContainer, $(this));
+                    clicked = true;
+                }
             }
         });
 
