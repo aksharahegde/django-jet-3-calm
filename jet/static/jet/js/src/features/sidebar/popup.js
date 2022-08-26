@@ -14,6 +14,7 @@ SideBarPopup.prototype = {
     $currentSectionLink: null,
     $currentSection: null,
     $currentSectionListItem: null,
+    someLinkOpen: false,
     resetPopupDisplayTimeout: function() {
         if (this.popupDisplayTimeout != null) {
             clearTimeout(this.popupDisplayTimeout);
@@ -58,6 +59,7 @@ SideBarPopup.prototype = {
 
             $popupContainer.stop().fadeIn(200, 'swing');
             $(document.body).addClass('non-scrollable');
+            self.someLinkOpen = true;
         }, delay);
     },
     closePopup: function($popupContainer, delay) {
@@ -89,25 +91,19 @@ SideBarPopup.prototype = {
         var self = this;
         var $popupContainer = $sidebar.find('.sidebar-popup-container');
         var $popup = $sidebar.find('.sidebar-popup');
-        var clicked = false;
-        var currentActiveLink = null;
-
         $sidebar.find('.popup-section-link').on('click', function(e) {
             e.preventDefault();
 
             var href = $(this).attr('href');
-            if (clicked && href === currentActiveLink) {
-                clicked = false;
-                currentActiveLink = null;
+            if (self.someLinkOpen) {
                 self.closePopup($popupContainer);
-            } else {
+            }
+            if (href !== self.$currentSectionLink) {
                 if (!$(document.documentElement).hasClass('touchevents') && href) {
                     document.location = href;
                 } else {
                     self.onSectionLinkInteracted($popupContainer, $(this));
                 }
-                clicked = true;
-                currentActiveLink = href;
             }
         });
 
@@ -120,12 +116,8 @@ SideBarPopup.prototype = {
 
         $popup.on('mouseenter', function() {
             self.openPopup($popupContainer, 0);
-            clicked = true;
-            currentActiveLink = href;
         }).on('mouseleave', function() {
             self.closePopup($popupContainer);
-            clicked = false;
-            currentActiveLink = null;
         });
     },
     initSectionsSearch: function($sidebar) {
@@ -136,7 +128,6 @@ SideBarPopup.prototype = {
 
             $search.on('change keyup', function() {
                 var text = $(this).val();
-
                 $items
                     .hide()
                     .find('.sidebar-popup-list-item-link:icontains("' + text + '")')
@@ -179,7 +170,7 @@ SideBarPopup.prototype = {
                 self.moveSectionListItemSelection(true);
             } else if (e.which == 13) {
                 if (self.$currentSectionListItem) {
-                    var $el =  self.$currentSectionListItem.find('a');
+                    var $el = self.$currentSectionListItem.find('a');
 
                     if ($el.attr('href')) {
                         document.location = $el.attr('href');
