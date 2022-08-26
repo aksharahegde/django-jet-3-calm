@@ -96,8 +96,7 @@ SideBarPopup.prototype = {
             e.preventDefault();
 
             var href = $(this).attr('href');
-            clicked = href === currentActiveLink
-            if (clicked) {
+            if (clicked && href === currentActiveLink) {
                 clicked = false;
                 currentActiveLink = null;
                 self.closePopup($popupContainer);
@@ -115,6 +114,8 @@ SideBarPopup.prototype = {
         $sidebar.find('.sidebar-back').on('click touchend', function(e) {
             e.preventDefault();
             self.closePopup($popupContainer);
+            clicked = false;
+            currentActiveLink = null;
         });
 
         $popup.on('mouseenter', function() {
