@@ -90,13 +90,7 @@ SideBarPopup.prototype = {
         var $popupContainer = $sidebar.find('.sidebar-popup-container');
         var $popup = $sidebar.find('.sidebar-popup');
 
-        $sidebar.find('.popup-section-link').on('click', function() {
-            if (!$(document.documentElement).hasClass('touchevents')) {
-                self.onSectionLinkInteracted($popupContainer, $(this));
-            }
-        }).on('mouseleave', function() {
-            self.closePopup($popupContainer);
-        }).on('click', function(e) {
+        $sidebar.find('.popup-section-link').on('click', function(e) {
             e.preventDefault();
 
             if (!$(document.documentElement).hasClass('touchevents') && $(this).attr('href')) {
