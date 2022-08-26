@@ -90,21 +90,25 @@ SideBarPopup.prototype = {
         var $popupContainer = $sidebar.find('.sidebar-popup-container');
         var $popup = $sidebar.find('.sidebar-popup');
         var clicked = false;
+        var currentActiveLink = null;
 
         $sidebar.find('.popup-section-link').on('click', function(e) {
             e.preventDefault();
 
+            var href = $(this).attr('href');
+            clicked = href === currentActiveLink
             if (clicked) {
                 clicked = false;
+                currentActiveLink = null;
                 self.closePopup($popupContainer);
             } else {
-                if (!$(document.documentElement).hasClass('touchevents') && $(this).attr('href')) {
-                    document.location = $(this).attr('href');
-                    clicked = true;
+                if (!$(document.documentElement).hasClass('touchevents') && href) {
+                    document.location = href;
                 } else {
                     self.onSectionLinkInteracted($popupContainer, $(this));
-                    clicked = true;
                 }
+                clicked = true;
+                currentActiveLink = href;
             }
         });
 
@@ -116,9 +120,11 @@ SideBarPopup.prototype = {
         $popup.on('mouseenter', function() {
             self.openPopup($popupContainer, 0);
             clicked = true;
+            currentActiveLink = href;
         }).on('mouseleave', function() {
             self.closePopup($popupContainer);
             clicked = false;
+            currentActiveLink = null;
         });
     },
     initSectionsSearch: function($sidebar) {
