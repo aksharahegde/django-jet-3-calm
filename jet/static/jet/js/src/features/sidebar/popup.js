@@ -115,8 +115,10 @@ SideBarPopup.prototype = {
 
         $popup.on('mouseenter', function() {
             self.openPopup($popupContainer, 0);
+            clicked = true;
         }).on('mouseleave', function() {
             self.closePopup($popupContainer);
+            clicked = false;
         });
     },
     initSectionsSearch: function($sidebar) {
