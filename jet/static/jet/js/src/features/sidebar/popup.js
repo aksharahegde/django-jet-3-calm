@@ -85,7 +85,7 @@ SideBarPopup.prototype = {
         var changingSection = this.$currentSectionLink && $link !== this.$currentSectionLink;
 
         this.setCurrentSectionLink($link);
-        this.openPopup($popupContainer, changingSection ? 500 : null);
+        this.openPopup($popupContainer, changingSection ? 300 : null);
     },
     initSectionsDisplay: function($sidebar) {
         var self = this;

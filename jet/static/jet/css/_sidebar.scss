@@ -149,8 +149,8 @@
   }
 
   &-section {
-    padding: 20px 0;
-    border-bottom: 1px solid $sidebar-contrast-background-color;
+    padding: 15px 0;
+    border-bottom: 1px solid $sidebar-contrast-border-color;
     transition: border-bottom-color 0.3s;
 
     @include for-mobile {
