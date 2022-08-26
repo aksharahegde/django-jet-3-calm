@@ -90,7 +90,7 @@ SideBarPopup.prototype = {
         var $popupContainer = $sidebar.find('.sidebar-popup-container');
         var $popup = $sidebar.find('.sidebar-popup');
 
-        $sidebar.find('.popup-section-link').on('mouseenter', function() {
+        $sidebar.find('.popup-section-link').on('click', function() {
             if (!$(document.documentElement).hasClass('touchevents')) {
                 self.onSectionLinkInteracted($popupContainer, $(this));
             }
