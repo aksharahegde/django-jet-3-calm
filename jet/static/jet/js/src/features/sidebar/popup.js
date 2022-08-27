@@ -14,6 +14,7 @@ SideBarPopup.prototype = {
     $currentSectionLink: null,
     $currentSection: null,
     $currentSectionListItem: null,
+    someLinkOpen: false,
     resetPopupDisplayTimeout: function() {
         if (this.popupDisplayTimeout != null) {
             clearTimeout(this.popupDisplayTimeout);
@@ -58,6 +59,7 @@ SideBarPopup.prototype = {
 
             $popupContainer.stop().fadeIn(200, 'swing');
             $(document.body).addClass('non-scrollable');
+            self.someLinkOpen = true;
         }, delay);
     },
     closePopup: function($popupContainer, delay) {
@@ -83,32 +85,33 @@ SideBarPopup.prototype = {
         var changingSection = this.$currentSectionLink && $link !== this.$currentSectionLink;
 
         this.setCurrentSectionLink($link);
-        this.openPopup($popupContainer, changingSection ? 500 : null);
+        this.openPopup($popupContainer, changingSection ? 300 : null);
     },
     initSectionsDisplay: function($sidebar) {
         var self = this;
         var $popupContainer = $sidebar.find('.sidebar-popup-container');
         var $popup = $sidebar.find('.sidebar-popup');
-
-        $sidebar.find('.popup-section-link').on('mouseenter', function() {
-            if (!$(document.documentElement).hasClass('touchevents')) {
-                self.onSectionLinkInteracted($popupContainer, $(this));
-            }
-        }).on('mouseleave', function() {
-            self.closePopup($popupContainer);
-        }).on('click', function(e) {
+        $sidebar.find('.popup-section-link').on('click', function(e) {
             e.preventDefault();
 
-            if (!$(document.documentElement).hasClass('touchevents') && $(this).attr('href')) {
-                document.location = $(this).attr('href');
-            } else {
-                self.onSectionLinkInteracted($popupContainer, $(this));
+            var href = $(this).attr('href');
+            if (self.someLinkOpen) {
+                self.closePopup($popupContainer);
+            }
+            if (href !== self.$currentSectionLink) {
+                if (!$(document.documentElement).hasClass('touchevents') && href) {
+                    document.location = href;
+                } else {
+                    self.onSectionLinkInteracted($popupContainer, $(this));
+                }
             }
         });
 
         $sidebar.find('.sidebar-back').on('click touchend', function(e) {
             e.preventDefault();
             self.closePopup($popupContainer);
+            clicked = false;
+            currentActiveLink = null;
         });
 
         $popup.on('mouseenter', function() {
@@ -125,7 +128,6 @@ SideBarPopup.prototype = {
 
             $search.on('change keyup', function() {
                 var text = $(this).val();
-
                 $items
                     .hide()
                     .find('.sidebar-popup-list-item-link:icontains("' + text + '")')
@@ -168,7 +170,7 @@ SideBarPopup.prototype = {
                 self.moveSectionListItemSelection(true);
             } else if (e.which == 13) {
                 if (self.$currentSectionListItem) {
-                    var $el =  self.$currentSectionListItem.find('a');
+                    var $el = self.$currentSectionListItem.find('a');
 
                     if ($el.attr('href')) {
                         document.location = $el.attr('href');
