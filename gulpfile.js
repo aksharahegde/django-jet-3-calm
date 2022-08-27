@@ -111,8 +111,8 @@ gulp.task('vendor-translations', function() {
             .pipe(gulp.dest('./jet/static/jet/js/i18n/jquery-ui/')),
         gulp.src(['./node_modules/timepicker/i18n/*.js'])
             .pipe(gulp.dest('./jet/static/jet/js/i18n/jquery-ui-timepicker/')),
-        gulp.src(['./node_modules/select2/dist/js/i18n/*.js'])
-            .pipe(gulp.dest('./jet/static/jet/js/i18n/select2/'))
+        // gulp.src(['./node_modules/select2/dist/js/i18n/*.js'])
+        //     .pipe(gulp.dest('./jet/static/jet/js/i18n/select2/'))
     )
 });
 

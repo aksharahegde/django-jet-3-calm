@@ -1,6 +1,6 @@
 require('select2');
 
-var $ = require('jquery');
+var $ = require('jquery');1
 var t = require('../utils/translate');
 
 var Select2 = function() { };
