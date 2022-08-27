@@ -1,14 +1,14 @@
 {
   "name": "django-jet-calm",
   "devDependencies": {
-    "autoprefixer": "6.4.0",
-    "browserify": "13.0.1",
-    "browsernizr": "2.1.0",
-    "es6-promise": "3.2.1",
+    "autoprefixer": "10.4.8",
+    "browserify": "17.0.0",
+    "browsernizr": "2.3.0",
+    "es6-promise": "4.2.8",
     "gulp": "^4.0.2",
     "gulp-clean-css": "2.0.12",
     "gulp-concat-css": "2.3.0",
-    "gulp-postcss": "6.1.1",
+    "gulp-postcss": "9.0.1",
     "gulp-replace": "0.5.4",
     "gulp-sass": "4.1.0",
     "gulp-shell": "0.5.2",
@@ -26,5 +26,8 @@
     "timepicker": "git+https://github.com/aksharahegde/timepicker.git",
     "vinyl-buffer": "1.0.1",
     "vinyl-source-stream": "2.0.0"
+  },
+  "dependencies": {
+    "postcss": "^8.1.0"
   }
 }
