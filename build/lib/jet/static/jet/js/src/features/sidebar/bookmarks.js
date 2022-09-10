@@ -1,9 +1,10 @@
 var $ = require('jquery');
 var t = require('../../utils/translate');
 
-require('jquery-ui/ui/core');
+// require('jquery-ui/ui/core');
 require('jquery-ui/ui/widget');
 require('jquery-ui/ui/widgets/mouse');
+require('jquery-ui/ui/widgets/sortable');
 require('jquery-ui/ui/widgets/draggable');
 require('jquery-ui/ui/widgets/resizable');
 require('jquery-ui/ui/widgets/button');

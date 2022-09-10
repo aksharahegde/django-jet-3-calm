@@ -1,5 +1,5 @@
 var $ = require('jquery');
-var t = require('../utils/translate');
+// var t = require('../utils/translate');
 
 var ChangeForm = function($changeForm) {
     this.$changeForm = $changeForm;

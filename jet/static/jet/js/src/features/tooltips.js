@@ -1,6 +1,6 @@
 var $ = require('jquery');
 
-require('jquery-ui/ui/core');
+// require('jquery-ui/ui/core');
 require('jquery-ui/ui/position');
 require('jquery-ui/ui/widget');
 require('jquery-ui/ui/widgets/tooltip');

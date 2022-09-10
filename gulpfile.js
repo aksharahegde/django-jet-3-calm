@@ -33,7 +33,7 @@ gulp.task('scripts', function() {
         })
         .pipe(source('bundle.min.js'))
         .pipe(buffer())
-        .pipe(uglify())
+        // .pipe(uglify())
         .pipe(gulp.dest('./jet/static/jet/js/build/'));
 });
 
@@ -61,7 +61,7 @@ gulp.task('vendor-styles', function() {
         merge(
             gulp.src([
                 './node_modules/select2/dist/css/select2.css',
-                './node_modules/timepicker/jquery.ui.timepicker.css'
+                './jet/static/jet/css/jquery.ui.timepicker.css'
             ]),
             gulp.src([
                 './node_modules/jquery-ui/themes/base/all.css'
