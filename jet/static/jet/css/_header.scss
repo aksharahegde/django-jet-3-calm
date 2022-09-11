@@ -112,7 +112,7 @@
     padding: 0;
     list-style: none;
     display: inline-block;
-    width: 175px;
+    width: 220px;
     z-index: 4;
 
     @include for-mobile {
@@ -127,6 +127,7 @@
       border-radius: 0;
       transform: none;
       transition: transform $transitions-duration;
+      z-index: 10;
 
       body.scroll-to-bottom & {
         transform: translate3d(0, -100%, 0);

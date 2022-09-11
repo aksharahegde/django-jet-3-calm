@@ -72,11 +72,11 @@ $top-hover-link-color: #1cacfc;
 $top-border-color: #dce0e6;
 $top-icon-color: $link-color;
 
-$top-dropdown-background-color: #5e4d99;
+$top-dropdown-background-color: #2b3647;
 $top-dropdown-text-color: #fff;
-$top-dropdown-contrast-background-color: #4d3b73;
+$top-dropdown-contrast-background-color: #10151d;
 $top-dropdown-contrast-text-color: #c8beeb;
-$top-dropdown-border-color: #594585;
+$top-dropdown-border-color: #2b3647;
 $top-dropdown-link-color: #fff;
 $top-dropdown-hover-link-color: #fff;
 $top-dropdown-icon-color: #c8beeb;
@@ -200,3 +200,6 @@ $chart-pointHighlightFill: $hover-link-color;
 $chart-scaleGridLineColor: transparentize(#000, 0.9);
 $chart-scaleLineColor: transparentize(#000, 0.9);
 $chart-scaleFontColor: $content-contrast2-text-color;
+
+// Paginator
+$paginator-active-background-color: #00d2f6;
