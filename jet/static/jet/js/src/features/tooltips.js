@@ -1,8 +1,8 @@
 var $ = require('jquery');
 
-// require('jquery-ui/ui/core');
-// require('jquery-ui/ui/position');
-// require('jquery-ui/ui/widget');
+require('jquery-ui/ui/position');
+require('jquery-ui/ui/unique-id');
+require('jquery-ui/ui/widgets/mouse');
 require('jquery-ui/ui/widgets/tooltip');
 require('browsernizr/test/touchevents');
 require('browsernizr');
@@ -27,5 +27,5 @@ Tooltips.prototype = {
 };
 
 $(document).ready(function() {
-    // new Tooltips($(this)).run();
+    new Tooltips($(this)).run();
 });
