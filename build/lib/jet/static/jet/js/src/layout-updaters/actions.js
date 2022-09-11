@@ -258,7 +258,6 @@ ActionsUpdater.prototype = {
             Actions(actionsEls);
             $('#changelist').each(function() {
                 new ActionsUpdater($(this)).run();
-                console.log('ActionsUpdater');
             });
         }
     });

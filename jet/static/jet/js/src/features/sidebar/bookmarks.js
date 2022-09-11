@@ -73,7 +73,6 @@ SideBarBookmarks.prototype = {
             e.preventDefault();
 
             var $link = $(this);
-            console.log('$link', $link)
             var defaultTitle = $link.data('title') ? $link.data('title') : document.title;
             var url = window.location.href;
 

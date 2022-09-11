@@ -105,6 +105,10 @@ ToolbarUpdater.prototype = {
             }
         });
 
+        var $btnSubmitSearch = $toolbar.find('input[type="submit"]');
+        if ($search.length) {
+            $btnSubmitSearch.insertAfter($search);
+        }
         $changelist.find('#changelist-filter').remove();
     },
     fixFloatLineBreak: function() {
