@@ -6,6 +6,7 @@ require('jquery-ui/ui/focusable');
 require('jquery-ui/ui/safe-active-element');
 require('jquery-ui/ui/position');
 require('jquery-ui/ui/data');
+require('jquery-ui/ui/tabbable');
 require('jquery-ui/ui/widget');
 require('jquery-ui/ui/widgets/mouse');
 require('jquery-ui/ui/widgets/sortable');
@@ -83,16 +84,14 @@ SideBarBookmarks.prototype = {
                 resizable: false,
                 modal: true,
                 buttons: [{
-                    text: t('Add'),
-                    icon: "ui-icon-plusthick",
+                    text: t('Cancel'),
                     click: function() {
-                        self.addBookmark($form, $container);
                         $(this).dialog("close");
                     }
                 }, {
-                    text: t('Cancel'),
-                    icon: "ui-icon-closethick",
+                    text: t('Add'),
                     click: function() {
+                        self.addBookmark($form, $container);
                         $(this).dialog("close");
                     }
                 }]
@@ -117,16 +116,14 @@ SideBarBookmarks.prototype = {
                 resizable: false,
                 modal: true,
                 buttons: [{
-                    text: t('Delete'),
-                    icon: "ui-icon-minusthick",
+                    text: t('Cancel'),
                     click: function() {
-                        self.deleteBookmark($form, $item);
                         $(this).dialog("close");
                     }
                 }, {
-                    text: t('Cancel'),
-                    icon: "ui-icon-closethick",
+                    text: t('Delete'),
                     click: function() {
+                        self.deleteBookmark($form, $item);
                         $(this).dialog("close");
                     }
                 }]

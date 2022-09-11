@@ -6,6 +6,7 @@ require('jquery-ui/ui/focusable');
 require('jquery-ui/ui/safe-active-element');
 require('jquery-ui/ui/position');
 require('jquery-ui/ui/data');
+require('jquery-ui/ui/tabbable');
 require('jquery-ui/ui/widget');
 require('jquery-ui/ui/widgets/mouse');
 require('jquery-ui/ui/widgets/sortable');
