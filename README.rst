@@ -51,7 +51,7 @@ Installation
 
 .. code:: python
 
-    pip install git+https://github.com/aksharahegde/django-jet-3-calm.git@main
+    pip install git+https://github.com/aksharahegde/django-jet-3-calm.git#5.0.0
     # or
     pip install git+https://github.com/aksharahegde/django-jet-3-calm.git@<version>
 
