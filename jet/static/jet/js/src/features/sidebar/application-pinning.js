@@ -1,14 +1,21 @@
+
 require('./../../utils/jquery-slidefade');
 
 var $ = require('jquery');
 
-require('jquery-ui/ui/core');
+require('jquery-ui/ui/unique-id');
 require('jquery-ui/ui/widget');
-require('jquery-ui/ui/mouse');
-require('jquery-ui/ui/draggable');
-require('jquery-ui/ui/resizable');
-require('jquery-ui/ui/button');
-require('jquery-ui/ui/dialog');
+require('jquery-ui/ui/widgets/mouse');
+require('jquery-ui/ui/plugin');
+require('jquery-ui/ui/position');
+require('jquery-ui/ui/safe-active-element');
+require('jquery-ui/ui/widgets/droppable');
+require('jquery-ui/ui/widgets/resizable');
+require('jquery-ui/ui/widgets/draggable');
+require('jquery-ui/ui/widgets/button');
+require('jquery-ui/ui/widgets/dialog');
+
+
 
 var SideBarApplicationPinning = function($sidebar) {
     this.$sidebar = $sidebar;

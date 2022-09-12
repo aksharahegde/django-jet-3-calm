@@ -205,3 +205,6 @@ $chart-pointHighlightFill: $hover-link-color !default;
 $chart-scaleGridLineColor: transparentize(#000, 0.9) !default;
 $chart-scaleLineColor: transparentize(#000, 0.9) !default;
 $chart-scaleFontColor: $content-contrast2-text-color !default;
+
+// Paginator
+$paginator-active-background-color: #00d2f6;

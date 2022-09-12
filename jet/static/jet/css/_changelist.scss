@@ -128,6 +128,8 @@
         text-transform: uppercase;
         vertical-align: middle;
         margin-bottom: 5px;
+        margin-left: 5px;
+        margin-right: 20px;
       }
 
       &:hover, &:focus {
@@ -278,7 +280,7 @@
     }
 
     span {
-      background-color: $button-active-background-color;
+      background-color: $paginator-active-background-color;
       color: $button-active-text-color;
 
       &.disabled {

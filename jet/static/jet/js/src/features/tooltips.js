@@ -1,9 +1,9 @@
 var $ = require('jquery');
 
-require('jquery-ui/ui/core');
 require('jquery-ui/ui/position');
-require('jquery-ui/ui/widget');
-require('jquery-ui/ui/tooltip');
+require('jquery-ui/ui/unique-id');
+require('jquery-ui/ui/widgets/mouse');
+require('jquery-ui/ui/widgets/tooltip');
 require('browsernizr/test/touchevents');
 require('browsernizr');
 

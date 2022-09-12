@@ -1,13 +1,19 @@
 var $ = require('jquery');
 var t = require('../../utils/translate');
 
-require('jquery-ui/ui/core');
+require('jquery-ui/ui/unique-id');
+require('jquery-ui/ui/focusable');
+require('jquery-ui/ui/safe-active-element');
+require('jquery-ui/ui/position');
+require('jquery-ui/ui/data');
+require('jquery-ui/ui/tabbable');
 require('jquery-ui/ui/widget');
-require('jquery-ui/ui/mouse');
-require('jquery-ui/ui/draggable');
-require('jquery-ui/ui/resizable');
-require('jquery-ui/ui/button');
-require('jquery-ui/ui/dialog');
+require('jquery-ui/ui/widgets/mouse');
+require('jquery-ui/ui/widgets/sortable');
+require('jquery-ui/ui/widgets/draggable');
+require('jquery-ui/ui/widgets/resizable');
+require('jquery-ui/ui/widgets/button');
+require('jquery-ui/ui/widgets/dialog');
 
 var SideBarBookmarks = function($sidebar) {
     this.$sidebar = $sidebar;
@@ -49,11 +55,9 @@ SideBarBookmarks.prototype = {
             dataType: 'json',
             data: $form.serialize(),
             success: function (result) {
-                if (result.error) {
-                    return;
+                if (!result.error) {
+                    $item.remove();
                 }
-
-                $item.remove();
             }
         });
     },
@@ -75,22 +79,22 @@ SideBarBookmarks.prototype = {
             $titleInput.val(defaultTitle);
             $urlInput.val(url);
 
-            var buttons = {};
-
-            buttons[t('Add')] = function() {
-                self.addBookmark($form, $container);
-                $(this).dialog('close');
-            };
-
-            buttons[t('Cancel')] = function() {
-                $(this).dialog('close');
-            };
-
             $dialog.dialog({
                 resizable: false,
                 modal: true,
-                buttons: buttons
-            });
+                buttons: [{
+                    text: t('Cancel'),
+                    click: function() {
+                        $(this).dialog("close");
+                    }
+                }, {
+                    text: t('Add'),
+                    click: function() {
+                        self.addBookmark($form, $container);
+                        $(this).dialog("close");
+                    }
+                }]
+            });            
         });
     },
     initBookmarksRemoving: function($sidebar) {
@@ -105,24 +109,23 @@ SideBarBookmarks.prototype = {
             var $remove = $(this);
             var $item = $remove.closest('.bookmark-item');
             var bookmarkId = $remove.data('bookmark-id');
-
             $idInput.val(bookmarkId);
-
-            var buttons = {};
-
-            buttons[t('Delete')] = function() {
-                self.deleteBookmark($form, $item);
-                $(this).dialog('close');
-            };
-
-            buttons[t('Cancel')] = function() {
-                $(this).dialog('close');
-            };
 
             $dialog.dialog({
                 resizable: false,
                 modal: true,
-                buttons: buttons
+                buttons: [{
+                    text: t('Cancel'),
+                    click: function() {
+                        $(this).dialog("close");
+                    }
+                }, {
+                    text: t('Delete'),
+                    click: function() {
+                        self.deleteBookmark($form, $item);
+                        $(this).dialog("close");
+                    }
+                }]
             });
         });
     },

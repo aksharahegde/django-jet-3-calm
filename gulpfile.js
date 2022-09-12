@@ -4,7 +4,7 @@ var gulp = require('gulp'),
     browserify = require('browserify'),
     concatCss = require('gulp-concat-css'),
     cleanCSS = require('gulp-clean-css'),
-    sass = require('gulp-sass'),
+    sass = require('gulp-sass')(require('node-sass')),
     uglify = require('gulp-uglify'),
     buffer = require('vinyl-buffer'),
     source = require('vinyl-source-stream'),
@@ -61,50 +61,47 @@ gulp.task('vendor-styles', function() {
         merge(
             gulp.src([
                 './node_modules/select2/dist/css/select2.css',
-                './node_modules/timepicker/jquery.ui.timepicker.css'
+                './jet/static/jet/css/jquery.ui.timepicker.css'
             ]),
             gulp.src([
                 './node_modules/jquery-ui/themes/base/all.css'
-            ])
-                .pipe(cleanCSS()) // needed to remove jQuery UI comments breaking concatCss
-                .on('error', function(error) {
-                    console.error(error);
-                })
-                .pipe(concatCss('jquery-ui.css', {
-                    rebaseUrls: false
-                }))
-                .on('error', function(error) {
-                    console.error(error);
-                })
-                .pipe(replace('images/', 'jquery-ui/images/'))
-                .on('error', function(error) {
-                    console.error(error);
-                }),
-            gulp.src([
-                './node_modules/perfect-scrollbar/src/css/main.scss'
-            ])
-                .pipe(sass({
-                    outputStyle: 'compressed'
-                }))
-                .on('error', function(error) {
-                    console.error(error);
-                })
-        )
-            .pipe(postcss(cssProcessors))
+            ]).pipe(cleanCSS()) // needed to remove jQuery UI comments breaking concatCss
             .on('error', function(error) {
                 console.error(error);
             })
-            .pipe(concatCss('vendor.css', {
+            .pipe(concatCss('jquery-ui.css', {
                 rebaseUrls: false
             }))
             .on('error', function(error) {
                 console.error(error);
             })
-            .pipe(cleanCSS())
+            .pipe(replace('images/', 'jquery-ui/images/'))
+            .on('error', function(error) {
+                console.error(error);
+            }),
+            gulp.src([
+                './node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css'
+            ]).pipe(sass({
+                outputStyle: 'compressed'
+            }))
             .on('error', function(error) {
                 console.error(error);
             })
-            .pipe(gulp.dest('./jet/static/jet/css'))
+        ).pipe(postcss(cssProcessors))
+        .on('error', function(error) {
+            console.error(error);
+        })
+        .pipe(concatCss('vendor.css', {
+            rebaseUrls: false
+        }))
+        .on('error', function(error) {
+            console.error(error);
+        })
+        .pipe(cleanCSS())
+        .on('error', function(error) {
+            console.error(error);
+        })
+        .pipe(gulp.dest('./jet/static/jet/css'))
     )
 });
 
