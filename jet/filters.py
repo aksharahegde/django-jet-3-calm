@@ -42,8 +42,8 @@ try:
     from collections import OrderedDict
     from django import forms
     from django.contrib.admin.widgets import AdminDateWidget
-    from rangefilter.filter import DateRangeFilter as OriginalDateRangeFilter
     from django.utils.translation import gettext_lazy as _
+    from rangefilter.filter import DateRangeFilter as OriginalDateRangeFilter
 
 
     class DateRangeFilter(OriginalDateRangeFilter):

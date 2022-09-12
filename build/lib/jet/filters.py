@@ -42,8 +42,8 @@ try:
     from collections import OrderedDict
     from django import forms
     from django.contrib.admin.widgets import AdminDateWidget
-    from rangefilter.filter import DateRangeFilter as OriginalDateRangeFilter
     from django.utils.translation import gettext_lazy as _
+    from rangefilter.filter import DateRangeFilter as OriginalDateRangeFilter
 
 
     class DateRangeFilter(OriginalDateRangeFilter):
@@ -73,8 +73,10 @@ try:
             css = [
                 'style.css',
             ]
-            return forms.Media(
+            css_files = forms.Media(
                 css={'all': ['range_filter/css/%s' % path for path in css]}
             )
+            print('css_files-->', css_files)
+            return css_files
 except ImportError:
     pass
