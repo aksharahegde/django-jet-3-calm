@@ -73,10 +73,8 @@ try:
             css = [
                 'style.css',
             ]
-            css_files = forms.Media(
+            return forms.Media(
                 css={'all': ['range_filter/css/%s' % path for path in css]}
             )
-            print('css_files-->', css_files)
-            return css_files
 except ImportError:
     pass
