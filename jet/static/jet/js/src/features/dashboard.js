@@ -4,6 +4,7 @@ var $ = require('jquery');
 var t = require('../utils/translate');
 
 require('jquery-ui/ui/unique-id');
+require('jquery-ui/ui/scroll-parent');
 require('jquery-ui/ui/widget');
 require('jquery-ui/ui/widgets/mouse');
 require('jquery-ui/ui/widgets/draggable');
@@ -152,7 +153,7 @@ Dashboard.prototype = {
             $link.on('click', function (e) {
                 e.preventDefault();
 
-                $collapsible.slide(200, 'swing', function () {
+                $collapsible.slideFadeToggle(200, 'swing', function () {
                     var collapsed = $collapsible.is(':visible') == false;
 
                     if (collapsed) {

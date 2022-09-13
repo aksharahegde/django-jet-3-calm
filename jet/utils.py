@@ -198,14 +198,13 @@ def get_model_queryset(admin_site, model, request, preserved_filters=None):
     list_select_related = model_admin.get_list_select_related(request) \
         if hasattr(model_admin, 'get_list_select_related') else model_admin.list_select_related
 
-    search_help_text = None
-
     actions = model_admin.get_actions(request)
     if actions:
         list_display = ['action_checkbox'] + list(list_display)
 
     ChangeList = model_admin.get_changelist(request)
 
+    search_help_text = model_admin.search_help_text
     change_list_args = [
         request, model, list_display, list_display_links, list_filter,
         model_admin.date_hierarchy, search_fields, list_select_related,
