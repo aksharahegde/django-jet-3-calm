@@ -129,13 +129,13 @@ Select2.prototype = {
                 $element.find('option').each(function () {
                     selected.push($(this).val());
                 });
-                $element.select2('val', selected);
+                $element.val(selected).trigger("change");
                 $element.select2('close');
             });
 
             $dropdown.find('.select2-buttons-button-deselect-all').on('click', function (e) {
                 e.preventDefault();
-                $element.select2('val', '');
+                $element.val('').trigger("change");
                 $element.select2('close');
             });
 
