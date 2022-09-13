@@ -79,26 +79,26 @@
   }
 }
 
-.ui-icon {
-  @include font-icon;
-  font-size: 16px;
-  font-weight: bold;
-  background: none !important;
-  text-indent: 0;
-  overflow: visible;
-}
+// .ui-icon {
+//   @include font-icon;
+//   font-size: 16px;
+//   font-weight: bold;
+//   background: none !important;
+//   text-indent: 0;
+//   overflow: visible;
+// }
 
-.ui-icon-circle-triangle-e:before {
-  content: $icon-arrow-right;
-}
+// .ui-icon-circle-triangle-e:before {
+//   content: $icon-arrow-right;
+// }
 
-.ui-icon-circle-triangle-w:before {
-  content: $icon-arrow-left;
-}
+// .ui-icon-circle-triangle-w:before {
+//   content: $icon-arrow-left;
+// }
 
-.ui-icon-closethick:before {
-  content: $icon-cross;
-}
+// .ui-icon-closethick:before {
+//   content: $icon-cross;
+// }
 
 .ui-widget-overlay {
   background: $jquery-ui-overlay-color;

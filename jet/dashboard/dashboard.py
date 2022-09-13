@@ -201,20 +201,10 @@ class DefaultIndexDashboard(Dashboard):
         self.available_children.append(modules.LinkList)
         self.available_children.append(modules.Feed)
 
-        site_name = get_admin_site_name(context)
-        # append a link list module for "quick links"
-        self.children.append(modules.LinkList(
-            _('Quick links'),
-            layout='inline',
-            draggable=False,
-            deletable=False,
-            collapsible=False,
-            children=[
-                [_('Return to site'), '/'],
-                [_('Change password'),
-                 reverse('%s:password_change' % site_name)],
-                [_('Log out'), reverse('%s:logout' % site_name)],
-            ],
+        # append an app list module for "Administration"
+        self.children.append(modules.AppList(
+            _('Administration'),
+            models=('auth.*',),
             column=0,
             order=0
         ))
@@ -223,24 +213,34 @@ class DefaultIndexDashboard(Dashboard):
         self.children.append(modules.AppList(
             _('Applications'),
             exclude=('auth.*',),
-            column=1,
-            order=0
+            column=0,
+            order=1
         ))
 
-        # append an app list module for "Administration"
-        self.children.append(modules.AppList(
-            _('Administration'),
-            models=('auth.*',),
-            column=2,
-            order=0
-        ))
-
+        # site_name = get_admin_site_name(context)
+        # # append a link list module for "quick links"
+        # self.children.append(modules.LinkList(
+        #     _('Quick links'),
+        #     layout='inline',
+        #     draggable=False,
+        #     deletable=False,
+        #     collapsible=False,
+        #     children=[
+        #         [_('Return to site'), '/'],
+        #         [_('Change password'),
+        #          reverse('%s:password_change' % site_name)],
+        #         [_('Log out'), reverse('%s:logout' % site_name)],
+        #     ],
+        #     column=0,
+        #     order=0
+        # ))
+        
         # append a recent actions module
         self.children.append(modules.RecentActions(
             _('Recent Actions'),
             10,
-            column=0,
-            order=1
+            column=1,
+            order=0
         ))
 
         # append a feed module
@@ -248,8 +248,8 @@ class DefaultIndexDashboard(Dashboard):
             _('Latest Django News'),
             feed_url='http://www.djangoproject.com/rss/weblog/',
             limit=5,
-            column=1,
-            order=1
+            column=2,
+            order=0
         ))
 
         # append another link list module for "support".
