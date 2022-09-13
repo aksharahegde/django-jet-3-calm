@@ -69,8 +69,10 @@ DateTimeWidgets.prototype = {
             $dateField.datepicker({
                 dateFormat: self.djangoDateTimeFormatToJs(DATE_FORMAT),
                 showButtonPanel: true,
+                changeMonth: true,
+                changeYear: true,
                 nextText: '',
-                prevText: ''
+                prevText: '',
             });
 
             $dateLink.on('click', function (e) {
