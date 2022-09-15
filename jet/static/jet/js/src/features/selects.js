@@ -122,6 +122,10 @@ Select2.prototype = {
             );
 
             var $element = this.$element;
+            $element.on('change', function (e) {
+                console.log('Select 2 triggered')
+                $element.trigger('change.select2');
+            });
 
             $dropdown.find('.select2-buttons-button-select-all').on('click', function (e) {
                 e.preventDefault();
