@@ -2,6 +2,8 @@
 Django JET (for Django-4)
 ================================
 
+## Maintined by Akshara Hegde  (Full-stack Developer)
+
 **Modern template for Django-4 admin interface with improved functionality**
 
 Django JET has two kinds of licenses: open-source (AGPLv3) and commercial. Please note that using AGPLv3
