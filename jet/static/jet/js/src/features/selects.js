@@ -125,6 +125,13 @@ Select2.prototype = {
             $element.on('change', function (e) {
                 console.log('Select change triggered...');
                 $element.trigger('change');
+
+                // Hack to get native event to allow addEventListener
+                var tempValStore = document.createElement("input");
+                tempValStore.name = ''
+                e.target.appendChild(tempValStore)
+                tempValStore.dispatchEvent(new Event("change"))
+                e.target.removeChild(tempValStore)
             });
 
             $dropdown.find('.select2-buttons-button-select-all').on('click', function (e) {
@@ -192,7 +199,7 @@ Select2.prototype = {
                 }
             };
         }
-
+        settings['id'] = objectId;
         $select.select2(settings);
     },
     initSelect2: function() {
