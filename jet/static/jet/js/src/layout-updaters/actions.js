@@ -216,14 +216,18 @@ ActionsUpdater.prototype = {
             });
         });
 
-        document.querySelector('#changelist-form button[name=index]').addEventListener('click', function(event) {
-            if (listEditableChanged) {
-                const confirmed = confirm(gettext("You have unsaved changes on individual editable fields. If you run an action, your unsaved changes will be lost."));
-                if (!confirmed) {
-                    event.preventDefault();
+
+        const btnIndex = document.querySelector('#changelist-form button[name=index]');
+        if (btnIndex) {
+            btnIndex.addEventListener('click', function(event) {
+                if (listEditableChanged) {
+                    const confirmed = confirm(gettext("You have unsaved changes on individual editable fields. If you run an action, your unsaved changes will be lost."));
+                    if (!confirmed) {
+                        event.preventDefault();
+                    }
                 }
-            }
-        });
+            });
+        }
 
         const el = document.querySelector('#changelist-form input[name=_save]');
         // The button does not exist if no fields are editable.
