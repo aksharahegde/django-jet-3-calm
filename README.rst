@@ -1,5 +1,5 @@
 ================================
-Django JET (Django-4)
+Django JET (for Django-4)
 ================================
 
 **Modern template for Django-4 admin interface with improved functionality**
