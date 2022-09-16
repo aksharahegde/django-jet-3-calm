@@ -2,7 +2,8 @@
 Django JET (for Django-4)
 ================================
 
-## Maintined by Akshara Hegde  (Full-stack Developer)
+Maintined by Akshara Hegde  (Full-stack Developer)
+===========
 
 **Modern template for Django-4 admin interface with improved functionality**
 
