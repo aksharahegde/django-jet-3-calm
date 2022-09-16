@@ -121,18 +121,20 @@ Select2.prototype = {
                 '</span>'
             );
 
-            var $element = this.$element;
-            $element.on('change', function (e) {
-                console.log('Select change triggered... 1');
-
-                // Hack to get native event to allow addEventListener
-                var tempValStore = document.createElement("input");
-                tempValStore.name = $element.name;
-                e.target.appendChild(tempValStore)
-                tempValStore.value = e.target.value;
-                tempValStore.dispatchEvent(new Event("change"))
-                e.target.removeChild(tempValStore)
-            });
+            function addNativeEventTrigger(e) {
+                if (window.document.documentMode) {
+                    // (IE doesnt support Event() constructor)
+                    // https://caniuse.com/?search=Event()
+                    var evt = document.createEvent('HTMLEvents');
+                    evt.initEvent('change', false, true);
+                    e.currentTarget.dispatchEvent(evt);
+                } else {
+                    const event = new Event('change');
+                    e.currentTarget.dispatchEvent(event);
+                }
+                $(e.currentTarget).one('change', this.addNativeEventTrigger);
+            }
+            this.$element.one("change", addNativeEventTrigger);
 
             $dropdown.find('.select2-buttons-button-select-all').on('click', function (e) {
                 e.preventDefault();
