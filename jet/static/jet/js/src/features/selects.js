@@ -123,7 +123,7 @@ Select2.prototype = {
 
             var $element = this.$element;
             $element.on('change', function (e) {
-                console.log('Select change triggered...');
+                console.log('Select change triggered...', this);
                 $element.trigger('change');
 
                 // Hack to get native event to allow addEventListener
@@ -199,7 +199,6 @@ Select2.prototype = {
                 }
             };
         }
-        settings['id'] = objectId;
         $select.select2(settings);
     },
     initSelect2: function() {
