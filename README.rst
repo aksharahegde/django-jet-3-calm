@@ -7,6 +7,8 @@ Maintained by Akshara Hegde  (Full-stack Developer)
 
 **Modern template for Django-4 admin interface with improved functionality**
 
+**Upgraded to latest jQuery and jQuery-UI**
+
 Django JET has two kinds of licenses: open-source (AGPLv3) and commercial. Please note that using AGPLv3
 code in your programs make them AGPL compatible too. So if you don't want to comply with that we can provide you a commercial
 license (visit Home page). The commercial license is designed for using Django JET in commercial products
