@@ -51,9 +51,9 @@ Installation
 
 .. code:: python
 
-    pip install git+https://github.com/aksharahegde/django-jet-3-calm.git#5.0.0
+    pip install git+https://github.com/aksharahegde/django-jet-3-calm.git#<version>
     # or
-    pip install git+https://github.com/aksharahegde/django-jet-3-calm.git@<version>
+    pip install git+https://github.com/aksharahegde/django-jet-3-calm.git@<branch_name>
 
 * Add 'jet' application to the INSTALLED_APPS setting of your Django project settings.py file (note it should be before 'django.contrib.admin'):
 
