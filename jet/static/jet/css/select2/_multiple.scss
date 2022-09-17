@@ -31,7 +31,7 @@
     background-color: $input-contrast-background-color;
     color: $input-contrast-text-color;
     font-size: 13px;
-    border-radius: 4px;
+    border-radius: $border-radius-all-side;
     cursor: default;
     float: left;
     margin-right: 5px;

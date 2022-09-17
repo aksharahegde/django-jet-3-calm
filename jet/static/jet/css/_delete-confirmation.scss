@@ -4,7 +4,7 @@
   #content > h1 + p + h2 + ul {
     background: $warning-color;
     color: $warning-text-color;
-    border-radius: 4px;
+    border-radius: $border-radius-all-side;
     padding: 20px;
     list-style-type: none;
     margin: 0;
@@ -17,7 +17,7 @@
 
   #content > ul:nth-of-type(2), #content > h1 + p + ul {
     background: $content-background-color;
-    border-radius: 4px;
+    border-radius: $border-radius-all-side;
     box-shadow: 0 2px 0 0 $content-border2-color;
 
     &, ul {

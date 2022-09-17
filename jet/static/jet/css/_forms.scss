@@ -8,7 +8,7 @@
     background-color: $button-background-color;
     color: $button-text-color;
     border: 0;
-    border-radius: 4px;
+    border-radius: $border-radius-all-side;
     height: 32px;
     line-height: 32px;
     outline: 0;
@@ -54,7 +54,7 @@
 }
 
 input[type="text"], input[type="email"], input[type="password"], input[type="url"], input[type="number"], textarea, select, .vTextField {
-  border-radius: 4px;
+  border-radius: $border-radius-all-side;
   font-size: 13px;
   height: $input-height;
   white-space: nowrap;

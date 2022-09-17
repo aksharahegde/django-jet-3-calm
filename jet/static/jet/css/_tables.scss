@@ -6,7 +6,7 @@
 table {
   border-collapse: collapse;
   background: $content-background-color;
-  border-radius: 4px;
+  border-radius: $border-radius-all-side;
   overflow-x: auto;
   box-shadow: 0 2px 0 0 $content-border2-color;
   margin-bottom: 2px;

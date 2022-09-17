@@ -106,7 +106,7 @@
     top: ($top-height + 10px * 2) / 2 - 30px / 2;
     right: 20px;
     border: 1px solid $top-border-color;
-    border-radius: 4px;
+    border-radius: $border-radius-all-side;
     font-size: 12px;
     margin: 0;
     padding: 0;
