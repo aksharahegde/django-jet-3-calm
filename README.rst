@@ -1,5 +1,5 @@
 ================================
-Django JET (for Django-4)
+Django JET (Calm for Django-4)
 ================================
 
 
