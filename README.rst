@@ -1,7 +1,8 @@
 ================================
-Django JET (Calm for Django-4)
+Django JET Calm (for Django-4)
 ================================
 
+Rebooted version of https://github.com/geex-arts/django-jet#readme
 
 **Modern template for Django-4 admin interface with improved functionality**
 
