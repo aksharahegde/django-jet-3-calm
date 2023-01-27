@@ -1,0 +1,74 @@
+
+{% load static i18n %}
+<h3>{% blocktrans with filter_title=title %} By {{ filter_title }} {% endblocktrans %}</h3>
+<div class="changelist-filter-popup mSelectFilter">
+<style>
+  .changelist-filter-popup-content .multiselect-dropdown {padding: 10px 4px 10px 10px;}
+  .changelist-filter-popup-content .multiselect-dropdown label {display: block;font-weight: 100;padding: 2px 0;cursor: pointer;}
+  .changelist-filter-popup-content .multiselect-dropdown label > div > label {color: #333;display: inline;}
+  .changelist-filter-popup-content .multiselect-dropdown label.selected > div {color: #00cc00;}
+  .changelist-filter-popup-content ul {margin-left: 0;padding: 0;max-height: 30vh;overflow-y: auto;}
+  .changelist-filter-popup-content ul li {list-style: none;}
+  .custom-scroll::-webkit-scrollbar-track {-webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.3);background-color: #fff;}
+  .custom-scroll::-webkit-scrollbar {width: 5px;background-color: #fff;}
+  .custom-scroll::-webkit-scrollbar-thumb {background-color: #ccc;border-radius: 6px;background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(.1, rgba(255, 255, 255, .2)), color-stop(.5, transparent), to(transparent));}
+</style>
+  <input class="changelist-filter-popup-toggle" type="text" value="{{title}}" readonly="">
+  <div class="changelist-filter-popup-content">
+    <form method="GET" action="." id="{{ title | slugify }}-form">
+      <link href="{% static 'admin/css/widgets.css' %}" type="text/css" media="all" rel="stylesheet">
+      <script>
+        function apply_multifilter(event, filterTitle) {
+          event.preventDefault();
+          var qs_name = filterTitle + '-query-string';
+          var form_name = filterTitle + '-form';
+          var query_string = django.jQuery('input#' + qs_name).val();
+          var form_data = django.jQuery('#' + form_name).serializeArray();
+          var values = form_data.map(i => i.value);
+          var search_term = filterTitle + '__in=' + values.join(',');
+          window.location = window.location.pathname + query_string + '&' + search_term;
+        }
+        function resetMultiFilter(url) {
+          window.location = url;
+        }
+      </script>
+      <div class="multiselect-dropdown">
+        <div class="controls">
+          <input type="button" class="default" value="{% trans 'Search' %}"
+          onclick="apply_multifilter(event,'{{ title | slugify }}')">
+          {% for choice in choices %}
+            {% if choice.reset %}
+              <input type="button"
+              onclick="resetMultiFilter('{{ choice.query_string|iriencode }}');"
+              value="{{ choice.display }}"/>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <ul class="custom-scroll">
+        {% for choice in choices %}
+          <li>
+            <input type="hidden" id="{{ title | slugify }}-query-string" value="{{ choice.query_string }}">
+            <label {% if choice.selected %} class="selected"{% endif %}>
+              {% if choice.selected and choice.exclude_query_string %}
+                <div title="{{ choice.display }}">
+                  <input type="checkbox" name="{{ title | slugify }}"
+                  value="{{ choice.display }}"
+                  checked="{{choice.selected}}"/>
+                  {{ choice.display }}
+                </div>
+              {% endif %}
+              {% if not choice.selected and choice.include_query_string %}
+                <div title="{{ choice.display }}">
+                  <input type="checkbox" name="{{ title | slugify }}"
+                  value="{{ choice.display }}"/>
+                  {{ choice.display }}
+                </div>
+              {% endif %}
+            </label>
+          </li>
+        {% endfor %}
+        </ul>
+      </div>
+    </form>
+  </div>
+</div>
