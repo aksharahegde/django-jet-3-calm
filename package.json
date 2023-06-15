@@ -19,12 +19,13 @@
     "jquery.cookie": "1.4.1",
     "jquery.mousewheel": "3.1.9",
     "merge-stream": "2.0.0",
-    "perfect-scrollbar": "git+https://github.com/aksharahegde/perfect-scrollbar.git#0.8.1",
-    "postcss-pxtorem": "6.0.0",
-    "vinyl-buffer": "1.0.1",
-    "vinyl-source-stream": "2.0.0",
-    "select2": "4.0.13",
     "node-sass": "^7.0.1",
-    "postcss": "^8.1.0"
-  }
+    "perfect-scrollbar": "git+https://github.com/aksharahegde/perfect-scrollbar.git#0.8.1",
+    "postcss": "^8.1.0",
+    "postcss-pxtorem": "6.0.0",
+    "select2": "4.0.13",
+    "vinyl-buffer": "1.0.1",
+    "vinyl-source-stream": "2.0.0"
+  },
+  "dependencies": {}
 }
