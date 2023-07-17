@@ -175,4 +175,6 @@ Dashboard installation
         python manage.py collectstatic
 
 
-![Alt](https://repobeats.axiom.co/api/embed/07083dcb52203db7d4a60a26ca66001a3cdde9de.svg "Repobeats analytics image")
+
+
+<img width="100%" src="https://repobeats.axiom.co/api/embed/07083dcb52203db7d4a60a26ca66001a3cdde9de.svg" />
