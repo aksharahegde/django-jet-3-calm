@@ -6,7 +6,9 @@ Rebooted version of https://github.com/geex-arts/django-jet#readme
 
 **Modern template for Django-4 admin interface with improved functionality**
 
-**Upgraded to latest jQuery and jQuery-UI**
+**MAJOR UPGRADE**
+  * Latest jQuery and jQuery-UI
+  * Multiselect dropdown in list filter
 
 .. image:: https://raw.githubusercontent.com/geex-arts/jet/static/logo.png
 
