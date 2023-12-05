@@ -1,4 +1,4 @@
-require('jquery.cookie');
+var Cookies = require('js-cookie');
 
 var $ = require('jquery');
 
@@ -16,10 +16,10 @@ Themes.prototype = {
 
         $links.on('click', function (e) {
             e.preventDefault();
-            
+
             var $link = $(this);
 
-            $.cookie('JET_THEME', $link.data('theme'), { expires: 365, path: '/' });
+            Cookies.set('JET_THEME', $link.data('theme'), { expires: 365, path: '/' });
 
             var cssToLoad = [
                 { url: $link.data('base-stylesheet'), class: 'base-stylesheet' },

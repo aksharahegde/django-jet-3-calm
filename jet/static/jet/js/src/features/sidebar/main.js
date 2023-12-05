@@ -6,7 +6,7 @@ var SideBarPopup = require('./popup');
 require('perfect-scrollbar/jquery')($);
 require('browsernizr/test/touchevents');
 require('browsernizr');
-require('jquery.cookie');
+var Cookies = require('js-cookie');
 
 var SideBar = function($sidebar) {
     this.$sidebar = $sidebar;
@@ -69,7 +69,7 @@ SideBar.prototype = {
         }).bind(this));
     },
     storePinStatus: function(status) {
-        $.cookie('sidebar_pinned', status, { expires: 365, path: '/' });
+        Cookies.set('sidebar_pinned', status, { expires: 365, path: '/' });
     },
     addToggleButton: function() {
         var $button = $('<span>')

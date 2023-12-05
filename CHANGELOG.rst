@@ -1,5 +1,75 @@
 Changelog
 =========
+5.1.6
+-----
+
+
+5.1.5
+-----
+## What's Changed
+* Update README.rst by @aksharahegde in https://github.com/aksharahegde/django-jet-3-calm/pull/14
+
+5.1.4
+-----
+* Removed dark mode switcher of Django 4.2 which was overlapping JET sidebar after user logging-out.
+* Upgraded `node-sass` and `postcss`
+* Updated `caniuse-lite`
+
+5.1.3
+-----
+Fixed issue in admin toolbar where filter dropdowns are not rendering due to change in filter template by official django admin.
+
+## What's Changed
+* Fixed - No filter toolbar for Django 4.1.5 by @aksharahegde in https://github.com/aksharahegde/django-jet-3-calm/pull/12
+
+
+5.1.2
+-----
+- Emit native **change** for select2.
+- Added a new theme `primary` .
+- Fixed - Error while initiating click event listener on action submit button.
+
+5.1.1
+-----
+Fixed - select all and deselect all button in select2
+
+5.1.0
+-----
+Fixed - JET Dashboard module compatibility issues with jquery-ui 1.13.2
+
+**Date Picker**
+- Enabled month and year selection.
+- Fixed - Next and Previous month movement icon.
+
+5.0.0
+-----
+- Upgraded jquery-ui from 1.11.4 to 1.13.2.
+- Migrated JET widgets to be compatible with latest jquery-ui.
+
+This release fixes following vulnerabilities:
+
+**Identifier**
+CVE-2021-41182
+**Description**
+jQuery-UI is the official jQuery user interface library. Prior to version 1.13.0, accepting the value of the `altField` option of the Datepicker widget from untrusted sources may execute untrusted code. The issue is fixed in jQuery UI 1.13.0. Any string value passed to the `altField` option is now treated as a CSS selector. A workaround is to not accept the value of the `altField` option from untrusted sources.
+**Affected versions**
+```< 1.13.0```
+
+**Identifier**
+CVE-2021-41183
+**Description**
+jQuery-UI is the official jQuery user interface library. Prior to version 1.13.0, accepting the value of various `*Text` options of the Datepicker widget from untrusted sources may execute untrusted code. The issue is fixed in jQuery UI 1.13.0. The values passed to various `*Text` options are now always treated as pure text, not HTML. A workaround is to not accept the value of the `*Text` options from untrusted sources.
+Affected versions
+`< 1.13.0
+` 
+
+**Identifier**
+CVE-2021-41184
+**Description**
+jQuery-UI is the official jQuery user interface library. Prior to version 1.13.0, accepting the value of the `of` option of the `.position()` util from untrusted sources may execute untrusted code. The issue is fixed in jQuery UI 1.13.0. Any string value passed to the `of` option is now treated as a CSS selector. A workaround is to not accept the value of the `of` option from untrusted sources.
+Affected versions
+`< 1.13.0`
+
 4.1.0
 -----
 * Dropped - Support for Django 3, Python < 3..9

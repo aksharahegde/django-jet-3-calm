@@ -6,4 +6,5 @@
 /docs/_build/
 /node_modules/
 .vscode/
-.build
+.build/
+build/
