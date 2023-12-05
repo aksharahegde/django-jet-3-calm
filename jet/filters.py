@@ -80,8 +80,6 @@ except ImportError:
     pass
 
 
-
-
 def multiple_choice_list_filter(**kwargs):
     class MultipleChoiceListFilter(SimpleListFilter):
         """
