@@ -1,8 +1,13 @@
 Changelog
 =========
-5.1.6
+5.2.0
 -----
+- Upgraded Django from 4.2.1 to 4.2.8
+- Replaced deprecated django template filter - length_is with length.
 
+- Replaced the deprecated library - jquery.cookie with js-cookie
+- Upgraded jQuery from 3.6.1 to 3.6.4
+- Upgraded PostCSS from 8.4.24 to 8.4.32
 
 5.1.5
 -----
