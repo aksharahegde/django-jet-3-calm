@@ -1,4 +1,4 @@
-from django.conf.urls import url
+from django.urls import path
 from django.contrib import messages
 from django.urls import reverse
 from django.http import HttpResponse
@@ -46,18 +46,18 @@ def yandex_metrika_callback_view(request):
 
 
 dashboard.urls.register_urls([
-    url(
-        r'^yandex-metrika/grant/(?P<pk>\d+)/$',
+    path(
+        'yandex-metrika/grant/<int:pk>/',
         yandex_metrika_grant_view,
         name='yandex-metrika-grant'
     ),
-    url(
-        r'^yandex-metrika/revoke/(?P<pk>\d+)/$',
+    path(
+        'yandex-metrika/revoke/<int:pk>/',
         yandex_metrika_revoke_view,
         name='yandex-metrika-revoke'
     ),
-    url(
-        r'^yandex-metrika/callback/$',
+    path(
+        'yandex-metrika/callback/',
         yandex_metrika_callback_view,
         name='yandex-metrika-callback'
     ),
