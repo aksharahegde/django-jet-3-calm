@@ -1,5 +1,10 @@
 Changelog
 =========
+5.3.0
+-----
+- Upgraded postcss from 8.4.32 to 8.4.32.
+- Refactor removed as url in urls.py for re_path and used re_path to remove ambiguity.
+
 5.2.0
 -----
 - Upgraded Django from 4.2.1 to 4.2.8
