@@ -21,7 +21,7 @@ UserToolsUpdater.prototype = {
                 }
             });
 
-        $usertools.find('a').each(function() {
+        $usertools.find('a, #logout-form').each(function() {
             var $link = $(this);
             $('<li>').addClass('user-tools-link').html($link).appendTo($list);
         });
