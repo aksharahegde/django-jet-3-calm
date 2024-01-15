@@ -163,3 +163,23 @@ input[type=checkbox] {
 .selector {
   display: none;
 }
+
+
+#logout-form {
+  display: inline;
+  button {
+    display: block;
+    line-height: 30px;
+    line-height: 2.14286rem;
+    padding: 0 14px;
+    padding: 0 1rem;
+    color: #fff;
+    text-decoration: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
