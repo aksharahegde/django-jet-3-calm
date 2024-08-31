@@ -2,6 +2,7 @@ from django.contrib.admin import RelatedFieldListFilter, SimpleListFilter
 from django.utils.encoding import smart_str
 from django.utils.html import format_html
 from django.urls import reverse
+from django.core.exceptions import ImproperlyConfigured
 from django.contrib.admin.utils import get_model_from_relation
 from django.forms.utils import flatatt
 
@@ -116,7 +117,7 @@ def multiple_choice_list_filter(**kwargs):
             returns: a list of tuples (value, verbose value)
             """
             if not self.lookup_choices:
-                ImproperlyConfigured(_('Choices are mandatory'))
+                raise ImproperlyConfigured(_('Choices are mandatory'))
 
             lookup_options = [(c, c) for c in self.lookup_choices]
             return sorted(lookup_options, key=lambda x: x[1])
