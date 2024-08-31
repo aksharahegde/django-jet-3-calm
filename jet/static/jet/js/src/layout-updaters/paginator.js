@@ -16,9 +16,10 @@ PaginatorUpdater.prototype = {
             if (($node.prev().prop('tagName') == 'A' || $node.prev().prop('tagName') == 'SPAN')
                 && ($node.next().prop('tagName') == 'A' || $node.next().prop('tagName') == 'SPAN')) {
 
-                if ($node.text().trim() === '...') {
+                const nodeText = $node.text().trim();
+                if (nodeText == '...' || nodeText == '…') {
                     $node.wrap($('<span>').addClass('disabled'));
-                } else if ($node.text().trim() === '') {
+                } else if (nodeText === '') {
                     $node.remove();
                 }
             }
