@@ -17,6 +17,6 @@ Icons.prototype = {
     }
 };
 
-$(document).ready(function() {
+$(function() {
     new Icons().run();
 });

@@ -26,6 +26,6 @@ ScrollToBottomDetector.prototype = {
     }
 };
 
-$(document).ready(function() {
+$(function() {
     new ScrollToBottomDetector().run();
 });

@@ -36,6 +36,6 @@ RelatedWidgetWrapperUpdater.prototype = {
     }
 };
 
-$(document).ready(function() {
+$(function() {
     new RelatedWidgetWrapperUpdater().run();
 });

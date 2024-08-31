@@ -14,6 +14,6 @@ DeleteConfirmationUpdater.prototype = {
     }
 };
 
-$(document).ready(function() {
+$(function() {
     new DeleteConfirmationUpdater().run();
 });

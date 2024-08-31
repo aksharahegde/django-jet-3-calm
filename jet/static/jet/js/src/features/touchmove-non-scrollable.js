@@ -33,6 +33,6 @@ TouchMoveNonScrollable.prototype = {
     }
 };
 
-$(document).ready(function() {
+$(function() {
     new TouchMoveNonScrollable().run();
 });

@@ -136,6 +136,6 @@ DateTimeWidgets.prototype = {
     }
 };
 
-$(document).ready(function() {
+$(function() {
     new DateTimeWidgets().run();
 });

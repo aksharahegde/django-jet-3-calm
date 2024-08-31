@@ -261,6 +261,6 @@ RelatedPopups.prototype = {
     }
 };
 
-$(document).ready(function() {
+$(function() {
     new RelatedPopups().run();
 });

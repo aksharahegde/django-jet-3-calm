@@ -150,7 +150,7 @@ ToolbarUpdater.prototype = {
     }
 };
 
-$(document).ready(function() {
+$(function() {
     $('#changelist').each(function() {
         new ToolbarUpdater($(this)).run();
     });

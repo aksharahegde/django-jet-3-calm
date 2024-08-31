@@ -90,7 +90,7 @@ ChangeFormTabs.prototype = {
     }
 };
 
-$(document).ready(function() {
+$(function() {
     $('.change-form').each(function() {
         new ChangeFormTabs($(this)).run();
     });

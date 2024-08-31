@@ -29,7 +29,7 @@ StackedInlineUpdater.prototype = {
     }
 };
 
-$(document).ready(function() {
+$(function() {
     $('.inline-related:not(.tabular)').each(function() {
         new StackedInlineUpdater($(this)).run();
     });

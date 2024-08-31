@@ -41,7 +41,7 @@ TabularInlineUpdater.prototype = {
     }
 };
 
-$(document).ready(function() {
+$(function() {
     $('.inline-related.tabular').each(function() {
         new TabularInlineUpdater($(this)).run();
     });

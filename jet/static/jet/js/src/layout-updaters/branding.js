@@ -21,7 +21,7 @@ BrandingUpdater.prototype = {
     }
 };
 
-$(document).ready(function() {
+$(function() {
     $('#branding').each(function() {
         new BrandingUpdater($(this)).run();
     });

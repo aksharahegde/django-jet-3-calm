@@ -80,7 +80,7 @@ ChangeFormTabsUpdater.prototype = {
     }
 };
 
-$(document).ready(function() {
+$(function() {
     $('.change-form').each(function() {
         new ChangeFormTabsUpdater($(this)).run();
     });

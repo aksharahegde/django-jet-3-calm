@@ -37,6 +37,6 @@ Checkboxes.prototype = {
     }
 };
 
-$(document).ready(function() {
+$(function() {
     new Checkboxes().run();
 });

@@ -65,6 +65,6 @@ Themes.prototype = {
     }
 };
 
-$(document).ready(function() {
+$(function() {
     new Themes().run();
 });

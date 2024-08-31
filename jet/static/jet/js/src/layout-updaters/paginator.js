@@ -86,7 +86,7 @@ PaginatorUpdater.prototype = {
     }
 };
 
-$(document).ready(function() {
+$(function() {
     $('.paginator').each(function() {
         new PaginatorUpdater($(this)).run();
     });

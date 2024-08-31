@@ -45,7 +45,7 @@ UserToolsUpdater.prototype = {
     }
 };
 
-$(document).ready(function() {
+$(function() {
     $('#user-tools').each(function() {
         new UserToolsUpdater($(this)).run();
     });

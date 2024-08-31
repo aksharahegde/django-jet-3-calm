@@ -29,7 +29,7 @@ Inline.prototype = {
     }
 };
 
-$(document).ready(function() {
+$(function() {
     $('.inline-group').each(function() {
         new Inline($(this)).run();
     });

@@ -97,7 +97,7 @@ SideBar.prototype = {
     }
 };
 
-$(document).ready(function() {
+$(function() {
     $('.sidebar').each(function() {
         new SideBar($(this)).run();
     });

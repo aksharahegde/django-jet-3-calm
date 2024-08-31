@@ -44,7 +44,7 @@ ChangeForm.prototype = {
     }
 };
 
-$(document).ready(function() {
+$(function() {
     $('.change-form').each(function() {
         new ChangeForm($(this)).run();
     });

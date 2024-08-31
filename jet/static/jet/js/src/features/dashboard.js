@@ -337,7 +337,7 @@ Dashboard.prototype = {
     }
 };
 
-$(document).ready(function() {
+$(function() {
     $('.dashboard.jet').each(function() {
         new Dashboard($(this)).run();
     });

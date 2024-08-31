@@ -29,7 +29,7 @@ BreadcrumbsUpdater.prototype = {
     }
 };
 
-$(document).ready(function() {
+$(function() {
     var $breadcrumbs = $('.breadcrumbs');
 
     if ($breadcrumbs.length == 0) {

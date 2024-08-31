@@ -245,6 +245,6 @@ Select2.prototype = {
     }
 };
 
-$(document).ready(function() {
+$(function() {
     new Select2().run();
 });

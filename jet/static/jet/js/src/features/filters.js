@@ -56,7 +56,7 @@ Filters.prototype = {
     }
 };
 
-$(document).ready(function() {
+$(function() {
     $('#toolbar').each(function() {
         new Filters($(this)).run();
     });

@@ -19,7 +19,7 @@ Siblings.prototype = {
     }
 };
 
-$(document).ready(function() {
+$(function() {
     $('.changeform-navigation').each(function() {
         new Siblings($(this)).run();
     });

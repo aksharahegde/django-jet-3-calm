@@ -26,6 +26,6 @@ Tooltips.prototype = {
     }
 };
 
-$(document).ready(function() {
+$(function() {
     new Tooltips($(this)).run();
 });

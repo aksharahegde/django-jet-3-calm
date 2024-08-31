@@ -105,7 +105,7 @@ ChangeList.prototype = {
     }
 };
 
-$(document).ready(function() {
+$(function() {
     $('#changelist').each(function() {
         new ChangeList($(this)).run();
     });

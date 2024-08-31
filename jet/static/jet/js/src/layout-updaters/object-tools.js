@@ -10,7 +10,7 @@ ObjectToolsUpdater.prototype = {
     }
 };
 
-$(document).ready(function() {
+$(function() {
     $('.object-tools').each(function() {
         new ObjectToolsUpdater($(this)).run();
     });
