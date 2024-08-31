@@ -1,5 +1,5 @@
 from django.db import models
-from django.utils import timezone
+from django.db.models.functions import Now
 from django.utils.translation import gettext_lazy as _
 
 
@@ -7,7 +7,7 @@ class Bookmark(models.Model):
     url = models.URLField(verbose_name=_('URL'))
     title = models.CharField(verbose_name=_('title'), max_length=255)
     user = models.PositiveIntegerField(verbose_name=_('user'))
-    date_add = models.DateTimeField(verbose_name=_('date created'), default=timezone.now)
+    date_add = models.DateTimeField(verbose_name=_('date created'), default=Now())
 
     class Meta:
         verbose_name = _('bookmark')
@@ -21,7 +21,7 @@ class Bookmark(models.Model):
 class PinnedApplication(models.Model):
     app_label = models.CharField(verbose_name=_('application name'), max_length=255)
     user = models.PositiveIntegerField(verbose_name=_('user'))
-    date_add = models.DateTimeField(verbose_name=_('date created'), default=timezone.now)
+    date_add = models.DateTimeField(verbose_name=_('date created'), default=Now())
 
     class Meta:
         verbose_name = _('pinned application')
