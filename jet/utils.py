@@ -261,7 +261,7 @@ def get_possible_language_codes():
     split = language_code.split("-", 2)
     if len(split) == 2:
         language_code = (
-            "{}-{}".format(split[0].lower(), split[1].upper())
+            f"{split[0].lower()}-{split[1].upper()}"
             if split[0] != split[1]
             else split[0]
         )

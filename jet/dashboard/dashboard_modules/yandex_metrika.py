@@ -36,7 +36,7 @@ class YandexMetrikaClient:
         self.access_token = access_token
 
     def request(self, base_url, url, data=None, headers=None):
-        url = "{}{}".format(base_url, url)
+        url = f"{base_url}{url}"
 
         if data is not None:
             data = urlencode(data).encode()
@@ -123,7 +123,7 @@ class AccessTokenWidget(Widget):
             value = ""
 
         return format_html(
-            '{}<input type="hidden" name="access_token" value="{}">'.format(link, value)
+            f'{link}<input type="hidden" name="access_token" value="{value}">'
         )
 
 
