@@ -1,19 +1,22 @@
-
 from django.contrib import messages
 from django.core.urlresolvers import reverse
 from django.http import HttpResponse
 from django.shortcuts import redirect
-from django.urls import path, re_path
+from django.urls import path
 from django.utils.translation import gettext_lazy as _
 from httplib2 import ServerNotFoundError
-from jet.dashboard.dashboard_modules.google_analytics import GoogleAnalyticsClient, ModuleCredentialStorage
-from jet.dashboard.models import UserDashboardModule
-from jet.dashboard import dashboard
 from oauth2client.client import FlowExchangeError
+
+from jet.dashboard import dashboard
+from jet.dashboard.dashboard_modules.google_analytics import GoogleAnalyticsClient
+from jet.dashboard.dashboard_modules.google_analytics import ModuleCredentialStorage
+from jet.dashboard.models import UserDashboardModule
 
 
 def google_analytics_grant_view(request, pk):
-    redirect_uri = request.build_absolute_uri(reverse('jet-dashboard:google-analytics-callback'))
+    redirect_uri = request.build_absolute_uri(
+        reverse("jet-dashboard:google-analytics-callback")
+    )
     client = GoogleAnalyticsClient(redirect_uri=redirect_uri)
     return redirect(client.get_oauth_authorize_url(pk))
 
@@ -22,34 +25,53 @@ def google_analytics_revoke_view(request, pk):
     try:
         module = UserDashboardModule.objects.get(pk=pk)
         ModuleCredentialStorage(module).delete()
-        return redirect(reverse('jet-dashboard:update_module', kwargs={'pk': module.pk}))
+        return redirect(
+            reverse("jet-dashboard:update_module", kwargs={"pk": module.pk})
+        )
     except UserDashboardModule.DoesNotExist:
-        return HttpResponse(_('Module not found'))
+        return HttpResponse(_("Module not found"))
 
 
 def google_analytics_callback_view(request):
     module = None
 
     try:
-        state = request.GET['state']
+        state = request.GET["state"]
         module = UserDashboardModule.objects.get(pk=state)
 
-        redirect_uri = request.build_absolute_uri(reverse('jet-dashboard:google-analytics-callback'))
+        redirect_uri = request.build_absolute_uri(
+            reverse("jet-dashboard:google-analytics-callback")
+        )
         client = GoogleAnalyticsClient(redirect_uri=redirect_uri)
         client.set_credential_from_request(request)
 
         ModuleCredentialStorage(module).put(client.credential)
     except (FlowExchangeError, ValueError, ServerNotFoundError):
-        messages.error(request, _('API request failed.'))
+        messages.error(request, _("API request failed."))
     except KeyError:
-        return HttpResponse(_('Bad arguments'))
+        return HttpResponse(_("Bad arguments"))
     except UserDashboardModule.DoesNotExist:
-        return HttpResponse(_('Module not found'))
+        return HttpResponse(_("Module not found"))
 
-    return redirect(reverse('jet-dashboard:update_module', kwargs={'pk': module.pk}))
+    return redirect(reverse("jet-dashboard:update_module", kwargs={"pk": module.pk}))
 
-dashboard.urls.register_urls([
-    path('google-analytics/grant/<int:pk>/', google_analytics_grant_view, name='google-analytics-grant'),
-    path('google-analytics/revoke/<int:pk>/', google_analytics_revoke_view, name='google-analytics-revoke'),
-    path('google-analytics/callback/', google_analytics_callback_view, name='google-analytics-callback'),
-])
+
+dashboard.urls.register_urls(
+    [
+        path(
+            "google-analytics/grant/<int:pk>/",
+            google_analytics_grant_view,
+            name="google-analytics-grant",
+        ),
+        path(
+            "google-analytics/revoke/<int:pk>/",
+            google_analytics_revoke_view,
+            name="google-analytics-revoke",
+        ),
+        path(
+            "google-analytics/callback/",
+            google_analytics_callback_view,
+            name="google-analytics-callback",
+        ),
+    ]
+)
