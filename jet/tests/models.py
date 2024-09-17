@@ -6,7 +6,7 @@ class TestModel(models.Model):
     field2 = models.IntegerField()
 
     def __str__(self):
-        return '%s%d' % (self.field1, self.field2)
+        return "%s%d" % (self.field1, self.field2)
 
 
 class RelatedToTestModel(models.Model):
@@ -21,8 +21,8 @@ class SearchableTestModel(models.Model):
     field2 = models.IntegerField()
 
     def __str__(self):
-        return '%s%d' % (self.field1, self.field2)
+        return "%s%d" % (self.field1, self.field2)
 
     @staticmethod
     def autocomplete_search_fields():
-        return 'field1'
+        return "field1"
