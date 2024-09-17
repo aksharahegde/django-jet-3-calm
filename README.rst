@@ -1,6 +1,7 @@
 ================================
 Django JET Calm (for Django-4)
 ================================
+[![CodeQL](https://github.com/aksharahegde/django-jet-3-calm/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/aksharahegde/django-jet-3-calm/actions/workflows/github-code-scanning/codeql)
 
 Rebooted version of https://github.com/geex-arts/django-jet#readme
 
