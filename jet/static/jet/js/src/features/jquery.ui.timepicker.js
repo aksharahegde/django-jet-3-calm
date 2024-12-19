@@ -38,6 +38,8 @@
                              ->T-Rex<-
 */
 
+import DOMPurify from 'dompurify';
+
 (function ($) {
 
     $.extend($.ui, { timepicker: { version: "0.3.3"} });
@@ -544,11 +546,11 @@
                 hourCounter = 0,
                 hourLabel = this._get(inst, 'hourText'),
                 showCloseButton = this._get(inst, 'showCloseButton'),
-                closeButtonText = this._get(inst, 'closeButtonText'),
+                closeButtonText = DOMPurify.sanitize(this._get(inst, 'closeButtonText')),
                 showNowButton = this._get(inst, 'showNowButton'),
-                nowButtonText = this._get(inst, 'nowButtonText'),
+                nowButtonText = DOMPurify.sanitize(this._get(inst, 'nowButtonText')),
                 showDeselectButton = this._get(inst, 'showDeselectButton'),
-                deselectButtonText = this._get(inst, 'deselectButtonText'),
+                deselectButtonText = DOMPurify.sanitize(this._get(inst, 'deselectButtonText')),
                 showButtonPanel = showCloseButton || showNowButton || showDeselectButton;
 
 
