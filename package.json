@@ -27,5 +27,7 @@
     "vinyl-buffer": "1.0.1",
     "vinyl-source-stream": "2.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "dompurify": "^3.2.3"
+  }
 }
