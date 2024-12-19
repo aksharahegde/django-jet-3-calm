@@ -20,7 +20,7 @@
     "js-cookie": "3.0.5",
     "merge-stream": "2.0.0",
     "node-sass": "^7.0.1",
-    "perfect-scrollbar": "git+https://github.com/aksharahegde/perfect-scrollbar.git#0.8.1",
+    "perfect-scrollbar": "https://github.com/mdbootstrap/perfect-scrollbar#1.5.6",
     "postcss": "^8.1.0",
     "postcss-pxtorem": "6.0.0",
     "select2": "4.0.13",
