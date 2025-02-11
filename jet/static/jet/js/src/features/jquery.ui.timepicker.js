@@ -293,6 +293,7 @@ import DOMPurify from 'dompurify';
                 // Add button if button element is not set
                 if(button == null) {
                     button = $('<button class="ui-timepicker-trigger" type="button">...</button>');
+                    button = $(DOMPurify.sanitize(button));
                     input.after(button);
                 }
 
