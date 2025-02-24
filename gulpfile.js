@@ -80,7 +80,7 @@ gulp.task('vendor-styles', function() {
                 console.error(error);
             }),
             gulp.src([
-                './node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css'
+                './node_modules/perfect-scrollbar/css/perfect-scrollbar.css'
             ]).pipe(sass({
                 outputStyle: 'compressed'
             }))
