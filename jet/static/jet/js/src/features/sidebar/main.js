@@ -3,7 +3,7 @@ var SideBarApplicationPinning = require('./application-pinning');
 var SideBarBookmarks = require('./bookmarks');
 var SideBarPopup = require('./popup');
 
-require('perfect-scrollbar/jquery')($);
+require('perfect-scrollbar')($);
 require('browsernizr/test/touchevents');
 require('browsernizr');
 var Cookies = require('js-cookie');
