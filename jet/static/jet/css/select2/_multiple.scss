@@ -47,6 +47,8 @@
     display: inline-block;
     font-weight: bold;
     margin-right: 2px;
+    background-color: transparent !important;
+    border: none !important;
 
     &:hover {
       color: $input-hover-background-color;
