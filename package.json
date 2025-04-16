@@ -6,7 +6,7 @@
     "browserify": "17.0.0",
     "browsernizr": "2.3.0",
     "es6-promise": "4.2.8",
-    "gulp": "^4.0.2",
+    "gulp": "^5.0.0",
     "gulp-clean-css": "4.3.0",
     "gulp-concat-css": "3.1.0",
     "gulp-postcss": "9.0.1",
