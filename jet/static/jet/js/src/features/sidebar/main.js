@@ -3,7 +3,6 @@ var SideBarApplicationPinning = require('./application-pinning');
 var SideBarBookmarks = require('./bookmarks');
 var SideBarPopup = require('./popup');
 
-require('perfect-scrollbar/jquery')($);
 require('browsernizr/test/touchevents');
 require('browsernizr');
 var Cookies = require('js-cookie');
@@ -13,11 +12,11 @@ var SideBar = function($sidebar) {
 };
 
 SideBar.prototype = {
-    initScrollBars: function($sidebar) {
-        if (!$(document.documentElement).hasClass('touchevents')) {
-            $sidebar.find('.sidebar-wrapper').perfectScrollbar();
-        }
-    },
+    // initScrollBars: function($sidebar) {
+    //     if (!$(document.documentElement).hasClass('touchevents')) {
+    //         $sidebar.find('.sidebar-wrapper').perfectScrollbar();
+    //     }
+    // },
     initSideBarToggle: function() {
         var toggle = function(e) {
             e.preventDefault();
@@ -85,7 +84,7 @@ SideBar.prototype = {
         new SideBarPopup($sidebar).run();
 
         try {
-            this.initScrollBars($sidebar);
+            // this.initScrollBars($sidebar);
             this.addToggleButton();
             this.initSideBarToggle();
             this.initPinSideBar($sidebar);
@@ -97,7 +96,7 @@ SideBar.prototype = {
     }
 };
 
-$(document).ready(function() {
+$(function() {
     $('.sidebar').each(function() {
         new SideBar($(this)).run();
     });

@@ -1,4 +1,5 @@
-@import "globals";
+@use "sass:color";
+@use "globals" as *;
 
 /* FORM ROWS */
 
@@ -582,7 +583,6 @@ body.popup .submit-row {
     span.delete, .inline-deletelink {
       float: right;
       margin-left: 10px;
-      display: inline-block;
       background: $danger-button-background-color;
       color: $danger-button-text-color;
       padding: 4px 8px;
@@ -663,7 +663,7 @@ body.popup .submit-row {
     right: 0;
     left: 0;
     height: 40px;
-    background: linear-gradient(to bottom, $content-background-color 25%, transparentize($content-contrast-background-color, 1) 100%);
+    background: linear-gradient(to bottom, $content-background-color 25%, color.adjust($content-contrast-background-color, $alpha: -1) 100%);
     z-index: 1;
   }
 
@@ -673,7 +673,7 @@ body.popup .submit-row {
     bottom: 0;
     left: 0;
     height: 40px;
-    background: linear-gradient(to top, $content-background-color 25%, transparentize($content-contrast-background-color, 1) 100%);
+    background: linear-gradient(to top, $content-background-color 25%, color.adjust($content-contrast-background-color, $alpha: -1) 100%);
     z-index: 1;
 
     @include for-mobile {

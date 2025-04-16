@@ -1,4 +1,4 @@
-@import "../globals";
+@use "../globals" as *;
 
 .select2-selection--multiple {
   background-color: $input-background-color !important;
@@ -47,6 +47,8 @@
     display: inline-block;
     font-weight: bold;
     margin-right: 2px;
+    background-color: transparent !important;
+    border: none !important;
 
     &:hover {
       color: $input-hover-background-color;
@@ -54,31 +56,33 @@
   }
 }
 
-&[dir="rtl"] {
-  .select2-selection--multiple {
-    .select2-selection__choice, .select2-selection__placeholder {
-      float: right;
-    }
+.select2-container {
+  &[dir="rtl"] {
+    .select2-selection--multiple {
+      .select2-selection__choice, .select2-selection__placeholder {
+        float: right;
+      }
 
-    .select2-selection__choice {
-      margin-left: 5px;
-      margin-right: auto;
+      .select2-selection__choice {
+        margin-left: 5px;
+        margin-right: auto;
+      }
+
+      .select2-selection__choice__remove {
+        margin-left: 2px;
+        margin-right: auto;
+      }
+    }
+  }
+
+  &.select2-container--disabled {
+    .select2-selection--multiple {
+      background-color: $input-contrast-background-color;
+      cursor: default;
     }
 
     .select2-selection__choice__remove {
-      margin-left: 2px;
-      margin-right: auto;
+      display: none;
     }
-  }
-}
-
-&.select2-container--disabled {
-  .select2-selection--multiple {
-    background-color: $input-contrast-background-color;
-    cursor: default;
-  }
-
-  .select2-selection__choice__remove {
-    display: none;
   }
 }

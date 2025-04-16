@@ -1,2 +1,2 @@
-@import "variables";
-@import "../../jquery-ui/jquery-ui.theme";
+@use "variables" as *;
+@use "../../jquery-ui/jquery-ui.theme" as *;

@@ -1,3 +1,5 @@
-@import "variables";
-@import "helpers";
-@import "icons/variables";
+@forward "variables";
+@forward "helpers";
+@forward "icons/variables";
+@use "helpers" as *;
+@use "icons/variables" as icons;

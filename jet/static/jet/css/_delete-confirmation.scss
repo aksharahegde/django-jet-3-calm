@@ -1,4 +1,4 @@
-@import "globals";
+@use "globals" as *;
 
 .delete-confirmation {
   #content > h1 + p + h2 + ul {

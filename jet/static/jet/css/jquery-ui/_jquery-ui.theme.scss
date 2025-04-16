@@ -1,4 +1,4 @@
-@import "../globals";
+@use "../globals" as *;
 
 .ui-widget-content {
   color: $text-color;

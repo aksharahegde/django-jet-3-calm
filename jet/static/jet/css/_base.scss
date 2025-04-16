@@ -2,7 +2,24 @@
   DJANGO JET Admin styles
 */
 
-@import "globals";
+@use "globals" as *;
+@use "jquery-ui/jquery-ui.theme";
+@use "select2/layout";
+@use "content";
+@use "forms";
+@use "tables";
+@use "messages";
+@use "header";
+@use "breadcrumbs";
+@use "modules";
+@use "object-tools";
+@use "changeform";
+@use "changelist";
+@use "sidebar";
+@use "relatedpopup";
+@use "dashboard";
+@use "delete-confirmation";
+@use "login";
 
 html, body {
   margin: 0;
@@ -153,21 +170,3 @@ body {
 .popup .colM {
   width: auto;
 }
-
-@import "jquery-ui/jquery-ui.theme";
-@import "select2/layout";
-@import "content";
-@import "forms";
-@import "tables";
-@import "messages";
-@import "header";
-@import "breadcrumbs";
-@import "modules";
-@import "object-tools";
-@import "changeform";
-@import "changelist";
-@import "sidebar";
-@import "relatedpopup";
-@import "dashboard";
-@import "delete-confirmation";
-@import "login";

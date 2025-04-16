@@ -38,7 +38,7 @@
                              ->T-Rex<-
 */
 
-import DOMPurify from 'dompurify';
+const DOMPurify = require('dompurify');
 
 (function ($) {
 

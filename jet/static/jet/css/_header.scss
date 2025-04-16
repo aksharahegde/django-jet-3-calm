@@ -1,4 +1,5 @@
-@import "globals";
+@use "sass:math";
+@use "globals" as *;
 
 /* HEADER */
 
@@ -103,7 +104,7 @@
 .user-tools {
   ul {
     position: absolute;
-    top: ($top-height + 10px * 2) / 2 - 30px / 2;
+    top: math.div($top-height + 10px * 2, 2) - math.div(30px, 2);
     right: 20px;
     border: 1px solid $top-border-color;
     border-radius: 4px;

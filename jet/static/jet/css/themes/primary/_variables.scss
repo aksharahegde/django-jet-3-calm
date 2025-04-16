@@ -1,3 +1,6 @@
+@use "sass:color";
+@use "sass:math";
+
 /*
  * Customizable variables
  * Update these variable to create theme
@@ -134,7 +137,7 @@ $input-hover-text-color: #fff;
 $input-selected-text-color: $contrast-color;
 $input-disabled-text-color: $dim-text-color;
 $input-placeholder-color: #999;
-$input-shadow-color: transparentize($contrast-color, 0.25);
+$input-shadow-color: color.adjust($contrast-color, $alpha: -0.25) !default;
 
 $background-input-background-color: #fff;
 $background-input-border-color: #fff;
@@ -193,12 +196,12 @@ $jquery-ui-tooltip-text-color: #fff;
  * Charts
  */
 
-$chart-fillColor: transparentize($hover-link-color, 0.75);
+$chart-fillColor: color.adjust($hover-link-color, $alpha: -0.75) !default;
 $chart-strokeColor: $hover-link-color;
 $chart-pointColor: #fff;
 $chart-pointHighlightFill: $hover-link-color;
-$chart-scaleGridLineColor: transparentize(#000, 0.9);
-$chart-scaleLineColor: transparentize(#000, 0.9);
+$chart-scaleGridLineColor: color.adjust(#000, $alpha: -0.9) !default;
+$chart-scaleLineColor: color.adjust(#000, $alpha: -0.9) !default;
 $chart-scaleFontColor: $content-contrast2-text-color;
 
 // Paginator
