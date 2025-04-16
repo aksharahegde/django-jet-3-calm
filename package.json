@@ -1,5 +1,6 @@
 {
   "name": "django-jet-calm",
+  "version": "5.3.13",
   "devDependencies": {
     "autoprefixer": "10.4.8",
     "browserify": "17.0.0",
