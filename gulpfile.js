@@ -78,12 +78,7 @@ gulp.task('vendor-styles', function() {
             .pipe(replace('images/', 'jquery-ui/images/'))
             .on('error', function(error) {
                 console.error(error);
-            }),
-            gulp.src([
-                './node_modules/perfect-scrollbar/css/perfect-scrollbar.css'
-            ]).pipe(sass({
-                outputStyle: 'compressed'
-            }))
+            })
             .on('error', function(error) {
                 console.error(error);
             })
