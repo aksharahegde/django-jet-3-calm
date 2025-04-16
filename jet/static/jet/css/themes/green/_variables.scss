@@ -46,7 +46,7 @@ $sidebar-hover-background-color: #254d49;
 
 $sidebar-popup-search-input-background-color: #cceae4;
 $sidebar-popup-search-input-text-color: #62a29c;
-$sidebar-popup-search-input-placeholder-color: transparentize(#6f7e95, 0.5);
+$sidebar-popup-search-input-placeholder-color: color.adjust(#6f7e95, $alpha: -0.5) !default;
 
 $sidebar-popup-background-color: #eff6f5;
 $sidebar-popup-text-color: #62a29c;
@@ -131,7 +131,7 @@ $input-hover-text-color: #fff;
 $input-selected-text-color: #44b78b;
 $input-disabled-text-color: #cceae4;
 $input-placeholder-color: #cceae4;
-$input-shadow-color: transparentize(#44b78b, 0.25);
+$input-shadow-color: color.adjust(#44b78b, $alpha: -0.25) !default;
 
 $background-input-background-color: #fff;
 $background-input-border-color: #fff;
@@ -190,12 +190,12 @@ $jquery-ui-tooltip-text-color: #fff;
  * Charts
  */
 
-$chart-fillColor: transparentize($hover-link-color, 0.75);
+$chart-fillColor: color.adjust($hover-link-color, $alpha: -0.75) !default;
 $chart-strokeColor: $hover-link-color;
 $chart-pointColor: $content-contrast2-text-color;
 $chart-pointHighlightFill: $hover-link-color;
-$chart-scaleGridLineColor: transparentize(#000, 0.9);
-$chart-scaleLineColor: transparentize(#000, 0.9);
+$chart-scaleGridLineColor: color.adjust(#000, $alpha: -0.9) !default;
+$chart-scaleLineColor: color.adjust(#000, $alpha: -0.9) !default;
 $chart-scaleFontColor: $content-contrast2-text-color;
 
 // Paginator

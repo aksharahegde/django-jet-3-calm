@@ -511,8 +511,8 @@
   }
 }
 .ui-widget-content {
-  color: #4E5454;
-  border-color: #f1f2f4;
+  color: #6f7e95;
+  border-color: #f4f4f4;
 }
 
 .ui-widget.ui-widget-content, .ui-timepicker-table.ui-widget-content {
@@ -528,51 +528,51 @@
 
 .ui-widget-header {
   border: 0;
-  background: #E3ECF2;
-  color: #4E5454;
+  background: #59677e;
+  color: #fff;
   font-weight: bold;
 }
 .ui-widget-header a {
-  color: #4E5454;
+  color: #fff;
 }
 
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
-  border: 1px solid #EDEDED;
-  border: 0.07143rem solid #EDEDED;
+  border: 1px solid #ecf2f6;
+  border: 0.07143rem solid #ecf2f6;
   background: #fff;
   font-weight: bold;
-  color: #4E5454;
+  color: #6f7e95;
   border-radius: 3px;
   border-radius: 0.21429rem;
 }
 
 .ui-widget-header .ui-state-default {
   background: none;
-  color: #4E5454;
+  color: #fff;
   border: 0;
 }
 
 .ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
-  border: 1px solid #1cacfc;
-  border: 0.07143rem solid #1cacfc;
-  background: #1cacfc;
+  border: 1px solid #639af5;
+  border: 0.07143rem solid #639af5;
+  background: #639af5;
   font-weight: bold;
   color: #fff;
 }
 
 .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
-  border: 1px solid #00c4bf;
-  border: 0.07143rem solid #00c4bf;
-  background: #00c4bf;
+  border: 1px solid #47bac1;
+  border: 0.07143rem solid #47bac1;
+  background: #47bac1;
   font-weight: bold;
   color: #fff;
 }
 
 .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
-  border: 1px solid #1cacfc;
-  border: 0.07143rem solid #1cacfc;
+  border: 1px solid #639af5;
+  border: 0.07143rem solid #639af5;
   background: #fff;
-  color: #1cacfc;
+  color: #639af5;
 }
 
 @media only screen and (max-width: 480px) {
@@ -586,7 +586,7 @@
 }
 
 .ui-dialog-buttonpane {
-  background: #E3ECF2;
+  background: #ecf2f6;
   margin: 0.5em -0.2em -0.2em -0.2em;
 }
 .ui-dialog-buttonpane .ui-button {
