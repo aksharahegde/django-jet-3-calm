@@ -1,4 +1,5 @@
-@import "globals";
+@use "sass:color";
+@use "globals" as *;
 
 .sidebar {
   position: fixed;
@@ -202,7 +203,6 @@
       display: block;
       color: $sidebar-link-color;
       padding: 8px 12px 8px 20px;
-      vertical-align: middle;
       transition: color $transitions-duration, background-color $transitions-duration;
       position: relative;
       cursor: pointer;
@@ -235,7 +235,6 @@
     }
 
     &-label {
-      vertical-align: middle;
       display: block;
       transition: transform $transitions-duration;
       overflow: hidden;
@@ -460,7 +459,7 @@
       z-index: 5;
 
       body.menu-pinned & {
-        background-color: transparentize($sidebar-popup-overlay-color, 0.5);
+        background-color: color.adjust($sidebar-popup-overlay-color, $alpha: -0.5);
       }
 
       @include for-mobile {
@@ -543,7 +542,6 @@
 
   &-container-toggle {
     float: left;
-    display: inline-block;
     vertical-align: middle;
     cursor: pointer;
     line-height: 31px;

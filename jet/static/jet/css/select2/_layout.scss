@@ -1,8 +1,8 @@
-@import "../globals";
+@use "../globals" as *;
+@use "single" as *;
+@use "multiple" as *;
 
 .select2-container--jet {
-  @import "single";
-  @import "multiple";
   min-width: 160px;
 
   .select2-selection {
@@ -80,6 +80,7 @@
       color: $input-text-color;
       height: $input-height;
       -webkit-appearance: textfield;
+      appearance: textfield;
       box-shadow: none;
     }
   }
@@ -91,6 +92,7 @@
       outline: 0;
       color: $input-text-color;
       -webkit-appearance: textfield;
+      appearance: textfield;
       box-shadow: none;
     }
   }

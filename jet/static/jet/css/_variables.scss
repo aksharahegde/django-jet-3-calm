@@ -1,3 +1,5 @@
+@use "sass:color";
+
 /*
  * Default variable values
  * Create separate themes/theme/_variables.scss to override these variables
@@ -53,7 +55,7 @@ $sidebar-hover-background-color: #2b3647 !default;
 
 $sidebar-popup-search-input-background-color: #d0dbe6 !default;
 $sidebar-popup-search-input-text-color: #6f7e95 !default;
-$sidebar-popup-search-input-placeholder-color: transparentize(#6f7e95, 0.5) !default;
+$sidebar-popup-search-input-placeholder-color: color.adjust(#6f7e95, $alpha: -0.5) !default;
 
 $sidebar-popup-background-color: #ecf2f6 !default;
 $sidebar-popup-text-color: #6f7e95 !default;
@@ -139,7 +141,7 @@ $input-hover-text-color: #fff !default;
 $input-selected-text-color: #47bac1 !default;
 $input-disabled-text-color: #d0dbe6 !default;
 $input-placeholder-color: #d0dbe6 !default;
-$input-shadow-color: transparentize(#47bac1, 0.25) !default;
+$input-shadow-color: color.adjust(#47bac1, $alpha: -0.25) !default;
 
 $background-input-background-color: #fff !default;
 $background-input-border-color: #fff !default;
@@ -198,12 +200,12 @@ $jquery-ui-tooltip-text-color: #fff !default;
  * Charts
  */
 
-$chart-fillColor: transparentize($hover-link-color, 0.75) !default;
+$chart-fillColor: color.adjust($hover-link-color, $alpha: -0.75) !default;
 $chart-strokeColor: $hover-link-color !default;
 $chart-pointColor: $content-contrast2-text-color !default;
 $chart-pointHighlightFill: $hover-link-color !default;
-$chart-scaleGridLineColor: transparentize(#000, 0.9) !default;
-$chart-scaleLineColor: transparentize(#000, 0.9) !default;
+$chart-scaleGridLineColor: color.adjust(#000, $alpha: -0.9) !default;
+$chart-scaleLineColor: color.adjust(#000, $alpha: -0.9) !default;
 $chart-scaleFontColor: $content-contrast2-text-color !default;
 
 // Paginator

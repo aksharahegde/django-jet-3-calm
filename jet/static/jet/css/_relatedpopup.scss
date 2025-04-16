@@ -1,4 +1,5 @@
-@import "globals";
+@use "sass:color";
+@use "globals" as *;
 
 /* POPUP */
 
@@ -29,7 +30,7 @@
 
   &-container {
     display: none;
-    background-color: transparentize($sidebar-popup-overlay-color, 0.5);
+    background-color: color.adjust($sidebar-popup-overlay-color, $alpha: -0.5);
     position: fixed;
     top: 0;
     left: 0;
