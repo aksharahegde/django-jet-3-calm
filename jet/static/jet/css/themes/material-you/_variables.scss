@@ -1,0 +1,138 @@
+@use "sass:color";
+@use "sass:math";
+
+/*
+ * Material You Theme Variables
+ * Based on Material Design 3
+ */
+
+/*
+ * Color System
+ */
+
+// Primary colors
+$primary-color: #006C50;
+$on-primary-color: #FFFFFF;
+$primary-container-color: #89F8D0;
+$on-primary-container-color: #002116;
+
+// Secondary colors
+$secondary-color: #4B635B;
+$on-secondary-color: #FFFFFF;
+$secondary-container-color: #CDE8DE;
+$on-secondary-container-color: #072019;
+
+// Tertiary colors
+$tertiary-color: #3D6373;
+$on-tertiary-color: #FFFFFF;
+$tertiary-container-color: #C1E8FB;
+$on-tertiary-container-color: #001F2A;
+
+// Error colors
+$error-color: #BA1A1A;
+$on-error-color: #FFFFFF;
+$error-container-color: #FFDAD6;
+$on-error-container-color: #410002;
+
+// Background colors
+$background-color: #FBFDF9;
+$on-background-color: #191C1B;
+$surface-color: #FBFDF9;
+$on-surface-color: #191C1B;
+
+// Surface variants
+$surface-variant-color: #DCE5E1;
+$on-surface-variant-color: #404944;
+$outline-color: #707973;
+$outline-variant-color: #BFC9C4;
+
+// Custom elevation colors
+$surface-container-lowest: #FFFFFF;
+$surface-container-low: #F5F7F5;
+$surface-container: #EFF1EF;
+$surface-container-high: #E9EBE9;
+$surface-container-highest: #E3E5E3;
+
+/*
+ * Typography
+ */
+
+$font: "Roboto", Arial, sans-serif;
+$font-size: 14px;
+
+/*
+ * Component Specific
+ */
+
+// Sidebar
+$sidebar-width: 250px;
+$sidebar-background-color: $surface-container;
+$sidebar-text-color: $on-surface-color;
+$sidebar-icon-color: $primary-color;
+$sidebar-link-color: $on-surface-variant-color;
+$sidebar-hover-link-color: $primary-color;
+$sidebar-hover-background-color: $surface-container-high;
+
+// Top bar
+$top-height: 64px;
+$top-background-color: $surface-container-low;
+$top-text-color: $on-surface-color;
+$top-link-color: $primary-color;
+$top-hover-link-color: $primary-container-color;
+$top-border-color: $outline-variant-color;
+
+// Content
+$content-background-color: $surface-color;
+$content-text-color: $on-surface-color;
+$content-border-color: $outline-variant-color;
+$content-selected-background-color: $primary-container-color;
+$content-selected-text-color: $on-primary-container-color;
+
+// Buttons
+$button-background-color: $primary-color;
+$button-text-color: $on-primary-color;
+$button-hover-background-color: color.adjust($primary-color, $lightness: 5%);
+$button-active-background-color: color.adjust($primary-color, $lightness: -5%);
+
+$secondary-button-background-color: $secondary-container-color;
+$secondary-button-text-color: $on-secondary-container-color;
+
+$danger-button-background-color: $error-color;
+$danger-button-text-color: $on-error-color;
+
+// Inputs
+$input-background-color: $surface-container-lowest;
+$input-border-color: $outline-color;
+$input-text-color: $on-surface-color;
+$input-placeholder-color: $on-surface-variant-color;
+$input-focus-border-color: $primary-color;
+$input-hover-border-color: $primary-container-color;
+$input-disabled-background-color: $surface-variant-color;
+$input-disabled-text-color: $on-surface-variant-color;
+
+// Messages
+$success-color: #146C2E;
+$success-container-color: #A2F6AC;
+$warning-color: #7D5700;
+$warning-container-color: #FFDE9C;
+$info-color: #0062A2;
+$info-container-color: #D0E4FF;
+
+// States
+$hover-overlay-color: color.adjust($on-surface-color, $alpha: -0.92);
+$pressed-overlay-color: color.adjust($on-surface-color, $alpha: -0.88);
+$dragged-overlay-color: color.adjust($on-surface-color, $alpha: -0.84);
+
+// Elevation
+$elevation-level-0: none;
+$elevation-level-1: 0 1px 2px rgba(0, 0, 0, 0.3);
+$elevation-level-2: 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
+$elevation-level-3: 0 4px 8px 3px rgba(0, 0, 0, 0.15);
+$elevation-level-4: 0 6px 10px 4px rgba(0, 0, 0, 0.15);
+$elevation-level-5: 0 8px 12px 6px rgba(0, 0, 0, 0.15);
+
+// Paginator
+$paginator-background-color: $surface-container;
+$paginator-text-color: $on-surface-color;
+$paginator-active-background-color: $primary-container-color;
+$paginator-active-text-color: $on-primary-container-color; 
