@@ -12,6 +12,8 @@ Rebooted version of https://github.com/geex-arts/django-jet#readme
 
 .. image:: https://raw.githubusercontent.com/geex-arts/jet/static/logo.png
 
+![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/aksharahegde/django-jet-3-calm?utm_source=oss&utm_medium=github&utm_campaign=aksharahegde%2Fdjango-jet-3-calm&labelColor=171717&color=FF570A&link=https%3A%2F%2Fcoderabbit.ai&label=CodeRabbit+Reviews)
+
 Django JET has two kinds of licenses: open-source (AGPLv3) and commercial. Please note that using AGPLv3
 code in your programs make them AGPL compatible too. So if you don't want to comply with that we can provide you a commercial
 license (visit Home page). The commercial license is designed for using Django JET in commercial products
