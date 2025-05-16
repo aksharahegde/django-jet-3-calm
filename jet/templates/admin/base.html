@@ -150,6 +150,9 @@
     {% endif %}
 
     {% jet_get_side_menu_compact as SIDE_MENU_COMPACT %}
+    <script>
+      window.JET_SIDE_MENU_COMPACT = {{ SIDE_MENU_COMPACT|yesno:'true,false'|lower }};
+    </script>
     {% if not is_popup %}
         <div class="related-popup-container scrollable">
             <a href="#" class="related-popup-back">
