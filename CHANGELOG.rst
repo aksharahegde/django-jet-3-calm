@@ -1,6 +1,25 @@
 Changelog
 =========
 
+5.4.0
+---
+- New Features
+    - Improved admin Date Range Filter with a dynamic form, better state handling, and timezone-aware queries.
+
+- Bug Fixes
+    - More robust filter choice handling and clearer errors for misconfigured multiple-choice filters.
+
+- Documentation
+    - Updated CHANGELOG with logout deprecation note; refined installation instructions in README.
+
+- Style
+    - Updated vendor/theme CSS (jQuery UI 1.14.1); minor visual refinements.
+
+- Chores
+    - Upgraded dependencies: Django 5.2.6, jQuery 3.7.1; added django-rangefilter; pinned six.
+    - Added safer startup feedback when Django is not installed.
+    - Cleaned build config and removed unused tooling.
+
 5.3.1
 -----
 - Logging out via GET requests to the built-in logout view is deprecated. Use POST requests instead.
@@ -77,7 +96,7 @@ CVE-2021-41183
 jQuery-UI is the official jQuery user interface library. Prior to version 1.13.0, accepting the value of various `*Text` options of the Datepicker widget from untrusted sources may execute untrusted code. The issue is fixed in jQuery UI 1.13.0. The values passed to various `*Text` options are now always treated as pure text, not HTML. A workaround is to not accept the value of the `*Text` options from untrusted sources.
 Affected versions
 `< 1.13.0
-` 
+`
 
 **Identifier**
 CVE-2021-41184
@@ -372,7 +391,3 @@ Affected versions
 -----
 
 * Initial release
-
-
-
-
