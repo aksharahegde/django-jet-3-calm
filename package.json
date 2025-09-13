@@ -1,6 +1,8 @@
 {
   "name": "django-jet-calm",
   "version": "5.3.13",
+  "description": "Modern template for Django-4 admin interface with improved functionality",
+  "license": "AGPL-3.0",
   "devDependencies": {
     "autoprefixer": "^10.4.21",
     "browserify": "^17.0.1",
