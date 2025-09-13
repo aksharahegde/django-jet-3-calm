@@ -1,12 +1,14 @@
 import datetime
 from collections import OrderedDict
+
+from django import forms
 from django.conf import settings
 from django.contrib import admin
-from django.contrib.admin import RelatedFieldListFilter, SimpleListFilter
+from django.contrib.admin import RelatedFieldListFilter
+from django.contrib.admin import SimpleListFilter
 from django.contrib.admin.utils import get_model_from_relation
 from django.contrib.admin.widgets import AdminDateWidget
 from django.core.exceptions import ImproperlyConfigured
-from django import forms
 from django.forms.utils import flatatt
 from django.urls import reverse
 from django.utils import timezone
@@ -57,18 +59,17 @@ class RelatedFieldAjaxListFilter(RelatedFieldListFilter):
         lookup_value = self.lookup_val
         if isinstance(lookup_value, list) and len(lookup_value) > 0:
             lookup_value = lookup_value[0]
-        
+
         queryset = model._default_manager.filter(**{rel_name: lookup_value}).all()
         return [(x._get_pk_val(), smart_str(x)) for x in queryset]
 
 
 class DateRangeFilter(admin.filters.FieldListFilter):
     def __init__(self, field, request, params, model, model_admin, field_path):
-        self.lookup_kwarg_gte = '{}__gte'.format(field_path)
-        self.lookup_kwarg_lte = '{}__lte'.format(field_path)
+        self.lookup_kwarg_gte = f"{field_path}__gte"
+        self.lookup_kwarg_lte = f"{field_path}__lte"
 
-        super(DateRangeFilter, self).__init__(field, request, params, model,
-                                              model_admin, field_path)
+        super().__init__(field, request, params, model, model_admin, field_path)
 
         self.form = self.get_form(request)
 
@@ -79,22 +80,20 @@ class DateRangeFilter(admin.filters.FieldListFilter):
     def make_dt_aware(value):
         if settings.USE_TZ:
             # Add ACT TIMEZONE to value since it's naive datetime.
-            if hasattr(settings, 'ACT_ZONEINFO'):
+            if hasattr(settings, "ACT_ZONEINFO"):
                 value = value.replace(tzinfo=settings.ACT_ZONEINFO)
             else:
                 value = value.replace(tzinfo=timezone.get_default_timezone())
             # Convert to UTC used by DB
-            if hasattr(settings, 'UTC_ZONEINFO'):
+            if hasattr(settings, "UTC_ZONEINFO"):
                 value = value.astimezone(settings.UTC_ZONEINFO)
 
         return value
 
     def choices(self, cl):
         yield {
-            'system_name': slugify(self.title),
-            'query_string': cl.get_query_string(
-                {}, remove=self._get_expected_fields()
-            )
+            "system_name": slugify(self.title),
+            "query_string": cl.get_query_string({}, remove=self._get_expected_fields()),
         }
 
     def expected_parameters(self):
@@ -118,20 +117,18 @@ class DateRangeFilter(admin.filters.FieldListFilter):
         date_value_lte = validated_data.get(self.lookup_kwarg_lte, None)
 
         if date_value_gte:
-            query_params[
-                '{0}__gte'.format(self.field_path)] = self.make_dt_aware(
+            query_params[f"{self.field_path}__gte"] = self.make_dt_aware(
                 datetime.datetime.combine(date_value_gte, datetime.time.min),
             )
         if date_value_lte:
-            query_params[
-                '{0}__lte'.format(self.field_path)] = self.make_dt_aware(
+            query_params[f"{self.field_path}__lte"] = self.make_dt_aware(
                 datetime.datetime.combine(date_value_lte, datetime.time.max),
             )
 
         return query_params
 
     def get_template(self):
-        return 'rangefilter/date_filter.html'
+        return "rangefilter/date_filter.html"
 
     template = property(get_template)
 
@@ -149,43 +146,47 @@ class DateRangeFilter(admin.filters.FieldListFilter):
     def _get_form_class(self):
         fields = self._get_form_fields()
 
-        form_class = type(
-            str('DateRangeForm'),
-            (forms.BaseForm,),
-            {'base_fields': fields}
-        )
+        form_class = type("DateRangeForm", (forms.BaseForm,), {"base_fields": fields})
         form_class.media = self._get_media()
 
         return form_class
 
     def _get_form_fields(self):
-        return OrderedDict((
-            (self.lookup_kwarg_gte, forms.DateField(
-                label='',
-                widget=AdminDateWidget(attrs={'placeholder': _('From date')}),
-                localize=True,
-                required=False
-            )),
-            (self.lookup_kwarg_lte, forms.DateField(
-                label='',
-                widget=AdminDateWidget(attrs={'placeholder': _('To date')}),
-                localize=True,
-                required=False
-            )),
-        ))
+        return OrderedDict(
+            (
+                (
+                    self.lookup_kwarg_gte,
+                    forms.DateField(
+                        label="",
+                        widget=AdminDateWidget(attrs={"placeholder": _("From date")}),
+                        localize=True,
+                        required=False,
+                    ),
+                ),
+                (
+                    self.lookup_kwarg_lte,
+                    forms.DateField(
+                        label="",
+                        widget=AdminDateWidget(attrs={"placeholder": _("To date")}),
+                        localize=True,
+                        required=False,
+                    ),
+                ),
+            )
+        )
 
     @staticmethod
     def _get_media():
         js = [
-            'calendar.js',
-            'admin/DateTimeShortcuts.js',
+            "calendar.js",
+            "admin/DateTimeShortcuts.js",
         ]
         css = [
-            'widgets.css',
+            "widgets.css",
         ]
         return forms.Media(
-            js=['admin/js/%s' % url for url in js],
-            css={'all': ['admin/css/%s' % path for path in css]}
+            js=["admin/js/%s" % url for url in js],
+            css={"all": ["admin/css/%s" % path for path in css]},
         )
 
 
