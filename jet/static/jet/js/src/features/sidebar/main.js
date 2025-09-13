@@ -79,6 +79,15 @@ SideBar.prototype = {
     run: function() {
         var $sidebar = this.$sidebar;
 
+        // Check the global variable set from Django template
+        if (typeof window.JET_SIDE_MENU_COMPACT !== 'undefined') {
+            if (window.JET_SIDE_MENU_COMPACT) {
+                $sidebar.addClass('compact-mode');
+            } else {
+                $sidebar.removeClass('compact-mode');
+            }
+        }
+
         new SideBarApplicationPinning($sidebar).run();
         new SideBarBookmarks($sidebar).run();
         new SideBarPopup($sidebar).run();
