@@ -56,11 +56,11 @@ Screenshots
 Installation
 ============
 
-* Download and install the Django 4 version of Django JET:
+* Download and install the Django 4 version of Django JET Calm:
 
 .. code:: python
 
-    pip install django-jet-calm==5.1.5
+    pip install django-jet-calm==<version>
 
 * Add 'jet' application to the INSTALLED_APPS setting of your Django project settings.py file (note it should be before 'django.contrib.admin'):
 
