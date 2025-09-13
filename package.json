@@ -31,7 +31,6 @@
   "dependencies": {
     "dompurify": "^3.2.3",
     "jquery-ui-timepicker-addon": "^1.6.3",
-    "node-sass": "^9.0.0",
     "sass": "^1.86.3"
   },
   "scripts": {
