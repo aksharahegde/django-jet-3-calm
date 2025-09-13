@@ -53,7 +53,12 @@ class RelatedFieldAjaxListFilter(RelatedFieldListFilter):
         else:
             rel_name = other_model._meta.pk.name
 
-        queryset = model._default_manager.filter(**{rel_name: self.lookup_val}).all()
+        # Handle case where lookup_val might be a list (e.g., ['28'] instead of '28')
+        lookup_value = self.lookup_val
+        if isinstance(lookup_value, list) and len(lookup_value) > 0:
+            lookup_value = lookup_value[0]
+        
+        queryset = model._default_manager.filter(**{rel_name: lookup_value}).all()
         return [(x._get_pk_val(), smart_str(x)) for x in queryset]
 
 
