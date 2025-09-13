@@ -1,6 +1,8 @@
 {
   "name": "django-jet-calm",
   "version": "5.3.13",
+  "description": "Modern template for Django-4 admin interface with improved functionality",
+  "license": "AGPL-3.0",
   "devDependencies": {
     "autoprefixer": "^10.4.21",
     "browserify": "^17.0.1",
@@ -15,8 +17,8 @@
     "gulp-shell": "0.5.2",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.2",
-    "jquery": "3.6.4",
-    "jquery-ui": "1.13.2",
+    "jquery": "3.7.1",
+    "jquery-ui": "1.14.1",
     "jquery.mousewheel": "3.1.9",
     "js-cookie": "3.0.5",
     "merge-stream": "^2.0.0",
@@ -29,7 +31,6 @@
   "dependencies": {
     "dompurify": "^3.2.3",
     "jquery-ui-timepicker-addon": "^1.6.3",
-    "node-sass": "^9.0.0",
     "sass": "^1.86.3"
   },
   "scripts": {

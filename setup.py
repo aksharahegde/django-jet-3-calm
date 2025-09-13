@@ -14,7 +14,7 @@ def read(fname):
 
 
 def get_install_requires():
-    install_requires = ["Django", "six"]
+    install_requires = ["Django", "six", "django-rangefilter"]
 
     try:
         pass

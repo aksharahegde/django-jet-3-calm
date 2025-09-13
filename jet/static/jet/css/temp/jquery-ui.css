@@ -1,34 +1,34 @@
 /*!
- * jQuery UI CSS Framework 1.13.2
- * http://jqueryui.com
+ * jQuery UI CSS Framework 1.14.1
+ * https://jqueryui.com
  *
- * Copyright jQuery Foundation and other contributors
+ * Copyright OpenJS Foundation and other contributors
  * Released under the MIT license.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://api.jqueryui.com/category/theming/
+ * https://api.jqueryui.com/category/theming/
  */
 
 /*!
- * jQuery UI CSS Framework 1.13.2
- * http://jqueryui.com
+ * jQuery UI CSS Framework 1.14.1
+ * https://jqueryui.com
  *
- * Copyright jQuery Foundation and other contributors
+ * Copyright OpenJS Foundation and other contributors
  * Released under the MIT license.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://api.jqueryui.com/category/theming/
+ * https://api.jqueryui.com/category/theming/
  */
 
 /*!
- * jQuery UI CSS Framework 1.13.2
- * http://jqueryui.com
+ * jQuery UI CSS Framework 1.14.1
+ * https://jqueryui.com
  *
- * Copyright jQuery Foundation and other contributors
+ * Copyright OpenJS Foundation and other contributors
  * Released under the MIT license.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://api.jqueryui.com/category/theming/
+ * https://api.jqueryui.com/category/theming/
  */
 
 .ui-helper-hidden {
@@ -75,7 +75,6 @@
   left: 0;
   position: absolute;
   opacity: 0;
-  -ms-filter: "alpha(opacity=0)";
 }
 
 .ui-front {
@@ -112,14 +111,14 @@
 }
 
 /*!
- * jQuery UI Accordion 1.13.2
- * http://jqueryui.com
+ * jQuery UI Accordion 1.14.1
+ * https://jqueryui.com
  *
- * Copyright jQuery Foundation and other contributors
+ * Copyright OpenJS Foundation and other contributors
  * Released under the MIT license.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://api.jqueryui.com/accordion/#theming
+ * https://api.jqueryui.com/accordion/#theming
  */
 
 .ui-accordion .ui-accordion-header {
@@ -138,14 +137,14 @@
 }
 
 /*!
- * jQuery UI Autocomplete 1.13.2
- * http://jqueryui.com
+ * jQuery UI Autocomplete 1.14.1
+ * https://jqueryui.com
  *
- * Copyright jQuery Foundation and other contributors
+ * Copyright OpenJS Foundation and other contributors
  * Released under the MIT license.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://api.jqueryui.com/autocomplete/#theming
+ * https://api.jqueryui.com/autocomplete/#theming
  */
 
 .ui-autocomplete {
@@ -156,14 +155,14 @@
 }
 
 /*!
- * jQuery UI Button 1.13.2
- * http://jqueryui.com
+ * jQuery UI Button 1.14.1
+ * https://jqueryui.com
  *
- * Copyright jQuery Foundation and other contributors
+ * Copyright OpenJS Foundation and other contributors
  * Released under the MIT license.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://api.jqueryui.com/button/#theming
+ * https://api.jqueryui.com/button/#theming
  */
 
 .ui-button {
@@ -176,10 +175,7 @@
   vertical-align: middle;
   text-align: center;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
-  overflow: visible;
 }
 
 .ui-button,
@@ -232,14 +228,14 @@ input.ui-button::-moz-focus-inner {
 }
 
 /*!
- * jQuery UI Checkboxradio 1.13.2
- * http://jqueryui.com
+ * jQuery UI Checkboxradio 1.14.1
+ * https://jqueryui.com
  *
- * Copyright jQuery Foundation and other contributors
+ * Copyright OpenJS Foundation and other contributors
  * Released under the MIT license.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://api.jqueryui.com/checkboxradio/#theming
+ * https://api.jqueryui.com/checkboxradio/#theming
  */
 
 .ui-checkboxradio-label .ui-icon-background {
@@ -270,14 +266,14 @@ input.ui-button::-moz-focus-inner {
 }
 
 /*!
- * jQuery UI Controlgroup 1.13.2
- * http://jqueryui.com
+ * jQuery UI Controlgroup 1.14.1
+ * https://jqueryui.com
  *
- * Copyright jQuery Foundation and other contributors
+ * Copyright OpenJS Foundation and other contributors
  * Released under the MIT license.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://api.jqueryui.com/controlgroup/#theming
+ * https://api.jqueryui.com/controlgroup/#theming
  */
 
 .ui-controlgroup {
@@ -334,7 +330,6 @@ input.ui-button::-moz-focus-inner {
 }
 
 .ui-controlgroup-vertical .ui-spinner-input {
-  width: 75%;
   width: calc(100% - 2.4em);
 }
 
@@ -343,14 +338,14 @@ input.ui-button::-moz-focus-inner {
 }
 
 /*!
- * jQuery UI Datepicker 1.13.2
- * http://jqueryui.com
+ * jQuery UI Datepicker 1.14.1
+ * https://jqueryui.com
  *
- * Copyright jQuery Foundation and other contributors
+ * Copyright OpenJS Foundation and other contributors
  * Released under the MIT license.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://api.jqueryui.com/datepicker/#theming
+ * https://api.jqueryui.com/datepicker/#theming
  */
 
 .ui-datepicker {
@@ -561,14 +556,14 @@ input.ui-button::-moz-focus-inner {
 }
 
 /*!
- * jQuery UI Dialog 1.13.2
- * http://jqueryui.com
+ * jQuery UI Dialog 1.14.1
+ * https://jqueryui.com
  *
- * Copyright jQuery Foundation and other contributors
+ * Copyright OpenJS Foundation and other contributors
  * Released under the MIT license.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://api.jqueryui.com/dialog/#theming
+ * https://api.jqueryui.com/dialog/#theming
  */
 
 .ui-dialog {
@@ -681,28 +676,27 @@ input.ui-button::-moz-focus-inner {
 }
 
 /*!
- * jQuery UI Draggable 1.13.2
- * http://jqueryui.com
+ * jQuery UI Draggable 1.14.1
+ * https://jqueryui.com
  *
- * Copyright jQuery Foundation and other contributors
+ * Copyright OpenJS Foundation and other contributors
  * Released under the MIT license.
- * http://jquery.org/license
+ * https://jquery.org/license
  */
 
 .ui-draggable-handle {
-  -ms-touch-action: none;
   touch-action: none;
 }
 
 /*!
- * jQuery UI Menu 1.13.2
- * http://jqueryui.com
+ * jQuery UI Menu 1.14.1
+ * https://jqueryui.com
  *
- * Copyright jQuery Foundation and other contributors
+ * Copyright OpenJS Foundation and other contributors
  * Released under the MIT license.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://api.jqueryui.com/menu/#theming
+ * https://api.jqueryui.com/menu/#theming
  */
 
 .ui-menu {
@@ -720,7 +714,6 @@ input.ui-button::-moz-focus-inner {
 .ui-menu .ui-menu-item {
   margin: 0;
   cursor: pointer;
-  list-style-image: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7);
 }
 
 .ui-menu .ui-menu-item-wrapper {
@@ -763,14 +756,14 @@ input.ui-button::-moz-focus-inner {
 }
 
 /*!
- * jQuery UI Progressbar 1.13.2
- * http://jqueryui.com
+ * jQuery UI Progressbar 1.14.1
+ * https://jqueryui.com
  *
- * Copyright jQuery Foundation and other contributors
+ * Copyright OpenJS Foundation and other contributors
  * Released under the MIT license.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://api.jqueryui.com/progressbar/#theming
+ * https://api.jqueryui.com/progressbar/#theming
  */
 
 .ui-progressbar {
@@ -787,7 +780,6 @@ input.ui-button::-moz-focus-inner {
 .ui-progressbar .ui-progressbar-overlay {
   background: url(data:image/gif;base64,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);
   height: 100%;
-  -ms-filter: "alpha(opacity=25)";
   opacity: .25;
 }
 
@@ -796,12 +788,12 @@ input.ui-button::-moz-focus-inner {
 }
 
 /*!
- * jQuery UI Resizable 1.13.2
- * http://jqueryui.com
+ * jQuery UI Resizable 1.14.1
+ * https://jqueryui.com
  *
- * Copyright jQuery Foundation and other contributors
+ * Copyright OpenJS Foundation and other contributors
  * Released under the MIT license.
- * http://jquery.org/license
+ * https://jquery.org/license
  */
 
 .ui-resizable {
@@ -812,7 +804,6 @@ input.ui-button::-moz-focus-inner {
   position: absolute;
   font-size: .1px;
   display: block;
-  -ms-touch-action: none;
   touch-action: none;
 }
 
@@ -886,16 +877,15 @@ input.ui-button::-moz-focus-inner {
 }
 
 /*!
- * jQuery UI Selectable 1.13.2
- * http://jqueryui.com
+ * jQuery UI Selectable 1.14.1
+ * https://jqueryui.com
  *
- * Copyright jQuery Foundation and other contributors
+ * Copyright OpenJS Foundation and other contributors
  * Released under the MIT license.
- * http://jquery.org/license
+ * https://jquery.org/license
  */
 
 .ui-selectable {
-  -ms-touch-action: none;
   touch-action: none;
 }
 
@@ -906,14 +896,14 @@ input.ui-button::-moz-focus-inner {
 }
 
 /*!
- * jQuery UI Selectmenu 1.13.2
- * http://jqueryui.com
+ * jQuery UI Selectmenu 1.14.1
+ * https://jqueryui.com
  *
- * Copyright jQuery Foundation and other contributors
+ * Copyright OpenJS Foundation and other contributors
  * Released under the MIT license.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://api.jqueryui.com/selectmenu/#theming
+ * https://api.jqueryui.com/selectmenu/#theming
  */
 
 .ui-selectmenu-menu {
@@ -964,28 +954,27 @@ input.ui-button::-moz-focus-inner {
 }
 
 /*!
- * jQuery UI Sortable 1.13.2
- * http://jqueryui.com
+ * jQuery UI Sortable 1.14.1
+ * https://jqueryui.com
  *
- * Copyright jQuery Foundation and other contributors
+ * Copyright OpenJS Foundation and other contributors
  * Released under the MIT license.
- * http://jquery.org/license
+ * https://jquery.org/license
  */
 
 .ui-sortable-handle {
-  -ms-touch-action: none;
   touch-action: none;
 }
 
 /*!
- * jQuery UI Slider 1.13.2
- * http://jqueryui.com
+ * jQuery UI Slider 1.14.1
+ * https://jqueryui.com
  *
- * Copyright jQuery Foundation and other contributors
+ * Copyright OpenJS Foundation and other contributors
  * Released under the MIT license.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://api.jqueryui.com/slider/#theming
+ * https://api.jqueryui.com/slider/#theming
  */
 
 .ui-slider {
@@ -999,7 +988,6 @@ input.ui-button::-moz-focus-inner {
   width: 1.2em;
   height: 1.2em;
   cursor: pointer;
-  -ms-touch-action: none;
   touch-action: none;
 }
 
@@ -1010,11 +998,6 @@ input.ui-button::-moz-focus-inner {
   display: block;
   border: 0;
   background-position: 0 0;
-}
-
-.ui-slider.ui-state-disabled .ui-slider-handle,
-.ui-slider.ui-state-disabled .ui-slider-range {
-  filter: inherit;
 }
 
 .ui-slider-horizontal {
@@ -1064,14 +1047,14 @@ input.ui-button::-moz-focus-inner {
 }
 
 /*!
- * jQuery UI Spinner 1.13.2
- * http://jqueryui.com
+ * jQuery UI Spinner 1.14.1
+ * https://jqueryui.com
  *
- * Copyright jQuery Foundation and other contributors
+ * Copyright OpenJS Foundation and other contributors
  * Released under the MIT license.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://api.jqueryui.com/spinner/#theming
+ * https://api.jqueryui.com/spinner/#theming
  */
 
 .ui-spinner {
@@ -1122,14 +1105,14 @@ input.ui-button::-moz-focus-inner {
 }
 
 /*!
- * jQuery UI Tabs 1.13.2
- * http://jqueryui.com
+ * jQuery UI Tabs 1.14.1
+ * https://jqueryui.com
  *
- * Copyright jQuery Foundation and other contributors
+ * Copyright OpenJS Foundation and other contributors
  * Released under the MIT license.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://api.jqueryui.com/tabs/#theming
+ * https://api.jqueryui.com/tabs/#theming
  */
 
 .ui-tabs {
@@ -1182,14 +1165,14 @@ input.ui-button::-moz-focus-inner {
 }
 
 /*!
- * jQuery UI Tooltip 1.13.2
- * http://jqueryui.com
+ * jQuery UI Tooltip 1.14.1
+ * https://jqueryui.com
  *
- * Copyright jQuery Foundation and other contributors
+ * Copyright OpenJS Foundation and other contributors
  * Released under the MIT license.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://api.jqueryui.com/tooltip/#theming
+ * https://api.jqueryui.com/tooltip/#theming
  */
 
 .ui-tooltip {
@@ -1204,16 +1187,16 @@ body .ui-tooltip {
 }
 
 /*!
- * jQuery UI CSS Framework 1.13.2
- * http://jqueryui.com
+ * jQuery UI CSS Framework 1.14.1
+ * https://jqueryui.com
  *
- * Copyright jQuery Foundation and other contributors
+ * Copyright OpenJS Foundation and other contributors
  * Released under the MIT license.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://api.jqueryui.com/category/theming/
+ * https://api.jqueryui.com/category/theming/
  *
- * To view and modify this theme, visit http://jqueryui.com/themeroller/
+ * To view and modify this theme, visit https://jqueryui.com/themeroller/
  */
 
 .ui-widget {
@@ -1387,7 +1370,6 @@ a.ui-button:active {
 .ui-widget-content .ui-priority-secondary,
 .ui-widget-header .ui-priority-secondary {
   opacity: .7;
-  -ms-filter: "alpha(opacity=70)";
   font-weight: 400;
 }
 
@@ -1395,12 +1377,7 @@ a.ui-button:active {
 .ui-widget-content .ui-state-disabled,
 .ui-widget-header .ui-state-disabled {
   opacity: .35;
-  -ms-filter: "alpha(opacity=35)";
   background-image: none;
-}
-
-.ui-state-disabled .ui-icon {
-  -ms-filter: "alpha(opacity=35)";
 }
 
 .ui-icon {
@@ -2174,10 +2151,8 @@ a.ui-button:active {
 .ui-widget-overlay {
   background: #aaa;
   opacity: .3;
-  -ms-filter: "alpha(opacity=30)";
 }
 
 .ui-widget-shadow {
-  -webkit-box-shadow: 0 0 5px #666;
   box-shadow: 0 0 5px #666;
 }

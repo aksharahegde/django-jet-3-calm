@@ -10,11 +10,11 @@
  */
 
 $background-color: #f8fafc;
-$text-color: #8B9AA7;
+$text-color: #8b9aa7;
 $dim-text-color: #c0c6cc;
 $error-text-color: #c7254e;
 
-$link-color: #70C2A5;
+$link-color: #70c2a5;
 $hover-link-color: #1cacfc;
 
 $contrast-color: #2faa60;
@@ -23,32 +23,31 @@ $font: Arial, sans-serif !default;
 $font-size: 14px;
 
 /*
- * Sidebar
- */
+  * Sidebar
+  */
 
 $sidebar-width: 250px;
 
 $sidebar-background-color: #009471;
-$sidebar-contrast-background-color: #008A63;
-$sidebar-contrast-border-color: #585858;
-$sidebar-contrast-text-color: #00AD7C;
+$sidebar-contrast-background-color: #008a63;
+$sidebar-contrast-text-color: #00ad7c;
 
-$sidebar-arrow-color: #0E674D;
-$sidebar-hover-arrow-color: #FDBB5E;
+$sidebar-arrow-color: #0e674d;
+$sidebar-hover-arrow-color: #fdbb5e;
 
-$sidebar-action-color: #6DC5A8;
-$sidebar-hover-action-color: #FDBB5E;
+$sidebar-action-color: #6dc5a8;
+$sidebar-hover-action-color: #fdbb5e;
 
 $sidebar-title-action-color: #fff;
-$sidebar-hover-title-action-item-color: #FDBB5E;
+$sidebar-hover-title-action-item-color: #fdbb5e;
 
-$sidebar-text-color: #6DC5A8;
-$sidebar-icon-color: #49B692;
-$sidebar-link-color: #B6E2D3;
+$sidebar-text-color: #6dc5a8;
+$sidebar-icon-color: #49b692;
+$sidebar-link-color: #b6e2d3;
 $sidebar-hover-link-color: #fff;
 $sidebar-hover-background-color: #01805c;
 
-$sidebar-popup-search-input-background-color: #E3ECF2;
+$sidebar-popup-search-input-background-color: #e3ecf2;
 $sidebar-popup-search-input-text-color: #7f8fa4;
 $sidebar-popup-search-input-placeholder-color: #bdcbde;
 
@@ -61,14 +60,14 @@ $sidebar-popup-hover-link-color: #fff;
 $sidebar-popup-hover-link-background-color: #1cacfc;
 
 /*
- * Top
- */
+  * Top
+  */
 
 $top-height: 32px;
 
-$top-text-color: #8B9EAB;
-$top-separator-color: #C6D8E4;
-$top-link-color: #C6D8E4;
+$top-text-color: #8b9eab;
+$top-separator-color: #c6d8e4;
+$top-link-color: #c6d8e4;
 $top-hover-link-color: #1cacfc;
 $top-border-color: #dce0e6;
 $top-icon-color: $contrast-color;
@@ -81,30 +80,30 @@ $top-dropdown-border-color: #02996e;
 $top-dropdown-link-color: #fff;
 $top-dropdown-hover-link-color: #fff;
 $top-dropdown-icon-color: #beebdb;
-$top-dropdown-selected-color: #EFEDC8;
+$top-dropdown-selected-color: #efedc8;
 
 /*
- * Content
- */
+  * Content
+  */
 
 $content-background-color: #fff;
-$content-contrast-background-color: #F8FAFC; //inline list bg
-$content-contrast2-background-color: #E3ECF2; //table header
-$content-contrast3-background-color: #EEF3F7; //dashboard, delete collapsable
-$content-selected-background-color: #FFFDDB;
+$content-contrast-background-color: #f8fafc; //inline list bg
+$content-contrast2-background-color: #e3ecf2; //table header
+$content-contrast3-background-color: #eef3f7; //dashboard, delete collapsable
+$content-selected-background-color: #fffddb;
 $content-contrast2-text-color: $text-color;
 $content-border-color: #f1f2f4; //row bottom
-$content-border2-color: #D5E3EC; //table bottom
-$content-selected-border-color: #EFEDC8;
+$content-border2-color: #d5e3ec; //table bottom
+$content-selected-border-color: #efedc8;
 
 $tab-selected-border-color: #1cacfc;
 $tab-error-border-color: #c7254e;
 
 /*
- * Buttons
- */
+  * Buttons
+  */
 
-$button-background-color: #E3ECF2;
+$button-background-color: #e3ecf2;
 $button-hover-background-color: #1cacfc;
 $button-active-background-color: $contrast-color;
 $button-text-color: #7f8fa4;
@@ -121,12 +120,12 @@ $background-button-background-color: #fff;
 $background-button-text-color: #7f8fa4;
 
 /*
- * Inputs
- */
+  * Inputs
+  */
 
 $input-background-color: #fff;
-$input-contrast-background-color: #E3ECF2;
-$input-border-color: #EDEDED;
+$input-contrast-background-color: #e3ecf2;
+$input-border-color: #ededed;
 $input-hover-background-color: #1cacfc;
 $input-icon-color: $contrast-color;
 $input-text-color: $text-color;
@@ -142,19 +141,19 @@ $background-input-border-color: #fff;
 $background-input-text-color: $text-color;
 
 /*
- * Messages
- */
+  * Messages
+  */
 
 $warning-color: #e75e40;
 $warning-text-color: #fff;
-$info-color: #FCA326;
+$info-color: #fca326;
 $info-text-color: #fff;
 $success-color: #2d9fd8;
 $success-text-color: #fff;
 
 /*
- * Login
- */
+  * Login
+  */
 
 $login-background-color: $sidebar-background-color;
 $login-title-text-color: #aaddcc;
@@ -164,8 +163,8 @@ $login-header-text-color: $content-contrast2-text-color;
 $login-content-background-color: #fff;
 
 /*
- * jQuery UI
- */
+  * jQuery UI
+  */
 
 $jquery-ui-buttonpane-background: $content-contrast2-background-color;
 
@@ -191,8 +190,8 @@ $jquery-ui-tooltip-background-color: #000;
 $jquery-ui-tooltip-text-color: #fff;
 
 /*
- * Charts
- */
+  * Charts
+  */
 
 $chart-fillColor: color.adjust($hover-link-color, $alpha: -0.75);
 $chart-strokeColor: $hover-link-color;
@@ -201,6 +200,3 @@ $chart-pointHighlightFill: $hover-link-color;
 $chart-scaleGridLineColor: color.adjust(#000, $alpha: -0.9);
 $chart-scaleLineColor: color.adjust(#000, $alpha: -0.9);
 $chart-scaleFontColor: $content-contrast2-text-color;
-
-// Paginator
-$paginator-active-background-color: $button-active-background-color;

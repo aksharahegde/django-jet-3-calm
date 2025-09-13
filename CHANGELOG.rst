@@ -1,5 +1,11 @@
 Changelog
 =========
+
+5.3.1
+-----
+- Logging out via GET requests to the built-in logout view is deprecated. Use POST requests instead.
+  Details: [#features-deprecated-in-4-1](https://docs.djangoproject.com/en/5.0/releases/4.1/#features-deprecated-in-4-1)
+
 5.3.0
 -----
 - Upgraded postcss from 8.4.32 to 8.4.32.
