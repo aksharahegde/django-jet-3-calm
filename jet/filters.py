@@ -1,5 +1,6 @@
 import datetime
 from collections import OrderedDict
+from zoneinfo import ZoneInfo
 
 from django import forms
 from django.conf import settings
@@ -79,14 +80,24 @@ class DateRangeFilter(admin.filters.FieldListFilter):
     @staticmethod
     def make_dt_aware(value):
         if settings.USE_TZ:
-            # Add ACT TIMEZONE to value since it's naive datetime.
+            # The following settings are not part of the standard Django settings,
+            # but they have been left in for backward compatibility.
+            # If `ACT_ZONEINFO` is not set, it will fallback to `settings.TIME_ZONE`.
             if hasattr(settings, "ACT_ZONEINFO"):
-                value = value.replace(tzinfo=settings.ACT_ZONEINFO)
+                act_zoneinfo = settings.ACT_ZONEINFO
             else:
-                value = value.replace(tzinfo=timezone.get_default_timezone())
-            # Convert to UTC used by DB
+                try:
+                    act_zoneinfo = ZoneInfo(settings.TIME_ZONE)
+                except (AttributeError, TypeError):
+                    act_zoneinfo = timezone.get_default_timezone()
+
+            # If `UTC_ZONEINFO` is not set, it will fallback to UTC.
             if hasattr(settings, "UTC_ZONEINFO"):
-                value = value.astimezone(settings.UTC_ZONEINFO)
+                utc_zoneinfo = settings.UTC_ZONEINFO
+            else:
+                utc_zoneinfo = ZoneInfo("UTC")
+
+            value = value.replace(tzinfo=act_zoneinfo).astimezone(utc_zoneinfo)
 
         return value
 
@@ -227,7 +238,7 @@ def multiple_choice_list_filter(**kwargs):
             returns: a list of tuples (value, verbose value)
             """
             if not self.lookup_choices:
-                ImproperlyConfigured(_("Choices are mandatory"))
+                raise ImproperlyConfigured(_("Choices are mandatory"))
 
             lookup_options = [(c, c) for c in self.lookup_choices]
             return sorted(lookup_options, key=lambda x: x[1])
