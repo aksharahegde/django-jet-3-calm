@@ -15,31 +15,30 @@ $text-color: #62a29c;
 $dim-text-color: #cceae4;
 $error-text-color: #c14747;
 
-$link-color: #7FB1DC;
+$link-color: #7fb1dc;
 $hover-link-color: #44b78b;
 
 $font: Arial, sans-serif;
 $font-size: 14px;
 
 /*
- * Sidebar
- */
+  * Sidebar
+  */
 
 $sidebar-width: 250px;
 
 $sidebar-background-color: #2e5955;
 $sidebar-contrast-background-color: #254d49;
-$sidebar-contrast-border-color: #585858;
 $sidebar-contrast-text-color: #62a29c;
 
-$sidebar-arrow-color: #7FB1DC;
-$sidebar-hover-arrow-color: #7FB1DC;
+$sidebar-arrow-color: #7fb1dc;
+$sidebar-hover-arrow-color: #7fb1dc;
 
 $sidebar-action-color: #44b78b;
-$sidebar-hover-action-color: #7FB1DC;
+$sidebar-hover-action-color: #7fb1dc;
 
 $sidebar-title-action-color: #44b78b;
-$sidebar-hover-title-action-item-color: #7FB1DC;
+$sidebar-hover-title-action-item-color: #7fb1dc;
 
 $sidebar-text-color: #62a29c;
 $sidebar-icon-color: #62a29c;
@@ -49,7 +48,10 @@ $sidebar-hover-background-color: #254d49;
 
 $sidebar-popup-search-input-background-color: #cceae4;
 $sidebar-popup-search-input-text-color: #62a29c;
-$sidebar-popup-search-input-placeholder-color: color.adjust(#6f7e95, $alpha: -0.5) !default;
+$sidebar-popup-search-input-placeholder-color: color.adjust(
+  #6f7e95,
+  $alpha: -0.5
+);
 
 $sidebar-popup-background-color: #eff6f5;
 $sidebar-popup-text-color: #62a29c;
@@ -57,19 +59,19 @@ $sidebar-popup-overlay-color: #000;
 
 $sidebar-popup-link-text-color: #62a29c;
 $sidebar-popup-hover-link-color: #fff;
-$sidebar-popup-hover-link-background-color: #7FB1DC;
+$sidebar-popup-hover-link-background-color: #7fb1dc;
 
 /*
- * Top
- */
+  * Top
+  */
 
 $top-height: 32px;
 
 $top-text-color: #62a29c;
-$top-separator-color: #B4DCD4;
-$top-link-color: #B4DCD4;
-$top-hover-link-color: #7FB1DC;
-$top-border-color: #B4DCD4;
+$top-separator-color: #b4dcd4;
+$top-link-color: #b4dcd4;
+$top-hover-link-color: #7fb1dc;
+$top-border-color: #b4dcd4;
 $top-icon-color: #44b78b;
 
 $top-dropdown-background-color: #62a29c;
@@ -83,8 +85,8 @@ $top-dropdown-icon-color: #eff6f5;
 $top-dropdown-selected-color: #e5e2a5;
 
 /*
- * Content
- */
+  * Content
+  */
 
 $content-background-color: #fff;
 $content-contrast-background-color: #f5fdfa; //inline list bg
@@ -96,15 +98,15 @@ $content-border-color: #f5f3f4; //row bottom
 $content-border2-color: #cceae4; //table bottom
 $content-selected-border-color: #e5e2a5;
 
-$tab-selected-border-color: #7FB1DC;
+$tab-selected-border-color: #7fb1dc;
 $tab-error-border-color: #c14747;
 
 /*
- * Buttons
- */
+  * Buttons
+  */
 
 $button-background-color: #cceae4;
-$button-hover-background-color: #7FB1DC;
+$button-hover-background-color: #7fb1dc;
 $button-active-background-color: #62a29c;
 $button-text-color: #62a29c;
 $button-hover-text-color: #fff;
@@ -120,13 +122,13 @@ $background-button-background-color: #fff;
 $background-button-text-color: #62a29c;
 
 /*
- * Inputs
- */
+  * Inputs
+  */
 
 $input-background-color: #fff;
 $input-contrast-background-color: #cceae4;
 $input-border-color: #eff6f5;
-$input-hover-background-color: #7FB1DC;
+$input-hover-background-color: #7fb1dc;
 $input-icon-color: #44b78b;
 $input-text-color: #62a29c;
 $input-contrast-text-color: #62a29c;
@@ -134,15 +136,15 @@ $input-hover-text-color: #fff;
 $input-selected-text-color: #44b78b;
 $input-disabled-text-color: #cceae4;
 $input-placeholder-color: #cceae4;
-$input-shadow-color: color.adjust(#44b78b, $alpha: -0.25) !default;
+$input-shadow-color: color.adjust(#44b78b, $alpha: -0.25);
 
 $background-input-background-color: #fff;
 $background-input-border-color: #fff;
 $background-input-text-color: #62a29c;
 
 /*
- * Messages
- */
+  * Messages
+  */
 
 $warning-color: #f0dada;
 $warning-text-color: #dba4a4;
@@ -152,8 +154,8 @@ $success-color: #e0eec5;
 $success-text-color: #bcd386;
 
 /*
- * Login
- */
+  * Login
+  */
 
 $login-background-color: #2e5955;
 $login-title-text-color: #62a29c;
@@ -163,8 +165,8 @@ $login-header-text-color: #fff;
 $login-content-background-color: #fff;
 
 /*
- * jQuery UI
- */
+  * jQuery UI
+  */
 
 $jquery-ui-buttonpane-background: #eff6f5;
 
@@ -172,8 +174,8 @@ $jquery-ui-state-default-background-color: #fff;
 $jquery-ui-state-default-border-color: #eff6f5;
 $jquery-ui-state-default-text-color: #62a29c;
 
-$jquery-ui-state-hover-background-color: #7FB1DC;
-$jquery-ui-state-hover-border-color: #7FB1DC;
+$jquery-ui-state-hover-background-color: #7fb1dc;
+$jquery-ui-state-hover-border-color: #7fb1dc;
 $jquery-ui-state-hover-text-color: #fff;
 
 $jquery-ui-state-active-background-color: #44b78b;
@@ -181,8 +183,8 @@ $jquery-ui-state-active-border-color: #44b78b;
 $jquery-ui-state-active-text-color: #fff;
 
 $jquery-ui-state-highlight-background-color: #fff;
-$jquery-ui-state-highlight-border-color: #7FB1DC;
-$jquery-ui-state-highlight-text-color: #7FB1DC;
+$jquery-ui-state-highlight-border-color: #7fb1dc;
+$jquery-ui-state-highlight-text-color: #7fb1dc;
 
 $jquery-ui-overlay-color: #000;
 
@@ -190,16 +192,13 @@ $jquery-ui-tooltip-background-color: #000;
 $jquery-ui-tooltip-text-color: #fff;
 
 /*
- * Charts
- */
+  * Charts
+  */
 
-$chart-fillColor: color.adjust($hover-link-color, $alpha: -0.75) !default;
+$chart-fillColor: color.adjust($hover-link-color, $alpha: -0.75);
 $chart-strokeColor: $hover-link-color;
 $chart-pointColor: $content-contrast2-text-color;
 $chart-pointHighlightFill: $hover-link-color;
-$chart-scaleGridLineColor: color.adjust(#000, $alpha: -0.9) !default;
-$chart-scaleLineColor: color.adjust(#000, $alpha: -0.9) !default;
+$chart-scaleGridLineColor: color.adjust(#000, $alpha: -0.9);
+$chart-scaleLineColor: color.adjust(#000, $alpha: -0.9);
 $chart-scaleFontColor: $content-contrast2-text-color;
-
-// Paginator
-$paginator-active-background-color: #62a29c;
