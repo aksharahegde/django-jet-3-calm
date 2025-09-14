@@ -38,7 +38,7 @@
                              ->T-Rex<-
 */
 
-const DOMPurify = require('dompurify');
+
 
 (function ($) {
 
@@ -274,7 +274,7 @@ const DOMPurify = require('dompurify');
             var isRTL = this._get(inst, 'isRTL');
             if (inst.append) { inst.append.remove(); }
             if (appendText) {
-                inst.append = $('<span class="' + this._appendClass + '">' + appendText + '</span>');
+                inst.append = $('<span class="' + this._appendClass + '"></span>').text(appendText);
                 input[isRTL ? 'before' : 'after'](inst.append);
             }
             input.unbind('focus.timepicker', this._showTimepicker);
