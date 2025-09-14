@@ -44,6 +44,13 @@ const DOMPurify = require('dompurify');
 
     $.extend($.ui, { timepicker: { version: "0.3.3"} });
 
+    // Polyfill for $.escapeSelector if missing (jQuery >=3.0 has it)
+    if (typeof $.escapeSelector !== 'function') {
+        $.escapeSelector = function(sel) {
+            return sel.replace(/([!"#$%&'()*+,.\/:;<=>?@[\\\]^`{|}~])/g, "\\$1");
+        };
+    }
+
     var PROP_NAME = 'timepicker',
         tpuuid = new Date().getTime();
 
@@ -1302,7 +1309,7 @@ const DOMPurify = require('dompurify');
                 id = $td.attr("data-timepicker-instance-id"),
                 newMinutes = parseInt($td.attr("data-minute")),
                 fromDoubleClick = event.data.fromDoubleClick,
-                $target = $(id),
+                $target = $('#' + $.escapeSelector(id)),
                 inst = this._getInst($target[0]),
                 showHours = (this._get(inst, 'showHours') == true);
 
