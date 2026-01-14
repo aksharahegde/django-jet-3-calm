@@ -5,6 +5,7 @@
   "license": "AGPL-3.0",
   "devDependencies": {
     "autoprefixer": "^10.4.21",
+    "baseline-browser-mapping": "^2.9.11",
     "browserify": "^17.0.1",
     "browsernizr": "2.3.0",
     "es6-promise": "4.2.8",

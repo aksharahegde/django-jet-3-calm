@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "django-jet-calm"
-version = "5.4.0"
+version = "5.4.1"
 description = "Modern template for Django-4 admin interface with improved functionality"
 readme = "README.rst"
 license = "AGPL-3.0-or-later"
