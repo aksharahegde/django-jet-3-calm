@@ -38,7 +38,27 @@
                              ->T-Rex<-
 */
 
+if (button == null) {
+    // Build element safely and set label as text
+    button = $('<button>', { class: 'ui-timepicker-trigger', type: 'button' }).text('...');
+    input.after(button);
+}
 
+closeButtonText = escapeHtml(this._get(inst, 'closeButtonText')),
+nowButtonText = escapeHtml(this._get(inst, 'nowButtonText')),
+deselectButtonText = escapeHtml(this._get(inst, 'deselectButtonText')),
+
+function extendRemove(target, props) {
+    $.extend(target, props);
+    for (var name in props)
+        if (props[name] == null || props[name] == undefined)
+            target[name] = props[name];
+    return target;
+};
+
+function escapeHtml(text) {
+    return $('<div/>').text(text == null ? '' : String(text)).html();
+}
 
 (function ($) {
 
