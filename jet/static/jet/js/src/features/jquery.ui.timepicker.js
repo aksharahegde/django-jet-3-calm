@@ -776,10 +776,10 @@ const DOMPurify = require("dompurify");
         amFirstRow = 0,
         pmFirstRow = 0,
         hours = Array(),
-        hours_options = this._get(inst, "hours"),
+        hours_options = DOMPurify.sanitize(this._get(inst, "hours")),
         hoursPerRow = null,
         hourCounter = 0,
-        hourLabel = this._get(inst, "hourText"),
+        hourLabel = DOMPurify.sanitize(this._get(inst, "hourText")),
         showCloseButton = this._get(inst, "showCloseButton"),
         closeButtonText = DOMPurify.sanitize(
           this._get(inst, "closeButtonText")
