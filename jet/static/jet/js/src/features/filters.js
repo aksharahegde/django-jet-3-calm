@@ -42,7 +42,7 @@ Filters.prototype = {
                 if (url) {
                     document.location = $selectedOption.data('url');
                 } else if (querysetLookup) {
-                    document.location = '?' + querysetLookup + '=' + $selectedOption.val();
+                    document.location = '?' + querysetLookup + '=' + encodeURIComponent($selectedOption.val());
                 }
             });
         });
