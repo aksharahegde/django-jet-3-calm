@@ -8,7 +8,6 @@ const sass = require("gulp-sass")(require("sass")); // Switch to Dart Sass
 const uglify = require("gulp-uglify");
 const buffer = require("vinyl-buffer");
 const source = require("vinyl-source-stream");
-const sourcemaps = require("gulp-sourcemaps");
 const merge = require("merge-stream");
 const postcss = require("gulp-postcss");
 const pxtorem = require("postcss-pxtorem");
@@ -47,18 +46,12 @@ gulp.task("scripts", function () {
 gulp.task("styles", function () {
   return gulp
     .src("./jet/static/jet/css/**/*.scss", { allowEmpty: true })
-    .pipe(sourcemaps.init())
     .pipe(sass({ outputStyle: "compressed" }))
     .on("error", function (error) {
       console.error("sass error:", error);
       this.emit("end");
     })
     .pipe(postcss(cssProcessors))
-    .on("error", function (error) {
-      console.error("postcss error:", error);
-      this.emit("end");
-    })
-    .pipe(sourcemaps.write("./"))
     .pipe(gulp.dest("./jet/static/jet/css"));
 });
 
