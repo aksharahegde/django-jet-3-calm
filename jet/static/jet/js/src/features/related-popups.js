@@ -18,7 +18,7 @@ RelatedPopups.prototype = {
             var value = $select.val();
 
             if (value) {
-                $link.attr('href', hrefTemplate.replace('__fk__', value))
+                $link.attr('href', hrefTemplate.replace('__fk__', encodeURIComponent(value)))
             } else {
                 $link.removeAttr('href');
             }
