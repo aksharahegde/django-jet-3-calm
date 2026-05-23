@@ -2,6 +2,11 @@
 
 All notable changes to django-jet-calm will be documented in this file.
 
+## [Unreleased]
+
+### Security
+- Upgraded Django to 5.2.14 to address CVE-2026-5766 (GHSA-w26r-rmm8-9c29)
+
 ## [5.3.14] - 2026-04-11
 
 ### Security
