@@ -2,6 +2,11 @@
 
 All notable changes to django-jet-calm will be documented in this file.
 
+## [Unreleased]
+
+### Security
+- Pinned transitive `qs` to 6.15.2 to address CVE-2026-8723 (GHSA-q8mj-m7cp-5q26)
+
 ## [5.3.14] - 2026-04-11
 
 ### Security
