@@ -34,5 +34,8 @@
   },
   "scripts": {
     "build": "gulp build"
+  },
+  "resolutions": {
+    "qs": "6.15.2"
   }
 }
