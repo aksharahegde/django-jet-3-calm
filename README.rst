@@ -23,7 +23,7 @@ and applications without the provisions of the AGPLv3.
 
 * Documentation: http://jet.readthedocs.org/ (Old official version)
 * libi.io http://libi.io/library/1683/django-jet (Old official version)
-* PyPI: https://pypi.python.org/pypi/django-jet (Old official version)
+* PyPI: https://pypi.org/project/django-jet-calm/
 
 Why Django JET?
 ===============
@@ -62,7 +62,7 @@ Installation
 
 .. code:: python
 
-    pip install django-jet-calm==<version>
+    pip install django-jet-calm==5.4.3
 
 * Add 'jet' application to the INSTALLED_APPS setting of your Django project settings.py file (note it should be before 'django.contrib.admin'):
 
