@@ -171,6 +171,23 @@ const DOMPurify = require("dompurify");
     };
   }
 
+  /* Resolve plugin option to jQuery elements without interpreting strings as HTML. */
+  function resolveTimepickerElement(element) {
+    if (element == null) {
+      return $();
+    }
+    if (element.jquery) {
+      return element;
+    }
+    if (element.nodeType === 1) {
+      return $.merge($(), [element]);
+    }
+    if (typeof element === "string") {
+      return $.find(element);
+    }
+    return $();
+  }
+
   var PROP_NAME = "timepicker",
     tpuuid = new Date().getTime();
 
@@ -417,7 +434,9 @@ const DOMPurify = require("dompurify");
       }
       if (appendText) {
         inst.append = $(
-          '<span class="' + this._appendClass + '">' + appendText + "</span>"
+          DOMPurify.sanitize(
+            '<span class="' + this._appendClass + '">' + appendText + "</span>"
+          )
         );
         input[isRTL ? "before" : "after"](inst.append);
       }
@@ -436,18 +455,19 @@ const DOMPurify = require("dompurify");
       }
       if (showOn == "button" || showOn == "both") {
         // pop-up time picker when 'button' element is clicked
-        var button = this._get(inst, "button");
+        var button = resolveTimepickerElement(this._get(inst, "button"));
 
         // Add button if button element is not set
-        if (button == null) {
+        if (!button.length) {
           button = $(
-            '<button class="ui-timepicker-trigger" type="button">...</button>'
+            DOMPurify.sanitize(
+              '<button class="ui-timepicker-trigger" type="button">...</button>'
+            )
           );
-          button = $(DOMPurify.sanitize(button));
           input.after(button);
         }
 
-        $(button).bind("click.timepicker", function () {
+        button.bind("click.timepicker", function () {
           if (
             $.timepicker._timepickerShowing &&
             $.timepicker._lastInput == input[0]
@@ -767,7 +787,9 @@ const DOMPurify = require("dompurify");
         showLeadingZero = this._get(inst, "showLeadingZero") == true,
         showHours = this._get(inst, "showHours") == true,
         showMinutes = this._get(inst, "showMinutes") == true,
-        amPmText = this._get(inst, "amPmText"),
+        amPmText = this._get(inst, "amPmText").map(function (text) {
+          return DOMPurify.sanitize(text);
+        }),
         rows = this._get(inst, "rows"),
         amRows = 0,
         pmRows = 0,
@@ -937,11 +959,11 @@ const DOMPurify = require("dompurify");
             "</button>";
         }
 
-        html += buttonPanel + "</div></td></tr>";
+        html += DOMPurify.sanitize(buttonPanel + "</div></td></tr>");
       }
       html += "</table>";
 
-      return html;
+      return DOMPurify.sanitize(html);
     },
 
     /* Special function that update the minutes selection in currently visible timepicker
@@ -975,7 +997,7 @@ const DOMPurify = require("dompurify");
         showMinutesLeadingZero =
           this._get(inst, "showMinutesLeadingZero") == true,
         onMinuteShow = this._get(inst, "onMinuteShow"),
-        minuteLabel = this._get(inst, "minuteText");
+        minuteLabel = DOMPurify.sanitize(this._get(inst, "minuteText"));
 
       if (!minutes_options.starts) {
         minutes_options.starts = 0;
@@ -1072,7 +1094,7 @@ const DOMPurify = require("dompurify");
 
       html += "</table>";
 
-      return html;
+      return DOMPurify.sanitize(html);
     },
 
     /* Generate the content of a "Hour" cell */
@@ -1233,8 +1255,10 @@ const DOMPurify = require("dompurify");
       var nodeName = target.nodeName.toLowerCase();
       if (nodeName == "input") {
         target.disabled = false;
-        var button = this._get(inst, "button");
-        $(button).removeClass("ui-state-disabled").disabled = false;
+        var button = resolveTimepickerElement(this._get(inst, "button"));
+        if (button.length) {
+          button.removeClass("ui-state-disabled").prop("disabled", false);
+        }
         inst.trigger
           .filter("button")
           .each(function () {
@@ -1263,9 +1287,10 @@ const DOMPurify = require("dompurify");
       }
       var nodeName = target.nodeName.toLowerCase();
       if (nodeName == "input") {
-        var button = this._get(inst, "button");
-
-        $(button).addClass("ui-state-disabled").disabled = true;
+        var button = resolveTimepickerElement(this._get(inst, "button"));
+        if (button.length) {
+          button.addClass("ui-state-disabled").prop("disabled", true);
+        }
         target.disabled = true;
 
         inst.trigger
@@ -1854,7 +1879,7 @@ const DOMPurify = require("dompurify");
       var altField = this._get(inst, "altField");
       if (altField) {
         // update alternate field too
-        $(altField).each(function (i, e) {
+        resolveTimepickerElement(altField).each(function (i, e) {
           $(e).val(newTime);
         });
       }
@@ -1905,7 +1930,9 @@ const DOMPurify = require("dompurify");
   /* Invoke the timepicker functionality.
     @param  options  string - a command, optionally followed by additional parameters or
     Object - settings for attaching new timepicker functionality
-    @return  jQuery object */
+    @return  jQuery object
+    @option {string|Element|jQuery} button - CSS selector, DOM element, or jQuery object (not HTML)
+    @option {string|Element|jQuery} altField - CSS selector, DOM element, or jQuery object (not HTML) */
   $.fn.timepicker = function (options) {
     /* Initialise the time picker. */
     if (!$.timepicker.initialized) {
