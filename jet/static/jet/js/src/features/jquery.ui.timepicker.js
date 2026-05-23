@@ -174,18 +174,18 @@ const DOMPurify = require("dompurify");
   /* Resolve plugin option to jQuery elements without interpreting strings as HTML. */
   function resolveTimepickerElement(element) {
     if (element == null) {
-      return $([]);
+      return $();
     }
     if (element.jquery) {
       return element;
     }
     if (element.nodeType === 1) {
-      return $(element);
+      return $.merge($(), [element]);
     }
     if (typeof element === "string") {
-      return $(document).find(element);
+      return $.find(element);
     }
-    return $(element);
+    return $();
   }
 
   var PROP_NAME = "timepicker",
@@ -1930,7 +1930,9 @@ const DOMPurify = require("dompurify");
   /* Invoke the timepicker functionality.
     @param  options  string - a command, optionally followed by additional parameters or
     Object - settings for attaching new timepicker functionality
-    @return  jQuery object */
+    @return  jQuery object
+    @option {string|Element|jQuery} button - CSS selector, DOM element, or jQuery object (not HTML)
+    @option {string|Element|jQuery} altField - CSS selector, DOM element, or jQuery object (not HTML) */
   $.fn.timepicker = function (options) {
     /* Initialise the time picker. */
     if (!$.timepicker.initialized) {
