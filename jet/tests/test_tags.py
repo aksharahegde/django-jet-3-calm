@@ -1,4 +1,5 @@
 from django import forms
+from django.contrib.auth.models import User
 from django.test import TestCase
 from django.test.client import RequestFactory
 from django.urls import reverse
@@ -14,6 +15,10 @@ class TagsTestCase(TestCase):
     def setUp(self):
         self.models = []
         self.searchable_models = []
+        self.user = User.objects.create_superuser(
+            "admin", "admin@example.com", "password"
+        )
+        self.factory = RequestFactory()
 
         self.models.append(TestModel.objects.create(field1="first", field2=1))
         self.models.append(TestModel.objects.create(field1="second", field2=2))
@@ -23,6 +28,11 @@ class TagsTestCase(TestCase):
         self.searchable_models.append(
             SearchableTestModel.objects.create(field1="second", field2=2)
         )
+
+    def _admin_request(self, url):
+        request = self.factory.get(url)
+        request.user = self.user
+        return request
 
     def test_select2_lookups(self):
         class TestForm(forms.Form):
@@ -83,7 +93,7 @@ class TagsTestCase(TestCase):
         context = {
             "original": instance,
             "preserved_filters": preserved_filters,
-            "request": RequestFactory().get(expected_url),
+            "request": self._admin_request(expected_url),
         }
 
         actual_url = jet_next_object(context)["url"]
@@ -108,7 +118,7 @@ class TagsTestCase(TestCase):
         context = {
             "original": instance,
             "preserved_filters": preserved_filters,
-            "request": RequestFactory().get(changelist_url),
+            "request": self._admin_request(changelist_url),
         }
 
         previous_object = jet_previous_object(context)
