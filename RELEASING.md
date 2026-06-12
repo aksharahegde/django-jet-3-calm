@@ -39,4 +39,4 @@ unzip -l dist/django_jet_calm-*-py3-none-any.whl | grep -E 'bundle.min.js|jet/lo
 ## Links
 
 - **Package:** https://pypi.org/project/django-jet-calm/
-- **Install:** `pip install django-jet-calm==5.4.3`
+- **Install:** `pip install django-jet-calm==5.4.4`

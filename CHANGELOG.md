@@ -4,6 +4,14 @@ All notable changes to django-jet-calm will be documented in this file.
 
 ## [Unreleased]
 
+## [5.4.4] - 2026-06-12
+
+### Fixed
+- Restored test suite compatibility with Django 5.2 admin APIs (#68)
+
+### Changed
+- Bumped `shell-quote` to 1.8.4 (#67)
+
 ## [5.4.3] - 2026-05-23
 
 ### Security
