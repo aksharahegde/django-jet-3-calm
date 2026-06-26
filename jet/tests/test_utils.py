@@ -11,8 +11,8 @@ from jet.tests.models import TestModel
 from jet.utils import context_to_dict
 from jet.utils import get_admin_site
 from jet.utils import get_app_list
-from jet.utils import get_model_instance_label
 from jet.utils import get_menu_item_url
+from jet.utils import get_model_instance_label
 from jet.utils import get_possible_language_codes
 from jet.utils import JsonResponse
 from jet.utils import LazyDateTimeEncoder
@@ -122,7 +122,9 @@ class UtilsTestCase(TestCase):
             "/admin/tests/testmodel/",
         )
         self.assertEqual(
-            get_menu_item_url({"type": "reverse", "name": "admin:index"}, original_app_list),
+            get_menu_item_url(
+                {"type": "reverse", "name": "admin:index"}, original_app_list
+            ),
             "/admin/",
         )
         self.assertEqual(

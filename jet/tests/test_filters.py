@@ -1,14 +1,14 @@
 from django.contrib import admin
-from django.contrib.auth.models import User
 from django.contrib.admin.utils import get_fields_from_path
+from django.contrib.auth.models import User
 from django.core.exceptions import ImproperlyConfigured
 from django.test import RequestFactory
 from django.test import TestCase
 from django.utils.encoding import smart_str
 
 from jet.filters import DateRangeFilter
-from jet.filters import RelatedFieldAjaxListFilter
 from jet.filters import multiple_choice_list_filter
+from jet.filters import RelatedFieldAjaxListFilter
 from jet.tests.models import RelatedToTestModel
 from jet.tests.models import TestModel
 
@@ -197,8 +197,12 @@ class FiltersTestCase(TestCase):
 
         choice_items = list(list_filter.choices(ChangeList()))
         self.assertEqual(choice_items[0]["display"], "Reset")
-        first_choice = [item for item in choice_items if item.get("display") == "first"][0]
-        second_choice = [item for item in choice_items if item.get("display") == "second"][0]
+        first_choice = [
+            item for item in choice_items if item.get("display") == "first"
+        ][0]
+        second_choice = [
+            item for item in choice_items if item.get("display") == "second"
+        ][0]
         self.assertTrue(first_choice["selected"])
         self.assertIn("field1__in=first,second", second_choice["include_query_string"])
         self.assertEqual(first_choice["exclude_query_string"], "removed")
@@ -207,4 +211,6 @@ class FiltersTestCase(TestCase):
         filter_class = multiple_choice_list_filter(title="field1")
         request = self.factory.get("url")
         with self.assertRaises(ImproperlyConfigured):
-            filter_class(request, request.GET.copy(), TestModel, admin.site._registry[TestModel])
+            filter_class(
+                request, request.GET.copy(), TestModel, admin.site._registry[TestModel]
+            )
