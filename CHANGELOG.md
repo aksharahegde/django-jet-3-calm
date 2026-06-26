@@ -4,6 +4,13 @@ All notable changes to django-jet-calm will be documented in this file.
 
 ## [Unreleased]
 
+## [5.4.5] - 2026-06-26
+
+### Changed
+- Upgraded backend Python dependency constraints across package metadata and requirements.
+- Bumped Django from 5.2.14 to 5.2.15.
+- Aligned and pinned `six` and `django-rangefilter` declarations in backend dependency manifests.
+
 ## [5.4.4] - 2026-06-12
 
 ### Fixed
