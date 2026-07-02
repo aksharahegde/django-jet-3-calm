@@ -4,6 +4,15 @@ All notable changes to django-jet-calm will be documented in this file.
 
 ## [Unreleased]
 
+## [5.4.6] - 2026-07-02
+
+### Added
+- Backend coverage gate in CI with a 75% threshold (`backend-coverage` workflow).
+- Expanded tests for filter and utility helpers.
+
+### Changed
+- Configured pytest coverage defaults in `pyproject.toml` (production code only; tests omitted).
+
 ## [5.4.5] - 2026-06-26
 
 ### Changed
