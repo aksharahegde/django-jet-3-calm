@@ -60,6 +60,7 @@ addopts = "--cov=jet --cov-report=term-missing --cov-fail-under=75"
 
 [tool.coverage.run]
 omit = [
+    "jet/tests/*",
     "jet/dashboard/dashboard_modules/*",
     "jet/south_migrations/*",
     "jet/dashboard/south_migrations/*",
