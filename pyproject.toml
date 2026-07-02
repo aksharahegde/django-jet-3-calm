@@ -48,8 +48,23 @@ Documentation = "https://github.com/aksharahegde/django-jet-3-calm#readme"
 dev = [
     "pytest",
     "pytest-django",
+    "pytest-cov",
     "black",
     "flake8",
+]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "jet.tests.settings"
+testpaths = ["jet/tests"]
+addopts = "--cov=jet --cov-report=term-missing --cov-fail-under=75"
+
+[tool.coverage.run]
+omit = [
+    "jet/tests/*",
+    "jet/dashboard/dashboard_modules/*",
+    "jet/south_migrations/*",
+    "jet/dashboard/south_migrations/*",
+    "jet/management/commands/*",
 ]
 
 [tool.setuptools]

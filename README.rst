@@ -117,6 +117,15 @@ Installation
 .. code:: python
 
         python manage.py collectstatic
+
+Backend test coverage check
+===========================
+
+Run the backend coverage gate locally:
+
+.. code:: bash
+
+    python -m pytest
         
 * Clear your browser cache
 
