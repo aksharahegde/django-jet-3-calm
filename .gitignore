@@ -9,3 +9,8 @@
 .vscode/
 .build/
 build/
+.coverage
+.cursor/
+.venv/
+graphify-out/
+jet/db.sqlite3
