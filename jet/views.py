@@ -34,7 +34,7 @@ def _build_navigation_items(request):
                 items.append(
                     {
                         "type": "model",
-                        "label": "{} › {}".format(app_label, model_label),
+                        "label": f"{app_label} › {model_label}",
                         "url": model["url"],
                     }
                 )
