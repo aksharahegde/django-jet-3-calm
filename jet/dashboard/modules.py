@@ -609,3 +609,62 @@ class Feed(DashboardModule):
                     "warning": True,
                 }
             )
+
+
+class ModelStatsSettingsForm(forms.Form):
+    limit = forms.IntegerField(label=_("Models limit"), min_value=1, initial=10)
+
+
+class ModelStats(DashboardModule):
+    title = _("Model Statistics")
+    template = "jet.dashboard/modules/model_stats.html"
+    limit = 10
+    settings_form = ModelStatsSettingsForm
+
+    def settings_dict(self):
+        return {"limit": self.limit}
+
+    def load_settings(self, settings):
+        self.limit = settings.get("limit", 10)
+
+    def init_with_context(self, context):
+        from django.contrib import admin
+
+        request = context["request"]
+        stats = []
+
+        for app in admin.site.get_app_list(request):
+            for model in app.get("models", []):
+                model_class = model.get("model")
+                if model_class is None:
+                    continue
+                stats.append(
+                    {
+                        "app": app["name"],
+                        "name": model["name"],
+                        "url": model.get("admin_url"),
+                        "count": model_class.objects.count(),
+                    }
+                )
+
+        self.children = sorted(stats, key=lambda item: -item["count"])[: int(self.limit)]
+
+
+class ExternalEmbedSettingsForm(forms.Form):
+    embed_url = forms.URLField(label=_("Embed URL"), required=False)
+    height = forms.IntegerField(label=_("Height (px)"), min_value=100, initial=400)
+
+
+class ExternalEmbed(DashboardModule):
+    title = _("External Embed")
+    template = "jet.dashboard/modules/external_embed.html"
+    embed_url = None
+    height = 400
+    settings_form = ExternalEmbedSettingsForm
+
+    def settings_dict(self):
+        return {"embed_url": self.embed_url, "height": self.height}
+
+    def load_settings(self, settings):
+        self.embed_url = settings.get("embed_url")
+        self.height = settings.get("height", 400)

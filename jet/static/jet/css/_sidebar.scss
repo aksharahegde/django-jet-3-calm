@@ -559,4 +559,20 @@
       display: none;
     }
   }
+
+  &.compact-mode {
+    .sidebar-section {
+      .sidebar-title {
+        margin-bottom: 4px;
+      }
+
+      .sidebar-link {
+        padding-left: 28px;
+      }
+    }
+
+    .popup-section-link .sidebar-right-arrow {
+      display: none;
+    }
+  }
 }

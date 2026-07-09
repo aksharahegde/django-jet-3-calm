@@ -64,6 +64,16 @@ You can allow your users to change admin panel color scheme. This option will ad
             'theme': 'light-gray',
             'color': '#222',
             'title': 'Light Gray'
+        },
+        {
+            'theme': 'dark',
+            'color': '#1a1d23',
+            'title': 'Dark'
+        },
+        {
+            'theme': 'dark-blue',
+            'color': '#0f1724',
+            'title': 'Dark Blue'
         }
     ]
 

@@ -207,6 +207,8 @@ class DefaultIndexDashboard(Dashboard):
     def init_with_context(self, context):
         self.available_children.append(modules.LinkList)
         self.available_children.append(modules.Feed)
+        self.available_children.append(modules.ModelStats)
+        self.available_children.append(modules.ExternalEmbed)
 
         # append an app list module for "Administration"
         self.children.append(

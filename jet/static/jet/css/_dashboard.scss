@@ -512,3 +512,15 @@ ul.actionlist li {
     }
   }
 }
+
+.model-stats-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th,
+  td {
+    padding: 8px 10px;
+    border-bottom: 1px solid $content-border2-color;
+    text-align: left;
+  }
+}

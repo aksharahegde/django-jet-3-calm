@@ -247,3 +247,57 @@ class ViewsTestCase(TestCase):
         response = json.loads(response.content.decode())
         self.assertFalse(response["error"])
         self.assertFalse(UserDashboardModule.objects.filter(pk=module.pk).exists())
+
+    def test_navigation_lookup_view(self):
+        response = self.admin.get(reverse("jet:navigation_lookup"), {"q": "test"})
+        self.assertEqual(response.status_code, 200)
+        payload = json.loads(response.content.decode())
+        self.assertFalse(payload["error"])
+        self.assertIn("items", payload)
+
+    def test_saved_filter_views(self):
+        response = self.admin.post(
+            reverse("jet:save_filter_view"),
+            {
+                "app_label": "tests",
+                "model_name": "testmodel",
+                "name": "Active",
+                "query_string": "status__exact=1",
+            },
+        )
+        self.assertEqual(response.status_code, 200)
+        payload = json.loads(response.content.decode())
+        self.assertFalse(payload["error"])
+
+        response = self.admin.get(
+            reverse("jet:list_saved_filter_views"),
+            {"app_label": "tests", "model_name": "testmodel"},
+        )
+        payload = json.loads(response.content.decode())
+        self.assertEqual(len(payload["items"]), 1)
+
+        response = self.admin.post(
+            reverse("jet:delete_saved_filter_view"), {"id": payload["items"][0]["id"]}
+        )
+        payload = json.loads(response.content.decode())
+        self.assertFalse(payload["error"])
+
+    def test_user_preferences_views(self):
+        response = self.admin.get(reverse("jet:get_preferences"))
+        self.assertEqual(response.status_code, 200)
+        payload = json.loads(response.content.decode())
+        self.assertFalse(payload["error"])
+
+        response = self.admin.post(
+            reverse("jet:save_preferences"),
+            {
+                "theme": "dark",
+                "side_menu_compact": "true",
+                "sidebar_pinned": "false",
+            },
+        )
+        payload = json.loads(response.content.decode())
+        self.assertFalse(payload["error"])
+        self.assertEqual(payload["theme"], "dark")
+        self.assertTrue(payload["side_menu_compact"])
+        self.assertFalse(payload["sidebar_pinned"])

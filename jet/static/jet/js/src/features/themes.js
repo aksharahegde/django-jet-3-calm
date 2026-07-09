@@ -54,6 +54,15 @@ Themes.prototype = {
         });
     },
     run: function() {
+        if (!Cookies.get('JET_THEME') && window.matchMedia) {
+            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                var $darkLink = $('.choose-theme[data-theme="dark"]');
+                if ($darkLink.length) {
+                    $darkLink.trigger('click');
+                }
+            }
+        }
+
         var $chooser = $('.theme-chooser');
 
         try {

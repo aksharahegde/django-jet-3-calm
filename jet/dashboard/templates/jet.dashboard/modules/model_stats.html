@@ -1,0 +1,30 @@
+{% load i18n %}
+
+{% if module.children %}
+    <table class="model-stats-table">
+        <thead>
+            <tr>
+                <th>{% trans "Application" %}</th>
+                <th>{% trans "Model" %}</th>
+                <th>{% trans "Records" %}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in module.children %}
+                <tr>
+                    <td>{{ item.app }}</td>
+                    <td>
+                        {% if item.url %}
+                            <a href="{{ item.url }}">{{ item.name }}</a>
+                        {% else %}
+                            {{ item.name }}
+                        {% endif %}
+                    </td>
+                    <td>{{ item.count }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>{% trans "No models available" %}</p>
+{% endif %}

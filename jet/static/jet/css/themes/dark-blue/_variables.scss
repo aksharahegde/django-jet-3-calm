@@ -1,0 +1,157 @@
+@use "sass:color";
+
+$background-color: #0f1724;
+$text-color: #c8d4e6;
+$dim-text-color: #6f819c;
+$error-text-color: #f07178;
+
+$link-color: #5eb3ff;
+$hover-link-color: #7fd4ff;
+
+$font: Arial, sans-serif !default;
+$font-size: 14px;
+
+$sidebar-width: 250px;
+
+$sidebar-background-color: #0a101b;
+$sidebar-contrast-background-color: #060b14;
+$sidebar-contrast-text-color: #7f92ad;
+
+$sidebar-arrow-color: #3f5575;
+$sidebar-hover-arrow-color: #5eb3ff;
+
+$sidebar-action-color: #7f92ad;
+$sidebar-hover-action-color: #5eb3ff;
+
+$sidebar-title-action-color: #d7e4f7;
+$sidebar-hover-title-action-item-color: #5eb3ff;
+
+$sidebar-text-color: #8fa4c0;
+$sidebar-icon-color: #6f819c;
+$sidebar-link-color: #c8d4e6;
+$sidebar-hover-link-color: #fff;
+$sidebar-hover-background-color: #152033;
+
+$sidebar-popup-search-input-background-color: #152033;
+$sidebar-popup-search-input-text-color: #c8d4e6;
+$sidebar-popup-search-input-placeholder-color: #6f819c;
+
+$sidebar-popup-background-color: #152033;
+$sidebar-popup-text-color: #c8d4e6;
+$sidebar-popup-overlay-color: #000;
+
+$sidebar-popup-link-text-color: #c8d4e6;
+$sidebar-popup-hover-link-color: #fff;
+$sidebar-popup-hover-link-background-color: #2f7fd4;
+
+$top-height: 32px;
+
+$top-text-color: #c8d4e6;
+$top-separator-color: #2a3a52;
+$top-link-color: #c8d4e6;
+$top-hover-link-color: #5eb3ff;
+$top-border-color: #2a3a52;
+$top-icon-color: #5eb3ff;
+
+$top-dropdown-background-color: #152033;
+$top-dropdown-text-color: #fff;
+$top-dropdown-contrast-background-color: #0f1724;
+$top-dropdown-contrast-text-color: #8fa4c0;
+$top-dropdown-border-color: #2a3a52;
+$top-dropdown-link-color: #fff;
+$top-dropdown-hover-link-color: #fff;
+$top-dropdown-icon-color: #c8d4e6;
+$top-dropdown-selected-color: #e5c07b;
+
+$content-background-color: #121c2c;
+$content-contrast-background-color: #0f1724;
+$content-contrast2-background-color: #1a2940;
+$content-contrast3-background-color: #152033;
+$content-selected-background-color: #1f3150;
+$content-contrast2-text-color: #e6eef9;
+$content-border-color: #1a2940;
+$content-border2-color: #2a3a52;
+$content-selected-border-color: #3f5575;
+
+$tab-selected-border-color: #5eb3ff;
+$tab-error-border-color: #f07178;
+
+$button-background-color: #1a2940;
+$button-hover-background-color: #2f7fd4;
+$button-active-background-color: #3f5575;
+$button-text-color: #c8d4e6;
+$button-hover-text-color: #fff;
+$button-active-text-color: #fff;
+
+$primary-button-background-color: #2f7fd4;
+$primary-button-text-color: #fff;
+
+$danger-button-background-color: #c14747;
+$danger-button-text-color: #fff;
+
+$background-button-background-color: #121c2c;
+$background-button-text-color: #c8d4e6;
+
+$input-background-color: #0f1724;
+$input-contrast-background-color: #152033;
+$input-border-color: #2a3a52;
+$input-hover-background-color: #2f7fd4;
+$input-icon-color: #5eb3ff;
+$input-text-color: #e6eef9;
+$input-contrast-text-color: #c8d4e6;
+$input-hover-text-color: #fff;
+$input-selected-text-color: #5eb3ff;
+$input-disabled-text-color: #6f819c;
+$input-placeholder-color: #6f819c;
+$input-shadow-color: color.adjust(#2f7fd4, $alpha: -0.25);
+
+$background-input-background-color: #0f1724;
+$background-input-border-color: #2a3a52;
+$background-input-text-color: #c8d4e6;
+
+$warning-color: #4a3428;
+$warning-text-color: #f0a070;
+$info-color: #1f3550;
+$info-text-color: #5eb3ff;
+$success-color: #1f3d31;
+$success-text-color: #98c379;
+
+$login-background-color: #0a101b;
+$login-title-text-color: #8fa4c0;
+$login-title-contrast-text-color: #fff;
+$login-header-background-color: #1a2940;
+$login-header-text-color: #e6eef9;
+$login-content-background-color: #121c2c;
+
+$jquery-ui-buttonpane-background: #1a2940;
+
+$jquery-ui-state-default-background-color: #0f1724;
+$jquery-ui-state-default-border-color: #2a3a52;
+$jquery-ui-state-default-text-color: #c8d4e6;
+
+$jquery-ui-state-hover-background-color: #2f7fd4;
+$jquery-ui-state-hover-border-color: #2f7fd4;
+$jquery-ui-state-hover-text-color: #fff;
+
+$jquery-ui-state-active-background-color: #3f5575;
+$jquery-ui-state-active-border-color: #3f5575;
+$jquery-ui-state-active-text-color: #fff;
+
+$jquery-ui-state-highlight-background-color: #0f1724;
+$jquery-ui-state-highlight-border-color: #5eb3ff;
+$jquery-ui-state-highlight-text-color: #5eb3ff;
+
+$jquery-ui-overlay-color: #000;
+
+$jquery-ui-tooltip-background-color: #0a101b;
+$jquery-ui-tooltip-text-color: #fff;
+
+$chart-fillColor: color.adjust($hover-link-color, $alpha: -0.75);
+$chart-strokeColor: $hover-link-color;
+$chart-pointColor: #fff;
+$chart-pointHighlightFill: $hover-link-color;
+$chart-scaleGridLineColor: color.adjust(#fff, $alpha: -0.9);
+$chart-scaleLineColor: color.adjust(#fff, $alpha: -0.9);
+$chart-scaleFontColor: $content-contrast2-text-color;
+
+$paginator-active-background-color: #2f7fd4;

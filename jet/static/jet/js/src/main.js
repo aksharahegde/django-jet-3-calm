@@ -31,5 +31,8 @@ require('./features/themes');
 require('./features/siblings');
 require('./features/selects');
 require('./features/related-popups');
+require('./features/command-palette');
+require('./features/saved-filters');
+require('./features/preferences');
 require('./features/scroll-to-bottom-detector');
 require('./features/touchmove-non-scrollable');

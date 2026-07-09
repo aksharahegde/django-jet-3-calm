@@ -1,0 +1,160 @@
+@use "globals" as *;
+
+.command-palette {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+
+  &.visible {
+    display: block;
+  }
+
+  &-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.45);
+  }
+
+  &-dialog {
+    position: relative;
+    width: 560px;
+    max-width: calc(100% - 40px);
+    margin: 80px auto 0;
+    background: $content-background-color;
+    border-radius: 4px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+  }
+
+  &-input {
+    width: 100%;
+    box-sizing: border-box;
+    border: 0;
+    border-bottom: 1px solid $content-border2-color;
+    padding: 16px 20px;
+    font-size: 16px;
+    color: $text-color;
+    background: $input-background-color;
+  }
+
+  &-results {
+    max-height: 360px;
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &-result {
+    a {
+      display: block;
+      padding: 12px 20px;
+      color: $text-color;
+      text-decoration: none;
+
+      &:hover,
+      &.selected {
+        background: $content-contrast-background-color;
+        color: $hover-link-color;
+      }
+    }
+
+    &-type {
+      display: inline-block;
+      min-width: 72px;
+      margin-right: 8px;
+      font-size: 11px;
+      text-transform: uppercase;
+      color: $dim-text-color;
+    }
+  }
+
+  &-empty {
+    padding: 20px;
+    color: $dim-text-color;
+  }
+}
+
+.preferences-panel {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+
+  &.visible {
+    display: block;
+  }
+
+  &-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.45);
+  }
+
+  &-dialog {
+    position: relative;
+    width: 420px;
+    max-width: calc(100% - 40px);
+    margin: 80px auto 0;
+    background: $content-background-color;
+    border-radius: 4px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+    padding: 20px;
+  }
+
+  &-title {
+    margin: 0 0 16px;
+    font-size: 18px;
+    color: $text-color;
+  }
+
+  &-field {
+    margin-bottom: 12px;
+
+    label {
+      display: block;
+      margin-bottom: 4px;
+      color: $text-color;
+    }
+
+    select,
+    input[type="checkbox"] {
+      margin-top: 4px;
+    }
+  }
+
+  &-actions {
+    margin-top: 16px;
+    text-align: right;
+  }
+}
+
+.saved-filter-views {
+  margin: 0 0 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid $content-border2-color;
+
+  &-label {
+    display: inline-block;
+    margin-right: 8px;
+    color: $text-color;
+  }
+
+  select {
+    min-width: 180px;
+    margin-right: 8px;
+  }
+}

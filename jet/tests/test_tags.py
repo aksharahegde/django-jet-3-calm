@@ -125,3 +125,13 @@ class TagsTestCase(TestCase):
         expected_object = None
 
         self.assertEqual(previous_object, expected_object)
+
+    def test_jet_get_side_menu_compact_reads_runtime_setting(self):
+        from django.test import override_settings
+
+        from jet.templatetags.jet_tags import jet_get_side_menu_compact
+
+        with override_settings(JET_SIDE_MENU_COMPACT=True):
+            self.assertTrue(jet_get_side_menu_compact({"request": self._admin_request("/")}))
+        with override_settings(JET_SIDE_MENU_COMPACT=False):
+            self.assertFalse(jet_get_side_menu_compact({"request": self._admin_request("/")}))

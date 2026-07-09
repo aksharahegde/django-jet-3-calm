@@ -1,0 +1,7 @@
+{% load i18n %}
+
+{% if module.embed_url %}
+    <iframe src="{{ module.embed_url }}" class="external-embed-frame" style="width: 100%; height: {{ module.height }}px; border: 0;" title="{% trans 'Embedded content' %}"></iframe>
+{% else %}
+    <p>{% trans "Configure an embed URL in module settings." %}</p>
+{% endif %}

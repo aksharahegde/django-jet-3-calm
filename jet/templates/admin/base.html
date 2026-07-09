@@ -73,6 +73,7 @@
                     {% if user.has_usable_password %}
                     <a href="{% url 'admin:password_change' %}">{% trans 'Change password' %}</a> /
                     {% endif %}
+                    <a href="#" class="jet-open-preferences">{% trans 'Preferences' %}</a> /
                     <form id="logout-form" method="post" action="{% url 'admin:logout' %}">
                         {% csrf_token %}
                         <button type="submit">{% translate "Log out" %}</button>
@@ -150,8 +151,20 @@
     {% endif %}
 
     {% jet_get_side_menu_compact as SIDE_MENU_COMPACT %}
+    {% jet_get_themes as THEMES %}
     <script>
       window.JET_SIDE_MENU_COMPACT = {{ SIDE_MENU_COMPACT|yesno:'true,false'|lower }};
+      window.JET_NAVIGATION_LOOKUP_URL = "{% url 'jet:navigation_lookup' %}";
+      window.JET_LIST_SAVED_FILTER_VIEWS_URL = "{% url 'jet:list_saved_filter_views' %}";
+      window.JET_SAVE_FILTER_VIEW_URL = "{% url 'jet:save_filter_view' %}";
+      window.JET_DELETE_SAVED_FILTER_VIEW_URL = "{% url 'jet:delete_saved_filter_view' %}";
+      window.JET_GET_PREFERENCES_URL = "{% url 'jet:get_preferences' %}";
+      window.JET_SAVE_PREFERENCES_URL = "{% url 'jet:save_preferences' %}";
+      window.JET_THEMES = [
+        {% for conf_theme in THEMES %}
+        {"theme": "{{ conf_theme.theme }}", "title": "{{ conf_theme.title|default:conf_theme.theme|escapejs }}"}{% if not forloop.last %},{% endif %}
+        {% endfor %}
+      ];
     </script>
     {% if not is_popup %}
         <div class="related-popup-container scrollable">
