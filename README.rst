@@ -1,10 +1,10 @@
 ================================
-Django JET Calm (for Django-4)
+Django JET Calm (for Django 5)
 ================================
 
 Rebooted version of https://github.com/geex-arts/django-jet#readme
 
-**Modern template for Django-4 admin interface with improved functionality**
+**Modern template for Django 5 admin interface with improved functionality**
 
 **MAJOR UPGRADE**
   * Latest jQuery and jQuery-UI
@@ -55,10 +55,16 @@ Screenshots
     :align: center
     :target: https://raw.githubusercontent.com/geex-arts/django-jet/static/screen3.png
 
+Requirements
+============
+
+* Python 3.10+
+* Django 5.2+
+
 Installation
 ============
 
-* Download and install the Django 4 version of Django JET Calm:
+* Install Django JET Calm:
 
 .. code:: python
 
@@ -97,20 +103,19 @@ Installation
 
 .. code:: python
 
-    urlpatterns [
-        '',
-        path('jet/', include('jet.urls', 'jet')),  # Django JET URLS
-        path('admin/', include(admin.site.urls)),
-        ...
+    from django.contrib import admin
+    from django.urls import include, path
+
+    urlpatterns = [
+        path('jet/', include('jet.urls')),
+        path('admin/', admin.site.urls),
     ]
 
 * Create database tables:
 
-.. code:: python
+.. code:: bash
 
     python manage.py migrate jet
-    # or 
-    python manage.py syncdb
         
 * Collect static if you are in production environment:
 
@@ -151,21 +156,24 @@ Dashboard installation
 
 .. code:: python
 
-    urlpatterns [
-        '',
-        path('jet/', include('jet.urls', 'jet')),  # Django JET URLS
-        path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),  # Django JET dashboard URLS
-        path('admin/', include(admin.site.urls)),
-        ...
+    from django.contrib import admin
+    from django.urls import include, path
+
+    urlpatterns = [
+        path('jet/', include('jet.urls')),
+        path('jet/dashboard/', include('jet.dashboard.urls')),
+        path('admin/', admin.site.urls),
     ]
 
 .. warning::
-    From Django 3.0 the default value of the ``X_FRAME_OPTIONS`` setting was changed from ``SAMEORIGIN`` to ``DENY``. This       can cause errors for popups such as for the ``Field Lookup Popup``. To solve this you should add the following to your       Django project settings.py file:
-    
+    From Django 3.0 the default value of the ``X_FRAME_OPTIONS`` setting was changed
+    from ``SAMEORIGIN`` to ``DENY``. This can cause errors for popups such as the
+    ``Field Lookup Popup``. To solve this you should add the following to your
+    Django project settings.py file:
+
 .. code:: python
-        
-        X_FRAME_OPTIONS = 'SAMEORIGIN'
-        
+
+    X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 * **For Google Analytics widgets only** install python package:
 
@@ -175,11 +183,9 @@ Dashboard installation
 
 * Create database tables:
 
-.. code:: python
+.. code:: bash
 
-    python manage.py migrate dashboard
-    # or
-    python manage.py syncdb
+    python manage.py migrate jet.dashboard
 
 * Collect static if you are in production environment:
 
