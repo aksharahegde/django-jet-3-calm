@@ -14,10 +14,9 @@ from django.utils.encoding import smart_str
 from django.utils.formats import get_format
 from django.utils.safestring import mark_safe
 
-from jet import settings
-from jet.settings import get_setting
 from jet import VERSION
 from jet.models import Bookmark
+from jet.settings import get_setting
 from jet.utils import get_admin_site
 from jet.utils import get_menu_items
 from jet.utils import get_model_instance_label

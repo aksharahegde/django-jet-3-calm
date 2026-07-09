@@ -22,7 +22,10 @@ class Migration(migrations.Migration):
                     ),
                 ),
                 ("user", models.PositiveIntegerField(verbose_name="user")),
-                ("app_label", models.CharField(max_length=100, verbose_name="application")),
+                (
+                    "app_label",
+                    models.CharField(max_length=100, verbose_name="application"),
+                ),
                 ("model_name", models.CharField(max_length=100, verbose_name="model")),
                 ("name", models.CharField(max_length=255, verbose_name="name")),
                 ("query_string", models.TextField(verbose_name="query string")),
@@ -54,7 +57,10 @@ class Migration(migrations.Migration):
                     ),
                 ),
                 ("user", models.PositiveIntegerField(unique=True, verbose_name="user")),
-                ("theme", models.CharField(blank=True, max_length=50, verbose_name="theme")),
+                (
+                    "theme",
+                    models.CharField(blank=True, max_length=50, verbose_name="theme"),
+                ),
                 (
                     "side_menu_compact",
                     models.BooleanField(

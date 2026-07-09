@@ -30,7 +30,9 @@ urlpatterns = [
     re_path(r"^model_lookup/$", model_lookup_view, name="model_lookup"),
     re_path(r"^navigation_lookup/$", navigation_lookup_view, name="navigation_lookup"),
     re_path(
-        r"^saved_filter_views/$", list_saved_filter_views, name="list_saved_filter_views"
+        r"^saved_filter_views/$",
+        list_saved_filter_views,
+        name="list_saved_filter_views",
     ),
     re_path(r"^save_filter_view/$", save_filter_view, name="save_filter_view"),
     re_path(

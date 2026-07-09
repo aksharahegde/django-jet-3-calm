@@ -65,9 +65,7 @@ class UserPreferences(models.Model):
     sidebar_pinned = models.BooleanField(
         verbose_name=_("pinned sidebar"), null=True, blank=True
     )
-    date_updated = models.DateTimeField(
-        verbose_name=_("date updated"), auto_now=True
-    )
+    date_updated = models.DateTimeField(verbose_name=_("date updated"), auto_now=True)
 
     class Meta:
         verbose_name = _("user preference")

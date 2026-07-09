@@ -132,6 +132,10 @@ class TagsTestCase(TestCase):
         from jet.templatetags.jet_tags import jet_get_side_menu_compact
 
         with override_settings(JET_SIDE_MENU_COMPACT=True):
-            self.assertTrue(jet_get_side_menu_compact({"request": self._admin_request("/")}))
+            self.assertTrue(
+                jet_get_side_menu_compact({"request": self._admin_request("/")})
+            )
         with override_settings(JET_SIDE_MENU_COMPACT=False):
-            self.assertFalse(jet_get_side_menu_compact({"request": self._admin_request("/")}))
+            self.assertFalse(
+                jet_get_side_menu_compact({"request": self._admin_request("/")})
+            )

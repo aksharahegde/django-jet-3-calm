@@ -647,7 +647,9 @@ class ModelStats(DashboardModule):
                     }
                 )
 
-        self.children = sorted(stats, key=lambda item: -item["count"])[: int(self.limit)]
+        self.children = sorted(stats, key=lambda item: -item["count"])[
+            : int(self.limit)
+        ]
 
 
 class ExternalEmbedSettingsForm(forms.Form):

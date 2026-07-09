@@ -10,8 +10,8 @@ from jet.forms import UserPreferencesForm
 from jet.models import Bookmark
 from jet.models import SavedFilterView
 from jet.models import UserPreferences
-from jet.utils import JsonResponse
 from jet.utils import get_menu_items
+from jet.utils import JsonResponse
 from jet.utils import user_is_authenticated
 
 
@@ -34,7 +34,7 @@ def _build_navigation_items(request):
                 items.append(
                     {
                         "type": "model",
-                        "label": "%s › %s" % (app_label, model_label),
+                        "label": "{} › {}".format(app_label, model_label),
                         "url": model["url"],
                     }
                 )
