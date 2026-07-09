@@ -14,9 +14,9 @@ from django.utils.encoding import smart_str
 from django.utils.formats import get_format
 from django.utils.safestring import mark_safe
 
-from jet import settings
 from jet import VERSION
 from jet.models import Bookmark
+from jet.settings import get_setting
 from jet.utils import get_admin_site
 from jet.utils import get_menu_items
 from jet.utils import get_model_instance_label
@@ -134,18 +134,37 @@ def jet_select2_lookups(field):
 
 @assignment_tag(takes_context=True)
 def jet_get_current_theme(context):
+    if "request" in context and context["request"].user.is_authenticated:
+        from jet.models import UserPreferences
+
+        try:
+            prefs = UserPreferences.objects.get(user=context["request"].user.pk)
+            if prefs.theme:
+                jet_themes = get_setting("JET_THEMES", [])
+                if isinstance(jet_themes, list) and len(jet_themes) > 0:
+                    for conf_theme in jet_themes:
+                        if (
+                            isinstance(conf_theme, dict)
+                            and conf_theme.get("theme") == prefs.theme
+                        ):
+                            return prefs.theme
+                return prefs.theme
+        except UserPreferences.DoesNotExist:
+            pass
+
     if "request" in context and "JET_THEME" in context["request"].COOKIES:
         theme = context["request"].COOKIES["JET_THEME"]
-        if isinstance(settings.JET_THEMES, list) and len(settings.JET_THEMES) > 0:
-            for conf_theme in settings.JET_THEMES:
+        jet_themes = get_setting("JET_THEMES", [])
+        if isinstance(jet_themes, list) and len(jet_themes) > 0:
+            for conf_theme in jet_themes:
                 if isinstance(conf_theme, dict) and conf_theme.get("theme") == theme:
                     return theme
-    return settings.JET_DEFAULT_THEME
+    return get_setting("JET_DEFAULT_THEME", "default")
 
 
 @assignment_tag
 def jet_get_themes():
-    return settings.JET_THEMES
+    return get_setting("JET_THEMES", [])
 
 
 @assignment_tag
@@ -161,14 +180,23 @@ def jet_append_version(url):
         return f"{url}?v={VERSION}"
 
 
-@assignment_tag
-def jet_get_side_menu_compact():
-    return settings.JET_SIDE_MENU_COMPACT
+@assignment_tag(takes_context=True)
+def jet_get_side_menu_compact(context):
+    if "request" in context and context["request"].user.is_authenticated:
+        from jet.models import UserPreferences
+
+        try:
+            prefs = UserPreferences.objects.get(user=context["request"].user.pk)
+            if prefs.side_menu_compact is not None:
+                return prefs.side_menu_compact
+        except UserPreferences.DoesNotExist:
+            pass
+    return get_setting("JET_SIDE_MENU_COMPACT", False)
 
 
 @assignment_tag
 def jet_change_form_sibling_links_enabled():
-    return settings.JET_CHANGE_FORM_SIBLING_LINKS
+    return get_setting("JET_CHANGE_FORM_SIBLING_LINKS", True)
 
 
 def jet_sibling_object(context, next):

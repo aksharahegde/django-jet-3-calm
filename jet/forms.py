@@ -10,6 +10,8 @@ from django.db.models import Q
 
 from jet.models import Bookmark
 from jet.models import PinnedApplication
+from jet.models import SavedFilterView
+from jet.models import UserPreferences
 from jet.utils import get_model_instance_label
 from jet.utils import user_is_authenticated
 
@@ -170,3 +172,62 @@ class ModelLookupForm(forms.Form):
         total = qs.count()
 
         return items, total
+
+
+class SaveFilterViewForm(forms.ModelForm):
+    def __init__(self, request, *args, **kwargs):
+        self.request = request
+        super().__init__(*args, **kwargs)
+
+    class Meta:
+        model = SavedFilterView
+        fields = ["app_label", "model_name", "name", "query_string"]
+
+    def clean(self):
+        data = super().clean()
+        if (
+            not user_is_authenticated(self.request.user)
+            or not self.request.user.is_staff
+        ):
+            raise ValidationError("error")
+        return data
+
+    def save(self, commit=True):
+        self.instance.user = self.request.user.pk
+        return super().save(commit)
+
+
+class UserPreferencesForm(forms.Form):
+    theme = forms.CharField(required=False)
+    side_menu_compact = forms.CharField(required=False)
+    sidebar_pinned = forms.CharField(required=False)
+
+    def __init__(self, request, *args, **kwargs):
+        self.request = request
+        super().__init__(*args, **kwargs)
+
+    def clean(self):
+        data = super().clean()
+        if (
+            not user_is_authenticated(self.request.user)
+            or not self.request.user.is_staff
+        ):
+            raise ValidationError("error")
+        return data
+
+    def _parse_bool(self, value):
+        if value in (None, ""):
+            return None
+        return str(value).lower() in ("1", "true", "yes", "on")
+
+    def save(self):
+        prefs, _created = UserPreferences.objects.get_or_create(
+            user=self.request.user.pk
+        )
+        prefs.theme = self.cleaned_data.get("theme", "")
+        prefs.side_menu_compact = self._parse_bool(
+            self.cleaned_data.get("side_menu_compact")
+        )
+        prefs.sidebar_pinned = self._parse_bool(self.cleaned_data.get("sidebar_pinned"))
+        prefs.save()
+        return prefs

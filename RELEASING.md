@@ -4,11 +4,13 @@
 
 1. Bump version in `jet/__init__.py`, `pyproject.toml`, `setup.py`, and `package.json`.
 2. Update `CHANGELOG.md` and commit.
-3. Push to `main`, tag, and publish a GitHub release:
+3. Push to `main`, tag, and publish a GitHub release (keep release notes/description as a changelog link):
    ```bash
    git tag -a vX.Y.Z -m "Release X.Y.Z"
    git push origin main vX.Y.Z
-   gh release create vX.Y.Z --generate-notes --notes-start-tag vPREVIOUS
+   gh release create vX.Y.Z \
+     --title "vX.Y.Z" \
+     --notes "Release notes: https://github.com/aksharahegde/django-jet-3-calm/blob/main/CHANGELOG.md"
    ```
 4. Build and upload to PyPI from your machine (see below).
 

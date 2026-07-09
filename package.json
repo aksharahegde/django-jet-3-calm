@@ -36,6 +36,7 @@
     "build": "gulp build"
   },
   "resolutions": {
-    "qs": "6.15.2"
+    "qs": "6.15.2",
+    "elliptic": "npm:@mapped/elliptic@^6.6.5"
   }
 }
