@@ -14,7 +14,7 @@ def read(fname):
 
 
 def get_install_requires():
-    install_requires = ["Django>=5.2.15", "six>=1.17.0", "django-rangefilter>=0.9.1"]
+    install_requires = ["Django>=5.2.16", "six>=1.17.0", "django-rangefilter>=0.9.1"]
 
     try:
         pass
@@ -31,7 +31,7 @@ def get_install_requires():
 
 setup(
     name="django-jet-calm",
-    version="5.4.6",
+    version="5.4.7",
     description="Modern template for Django-4 admin interface with improved functionality",
     long_description=read("README.rst"),
     author="Akshara Hegde",

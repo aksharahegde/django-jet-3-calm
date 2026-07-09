@@ -4,6 +4,15 @@ All notable changes to django-jet-calm will be documented in this file.
 
 ## [Unreleased]
 
+## [5.4.7] - 2026-07-09
+
+### Security
+- Upgraded DOMPurify to 3.4.11 to address XSS bypass vulnerabilities
+- Upgraded Django to 5.2.16 to address CVE-2026-48588, CVE-2026-53877, and CVE-2026-53878
+
+### Changed
+- Rebuilt frontend bundle (`bundle.min.js`)
+
 ## [5.4.6] - 2026-07-02
 
 ### Added
