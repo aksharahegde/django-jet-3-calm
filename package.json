@@ -37,6 +37,7 @@
   },
   "resolutions": {
     "qs": "6.15.2",
-    "elliptic": "npm:@mapped/elliptic@^6.6.5"
+    "elliptic": "npm:@mapped/elliptic@^6.6.5",
+    "brace-expansion": "1.1.16"
   }
 }

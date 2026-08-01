@@ -1,4 +1,5 @@
 import operator
+import re
 from functools import reduce
 
 from django import forms
@@ -12,10 +13,43 @@ from jet.models import Bookmark
 from jet.models import PinnedApplication
 from jet.models import SavedFilterView
 from jet.models import UserPreferences
+from jet.settings import get_setting
 from jet.utils import get_model_instance_label
 from jet.utils import user_is_authenticated
 
 get_model = apps.get_model
+
+_THEME_PATTERN = re.compile(r"^[a-zA-Z0-9_-]+$")
+
+
+def get_allowed_themes():
+    jet_themes = get_setting("JET_THEMES", [])
+    if not isinstance(jet_themes, list):
+        return set()
+    return {
+        conf.get("theme")
+        for conf in jet_themes
+        if isinstance(conf, dict) and conf.get("theme")
+    }
+
+
+def sanitize_theme(theme):
+    theme = theme or ""
+    if not theme or not _THEME_PATTERN.match(theme):
+        return ""
+    allowed = get_allowed_themes()
+    if allowed and theme not in allowed:
+        return ""
+    return theme
+
+
+def serialize_user_preferences(prefs):
+    return {
+        "error": False,
+        "theme": sanitize_theme(prefs.theme),
+        "side_menu_compact": prefs.side_menu_compact,
+        "sidebar_pinned": prefs.sidebar_pinned,
+    }
 
 
 class AddBookmarkForm(forms.ModelForm):
@@ -206,6 +240,17 @@ class UserPreferencesForm(forms.Form):
         self.request = request
         super().__init__(*args, **kwargs)
 
+    def clean_theme(self):
+        theme = self.cleaned_data.get("theme", "")
+        if not theme:
+            return ""
+        if not _THEME_PATTERN.match(theme):
+            raise ValidationError("Invalid theme")
+        allowed = get_allowed_themes()
+        if allowed and theme not in allowed:
+            raise ValidationError("Invalid theme")
+        return theme
+
     def clean(self):
         data = super().clean()
         if (
@@ -224,7 +269,7 @@ class UserPreferencesForm(forms.Form):
         prefs, _created = UserPreferences.objects.get_or_create(
             user=self.request.user.pk
         )
-        prefs.theme = self.cleaned_data.get("theme", "")
+        prefs.theme = sanitize_theme(self.cleaned_data.get("theme", ""))
         prefs.side_menu_compact = self._parse_bool(
             self.cleaned_data.get("side_menu_compact")
         )

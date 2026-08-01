@@ -6,6 +6,7 @@ from jet.forms import ModelLookupForm
 from jet.forms import RemoveBookmarkForm
 from jet.forms import SaveFilterViewForm
 from jet.forms import ToggleApplicationPinForm
+from jet.forms import serialize_user_preferences
 from jet.forms import UserPreferencesForm
 from jet.models import Bookmark
 from jet.models import SavedFilterView
@@ -198,14 +199,7 @@ def get_preferences_view(request):
 
     try:
         prefs = UserPreferences.objects.get(user=request.user.pk)
-        return JsonResponse(
-            {
-                "error": False,
-                "theme": prefs.theme,
-                "side_menu_compact": prefs.side_menu_compact,
-                "sidebar_pinned": prefs.sidebar_pinned,
-            }
-        )
+        return JsonResponse(serialize_user_preferences(prefs))
     except UserPreferences.DoesNotExist:
         return JsonResponse(
             {
@@ -225,12 +219,5 @@ def save_preferences_view(request):
     form = UserPreferencesForm(request, request.POST)
     if form.is_valid():
         prefs = form.save()
-        return JsonResponse(
-            {
-                "error": False,
-                "theme": prefs.theme,
-                "side_menu_compact": prefs.side_menu_compact,
-                "sidebar_pinned": prefs.sidebar_pinned,
-            }
-        )
+        return JsonResponse(serialize_user_preferences(prefs))
     return JsonResponse({"error": True})

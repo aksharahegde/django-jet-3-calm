@@ -301,3 +301,14 @@ class ViewsTestCase(TestCase):
         self.assertEqual(payload["theme"], "dark")
         self.assertTrue(payload["side_menu_compact"])
         self.assertFalse(payload["sidebar_pinned"])
+
+        response = self.admin.post(
+            reverse("jet:save_preferences"),
+            {
+                "theme": "<script>alert(1)</script>",
+                "side_menu_compact": "false",
+                "sidebar_pinned": "false",
+            },
+        )
+        payload = json.loads(response.content.decode())
+        self.assertTrue(payload["error"])
