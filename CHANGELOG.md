@@ -4,6 +4,26 @@ All notable changes to django-jet-calm will be documented in this file.
 
 ## [Unreleased]
 
+## [5.5.0] - 2026-08-01
+
+### Added
+- Modern admin UX suite: command-palette navigation, user preferences panel, saved changelist filters, sidebar pinning, dark themes, and dashboard modules (model stats, external embeds)
+
+### Security
+- Validate user preference themes against `JET_THEMES` whitelist (CodeQL reflected XSS fix)
+- Upgraded DOMPurify to 3.4.12
+- Upgraded shell-quote to 1.10.0
+- Upgraded PostCSS to 8.5.18
+- Pinned brace-expansion to 1.1.16
+- Upgraded immutable to 5.1.9
+- Resolved elliptic advisory via `@mapped/elliptic` yarn resolution
+
+### Fixed
+- Gulp `locales` task ignores `.venv`, `venv`, and `node_modules` for `compilemessages`
+
+### Changed
+- Rebuilt frontend bundle (`bundle.min.js`)
+
 ## [5.4.7] - 2026-07-09
 
 ### Security
