@@ -169,11 +169,10 @@ gulp.task(
 );
 
 gulp.task("locales", async function () {
-  try {
-    await execPromise("python manage.py compilemessages", { stdio: "inherit" });
-  } catch (error) {
-    console.error("locales error:", error);
-  }
+  await execPromise(
+    "python manage.py compilemessages --ignore=.venv --ignore=venv --ignore=node_modules",
+    { stdio: "inherit" },
+  );
 });
 
 // Use series instead of parallel to avoid stream conflicts
