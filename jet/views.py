@@ -5,8 +5,8 @@ from jet.forms import AddBookmarkForm
 from jet.forms import ModelLookupForm
 from jet.forms import RemoveBookmarkForm
 from jet.forms import SaveFilterViewForm
-from jet.forms import ToggleApplicationPinForm
 from jet.forms import serialize_user_preferences
+from jet.forms import ToggleApplicationPinForm
 from jet.forms import UserPreferencesForm
 from jet.models import Bookmark
 from jet.models import SavedFilterView
