@@ -4,6 +4,13 @@ All notable changes to django-jet-calm will be documented in this file.
 
 ## [Unreleased]
 
+## [5.5.1] - 2026-08-10
+
+### Security
+- Escape user preference theme in JSON API response (CodeQL reflected XSS fix)
+- Upgraded DOMPurify to 3.4.13
+- Upgraded PostCSS to 8.5.23
+
 ## [5.5.0] - 2026-08-01
 
 ### Added
