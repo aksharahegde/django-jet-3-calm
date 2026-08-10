@@ -8,6 +8,7 @@ from django.contrib.auth.models import Permission
 from django.contrib.contenttypes.models import ContentType
 from django.core.exceptions import ValidationError
 from django.db.models import Q
+from django.utils.html import escape
 
 from jet.models import Bookmark
 from jet.models import PinnedApplication
@@ -46,7 +47,7 @@ def sanitize_theme(theme):
 def serialize_user_preferences(prefs):
     return {
         "error": False,
-        "theme": sanitize_theme(prefs.theme),
+        "theme": escape(sanitize_theme(prefs.theme)),
         "side_menu_compact": prefs.side_menu_compact,
         "sidebar_pinned": prefs.sidebar_pinned,
     }
