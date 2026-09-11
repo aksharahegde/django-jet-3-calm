@@ -68,7 +68,7 @@ Installation
 
 .. code:: python
 
-    pip install django-jet-calm==5.5.1
+    pip install django-jet-calm==5.5.2
 
 * Add 'jet' application to the INSTALLED_APPS setting of your Django project settings.py file (note it should be before 'django.contrib.admin'):
 

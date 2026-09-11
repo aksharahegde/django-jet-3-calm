@@ -61,7 +61,7 @@ author = "Geex Arts"
 # built documents.
 #
 # The short X.Y version.
-version = "5.5.1"
+version = "5.5.2"
 # The full version, including alpha/beta/rc tags.
 release = "5.4.4"
 

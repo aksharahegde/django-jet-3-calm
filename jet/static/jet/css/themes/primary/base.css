@@ -5508,7 +5508,6 @@ body {
   color: #6f7e95;
   font-family: Arial, sans-serif;
   -webkit-text-size-adjust: 100%;
-     -moz-text-size-adjust: 100%;
           text-size-adjust: 100%;
 }
 @media only screen and (max-width: 960px) {

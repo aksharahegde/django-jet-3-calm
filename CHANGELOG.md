@@ -4,6 +4,15 @@ All notable changes to django-jet-calm will be documented in this file.
 
 ## [Unreleased]
 
+## [5.5.2] - 2026-09-11
+
+### Security
+- Upgraded browserslist to 4.28.9 (fixes GHSA-73wf-gq98-2v4g / CVE-2026-73088, prototype-pollution crash via untrusted stats file)
+- Pinned decode-uri-component to 0.5.0 via yarn resolutions (fixes GHSA-vcc3-ghjq-m6fr / CVE-2026-45822, ReDoS)
+
+### Changed
+- Upgraded baseline-browser-mapping to 2.11.0
+
 ## [5.5.1] - 2026-08-10
 
 ### Security
