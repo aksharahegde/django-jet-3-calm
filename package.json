@@ -38,6 +38,7 @@
   "resolutions": {
     "qs": "6.15.2",
     "elliptic": "npm:@mapped/elliptic@^6.6.5",
-    "brace-expansion": "1.1.16"
+    "brace-expansion": "1.1.16",
+    "decode-uri-component": "^0.5.0"
   }
 }
