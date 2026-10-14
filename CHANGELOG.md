@@ -4,6 +4,16 @@ All notable changes to django-jet-calm will be documented in this file.
 
 ## [Unreleased]
 
+## [5.5.3] - 2026-10-14
+
+### Security
+- Pinned brace-expansion to 1.1.21 via yarn resolutions (fixes CVE-2026-102277, quadratic-time expansion DoS)
+- Upgraded DOMPurify to 3.4.16
+
+### Changed
+- Upgraded shell-quote to 1.12.0 and source-map-js to 1.2.2
+- Upgraded Django to 5.2.17 (dev requirements)
+
 ## [5.5.2] - 2026-09-11
 
 ### Security
