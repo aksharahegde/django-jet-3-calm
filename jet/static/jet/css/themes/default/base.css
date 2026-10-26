@@ -482,9 +482,6 @@
     transform: rotate(360deg);
   }
 }
-/*
-  DJANGO JET Admin styles
-*/
 .ui-widget-content {
   color: #6f7e95;
   border-color: #f4f4f4;
@@ -609,12 +606,6 @@
   margin: 0.15em 0 0;
 }
 
-/*
-  DJANGO JET Admin styles
-*/
-/*
-  DJANGO JET Admin styles
-*/
 .select2-selection--single {
   height: 32px;
   height: 2.28571rem;
@@ -675,9 +666,6 @@
   display: none;
 }
 
-/*
-  DJANGO JET Admin styles
-*/
 .select2-selection--multiple {
   background-color: #fff !important;
   border: 1px solid #ecf2f6;
@@ -905,9 +893,6 @@
   padding: 0.42857rem;
 }
 
-/*
-  DJANGO JET Admin styles
-*/
 /* LINKS */
 a, a:visited, a:hover, a:focus {
   color: #47bac1;
@@ -1258,9 +1243,6 @@ img[src$="admin/img/icon-no.gif"] + span, img[src$="admin/img/icon-no.svg"] + sp
   padding: 2.85714rem 0;
 }
 
-/*
-  DJANGO JET Admin styles
-*/
 /* FORM BUTTONS */
 .button, .button:visited, .button:hover, input[type=submit], input[type=submit]:visited, input[type=submit]:hover, input[type=button], input[type=button]:visited, input[type=button]:hover, .object-tools a, .object-tools a:visited, .object-tools a:hover {
   display: inline-block;
@@ -1461,9 +1443,6 @@ input[type=checkbox]:checked + label:before {
   text-decoration: underline;
 }
 
-/*
-  DJANGO JET Admin styles
-*/
 /* TABLES */
 table {
   border-collapse: collapse;
@@ -1681,9 +1660,6 @@ table#change-history tbody th {
   width: 16em;
 }
 
-/*
-  DJANGO JET Admin styles
-*/
 /* MESSAGES & ERRORS */
 ul.messagelist {
   padding: 0;
@@ -1811,9 +1787,6 @@ div.system-message p.system-message-title:before {
   padding: 0.42857rem 0 0 0;
 }
 
-/*
-  DJANGO JET Admin styles
-*/
 /* HEADER */
 #branding {
   display: none;
@@ -2122,9 +2095,6 @@ button.theme-toggle {
   display: none;
 }
 
-/*
-  DJANGO JET Admin styles
-*/
 /* BREADCRUMBS */
 div.breadcrumbs {
   font-size: 12px;
@@ -2178,9 +2148,6 @@ div.breadcrumbs a:focus, div.breadcrumbs a:hover {
   vertical-align: middle;
 }
 
-/*
-  DJANGO JET Admin styles
-*/
 /* MODULES */
 fieldset.module {
   background-color: #fff;
@@ -2239,9 +2206,6 @@ fieldset.module {
   font-weight: bold;
 }
 
-/*
-  DJANGO JET Admin styles
-*/
 /* OBJECT TOOLS */
 .object-tools {
   display: none;
@@ -2322,9 +2286,6 @@ body.change-list .object-tools li {
   color: #fff;
 }
 
-/*
-  DJANGO JET Admin styles
-*/
 /* FORM ROWS */
 .form-row {
   overflow: hidden;
@@ -3392,9 +3353,6 @@ body.change-form #content-main > form > div > .module.initialized, body.change-f
   display: block;
 }
 
-/*
-  DJANGO JET Admin styles
-*/
 /* CHANGELISTS */
 #changelist {
   position: relative;
@@ -3851,9 +3809,6 @@ body.menu-pinned.popup .changelist-footer.fixed {
   left: 1.42857rem;
 }
 
-/*
-  DJANGO JET Admin styles
-*/
 .sidebar {
   position: fixed;
   width: 250px;
@@ -4422,9 +4377,6 @@ body.login .sidebar-container-toggle, body.menu-pinned .sidebar-container-toggle
   display: none;
 }
 
-/*
-  DJANGO JET Admin styles
-*/
 /* POPUP */
 .related-popup {
   position: absolute;
@@ -4536,9 +4488,6 @@ body.login .sidebar-container-toggle, body.menu-pinned .sidebar-container-toggle
   }
 }
 
-/*
-  DJANGO JET Admin styles
-*/
 /* DASHBOARD */
 .dashboard .module {
   margin-bottom: 10px;
@@ -5074,9 +5023,6 @@ html.touchevents .dashboard-item-header-buttons {
   text-align: left;
 }
 
-/*
-  DJANGO JET Admin styles
-*/
 .delete-confirmation #content > h1 + p + h2 + ul {
   background: #f0dada;
   color: #d49d9d;
@@ -5170,9 +5116,6 @@ html.touchevents .dashboard-item-header-buttons {
   }
 }
 
-/*
-  DJANGO JET Admin styles
-*/
 /* LOGIN FORM */
 body.login {
   background: #354052;
@@ -5285,9 +5228,6 @@ body.login #footer {
   padding: 0;
 }
 
-/*
-  DJANGO JET Admin styles
-*/
 .command-palette {
   display: none;
   position: fixed;
@@ -5477,6 +5417,7 @@ body {
   color: #6f7e95;
   font-family: Arial, sans-serif;
   -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
           text-size-adjust: 100%;
 }
 @media only screen and (max-width: 960px) {
