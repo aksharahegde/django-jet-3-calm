@@ -4,6 +4,14 @@ All notable changes to django-jet-calm will be documented in this file.
 
 ## [Unreleased]
 
+## [5.5.4] - 2026-10-26
+
+### Changed
+- Upgraded npm and Python dependencies
+
+### Fixed
+- Portuguese Select2 translation: "Remover iten" → "Remover item"
+
 ## [5.5.3] - 2026-10-14
 
 ### Security
